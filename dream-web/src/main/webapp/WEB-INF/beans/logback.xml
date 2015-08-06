@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Logback Configuration.  -->
+<configuration debug="false">
+
+    <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="com.alibaba.bogda.commonservice.log.LogbackFilter" />  
+        <file>/home/admin/logs/app/all.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>all.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoding>UTF-8</encoding>
+        <!-- encoders are assigned the type
+     ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern><![CDATA[
+%n%-4r [%d{yyyy-MM-dd HH:mm:ss}] [%thread] - %X{method} %X{requestURIWithQueryString} [ip=%X{remoteAddr}, ref=%X{referrer}, ua=%X{userAgent}, sid=%X{cookie.JSESSIONID}]%n  %-5level %logger{35} - %m%n
+            ]]></pattern>
+        </layout>
+    </appender> 
+
+    <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/app/sql.log</file>
+        <append>true</append>
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>sql.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!-- encoders are assigned the type
+     ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%-4relative [%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="java.sql" level="DEBUG" additivity="false">
+        <appender-ref ref="SQL"/>
+    </logger>
+
+    <logger name="org.mybatis" level="INFO" additivity="false">
+        <appender-ref ref="SQL"/>
+    </logger>
+       
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="ALL"/>
+        <appender-ref ref="SQL"/> 
+    </root>
+</configuration>

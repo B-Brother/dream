@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="$assets.render()/images/favicon.ico" type="image/x-icon" />
+#if($!rundata.request.session.getAttribute("isBank"))
+<title>网商银行-法务平台</title>
+#else
+<title>阿里巴巴集团-法务平台</title>
+#end
+<script type="text/javascript">var contextPath = '$rundata.request.contextPath';</script>
+<link rel="stylesheet" href="$assets.render()/css/style.css" />
+<link rel="stylesheet" href="$assets.render()/css/bogda.css" />
+<link rel="stylesheet" type="text/css" href="$assets.render()/css/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="$assets.render()/css/themes/icon.css">
+##<script type="text/javascript" src="$assets.render()/lib/jquery.js"></script>
+<script src="https://a.alipayobjects.com/??seajs/seajs/2.1.1/sea.js,seajs/seajs-combo/1.0.0/seajs-combo.js,seajs/seajs-text/1.0.0/seajs-text.js,seajs/seajs-style/1.0.0/seajs-style.js,seajs/seajs-log/1.0.0/seajs-log.js,jquery/jquery/1.7.2/jquery.js,gallery/json/1.0.3/json.js"></script> 
+<script type="text/javascript" src="$assets.render()/js/common/lib/jquery.js"></script>
+<script type="text/javascript" src="$assets.render()/lib/rock/js/jQuery.drag.js"></script>
+<script type="text/javascript" src="$assets.render()/js/common/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="$assets.render()/js/common/jquery.validate.extends.js"></script>
+<script type="text/javascript" src="$assets.render()/js/common/bogdaObj.js"></script>
+<script type="text/javascript" src="$assets.render()/js/common/main.js"></script>
+<script type="text/javascript" src="$assets.render()/js/common/bogda.js"></script>
+<script type="text/javascript" src="$assets.render()/lib/rock/js/DatePicker/WdatePicker.js"></script>
+</head>
+
+<body #bodyAttributes ()>
+$screen_placeholder
+
+<div style="display:none">
+	<script src='https://w.cnzz.com/q_stat.php?id=1254635742&l=3' language='JavaScript'></script> 
+</div>	
+</body>
+</html>
