@@ -227,4 +227,54 @@
       SIZE_TYPE = #{sizeType,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  
+  
+  
+  <!-- private sql -->
+  <!-- 修改文件状态关联至业务对象 
+  <update id="updateFileStatusToSaved" parameterType="java.util.HashMap">
+  	UPDATE CERES_FILE CF
+  	SET CF.BUSINESS_TYPE = #{businessType}, BUSINESS_ID = #{businessId}, STATUS = 'save'
+  	WHERE CF.ID IN (${fileIds})
+  </update>-->
+  
+  <!-- 根据business_id和business_type获取文件信息 -->
+  <select id="getFileListByType" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+      select
+          <include refid="Base_Column_List" />
+	  from upload_file
+	  where is_deleted = 'n' 
+	  and business_type = #{businessType}
+	  and business_id = #{businessId}
+  </select>
+  
+  <!--  
+  <update id="deleteByBusinssIdAndBusinessType" parameterType="java.util.HashMap">
+  	update ceres_file
+   set status   = #{status_upload},
+       modifier     = #{modifier},
+       gmt_modified = sysdate
+ where is_deleted = 'n' 
+ 	and status = #{status_save}
+ 	and business_type = #{businessType}
+   	and business_id = #{businessId}
+  </update>-->
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

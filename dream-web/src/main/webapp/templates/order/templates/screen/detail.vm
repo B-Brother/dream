@@ -17,46 +17,13 @@
                                             <div class="image-block">                                               
                                                     <div id="imageitems" class="flexslider">
                                                         <ul class="slides">
+                                                        	#foreach($!file in $!fileList)
                                                             <li>
-                                                            <a class="image" href="images/content/products/p-1.jpg" data-rel="prettyPhoto[mixed]" >
-                                                           		<img src="images/content/products/p-1.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-2.jpg" data-rel="prettyPhoto[mixed]" >
-                                                            <img src="images/content/products/p-2.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-3.jpg" data-rel="prettyPhoto[mixed]" >
-                                                           		<img src="images/content/products/p-3.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-4.jpg" data-rel="prettyPhoto[mixed]" >
-                                                            <img src="images/content/products/p-4.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-5.jpg" data-rel="prettyPhoto[mixed]" >
-                                                           		<img src="images/content/products/p-5.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-6.jpg" data-rel="prettyPhoto[mixed]" >
-                                                            <img src="images/content/products/p-6.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-7.jpg" data-rel="prettyPhoto[mixed]" >
-                                                           		<img src="images/content/products/p-7.jpg" alt="" />
-                                                            </a>
-                                                            </li>
-                                                            <li>
-                                                            <a class="image" href="images/content/products/p-8.jpg" data-rel="prettyPhoto[mixed]" >
-                                                            <img src="images/content/products/p-8.jpg" alt="" />
-                                                            </a>
-                                                            </li>
+	                                                            <a class="image" href="$!file.url" data-rel="prettyPhoto[mixed]" >                                      
+	                                                           		<img src="$!file.url" alt="" />
+	                                                            </a>
+                                                            </li> 
+                                                            #end
                                                         </ul>
                                                     </div>
                                             </div>
@@ -64,14 +31,9 @@
                                             <div id="thumbslider">
                                                     <div id="carouselslider" class="flexslider">
                                                         <ul class="slides">
-                                                            <li><img src="images/content/products/p-1.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-2.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-3.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-4.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-5.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-6.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-7.jpg" alt="" /></li>
-                                                            <li><img src="images/content/products/p-8.jpg" alt="" /></li>
+                                                       	    #foreach($!file in $!fileList)
+                                                            	<li><img src="$!file.url" alt="" /></li>
+															#end
                                                         </ul>
                                                     </div>
                                             </div>
@@ -112,21 +74,26 @@
 										周 
 									#end 
 									</span></div>
-                                    <form action="#" method="get" class="product_attributes">
+                                    <form action="#" method="post" id="PayForm" class="product_attributes">
+                                    	<input type="hidden" name="action" value="PayAction"/>
+                                    	<input type="hidden" name="event_submit_do_ready" value="1"/>
+                                    	<input type="hidden" name="skillId" value="$!skill.id"/>
                                         <fieldset class="attribute_fieldset">
-                                            <label class="attribute_label">见面类型:</label>
+                                            <label class="attribute_label">数量:</label>
                                             <div class="attribute_list">
-                                            <select>
-                                                  <option title="White" selected="selected">师傅上门</option>
-                                                  <option title="Red">自己上门</option> 
-                                            </select>
+	                                            <select name="amount">
+	                                                  <option title="White" selected="selected">1</option>
+	                                                  <option title="Red">2</option>
+	                                                  <option title="Red">3</option> 
+	                                            </select>
                                             </div>
                                             <br> 
                                         </fieldset>
+                                          
                                     </form>
-                                    
-									<a href="checkout.html" class="cart">立刻下单</a> 
-                                    
+
+									<a href="#" id="cart" class="cart">立刻下单</a>
+
                                     </div>
                                 </div>
                                 
@@ -159,8 +126,7 @@
                                                         </div>
                                                     </li>  
                                                     #end
-                                                </ol>
-                    
+                                                </ol> 
                                             </section>
                                         </div> 
                                     </div>
@@ -197,4 +163,5 @@
                     
                 </div>
             </div>
-        </div>
+        </div> 
+        

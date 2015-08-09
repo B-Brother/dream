@@ -55,7 +55,9 @@ jQuery(document).ready(function(){
 		jQuery(this).toggleClass("active").next().slideToggle("slow");
 	});
 
- 
-	
+	//=================================== FOR READY PAY ===================================//
+	jQuery("#cart").click(function() {
+		document.getElementById("PayForm").submit();
+	});
 });
 
