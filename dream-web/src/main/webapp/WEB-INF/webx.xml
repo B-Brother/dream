@@ -38,6 +38,8 @@
 	<beans:import resource="webxcommon/webx-component-and-root.xml" />    
     <beans:import resource="webxcommon/resources.xml" /> 
     <beans:import resource="webxcommon/uris.xml" />
+    
+    <beans:import resource="beans/component-beans.xml" />
      
     <!-- 设置request/response/session。 -->
     <services:request-contexts>

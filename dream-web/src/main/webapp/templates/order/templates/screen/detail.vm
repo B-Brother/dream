@@ -1,0 +1,200 @@
+<div id="outermain">
+        	<div class="container">
+                <div class="row">
+                
+                    <section id="maincontent" class="ten columns positionleft">
+                    	<div class="padcontent">
+                    
+                        	<section class="content" id="product-detail">
+                            
+                                <div class="breadcrumb"><a href="index.html">首页</a> / 产品 </div>
+                                <h1 class="pagetitle">$!skill.name</h1>
+                                
+                                <div class="row">
+                                	<div class="one_fourth columns">
+                                        <div id="pb-right-column">
+                                            
+                                            <div class="image-block">                                               
+                                                    <div id="imageitems" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-1.jpg" data-rel="prettyPhoto[mixed]" >
+                                                           		<img src="images/content/products/p-1.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-2.jpg" data-rel="prettyPhoto[mixed]" >
+                                                            <img src="images/content/products/p-2.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-3.jpg" data-rel="prettyPhoto[mixed]" >
+                                                           		<img src="images/content/products/p-3.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-4.jpg" data-rel="prettyPhoto[mixed]" >
+                                                            <img src="images/content/products/p-4.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-5.jpg" data-rel="prettyPhoto[mixed]" >
+                                                           		<img src="images/content/products/p-5.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-6.jpg" data-rel="prettyPhoto[mixed]" >
+                                                            <img src="images/content/products/p-6.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-7.jpg" data-rel="prettyPhoto[mixed]" >
+                                                           		<img src="images/content/products/p-7.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                            <li>
+                                                            <a class="image" href="images/content/products/p-8.jpg" data-rel="prettyPhoto[mixed]" >
+                                                            <img src="images/content/products/p-8.jpg" alt="" />
+                                                            </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            </div>
+                                                <!--
+                                            <div id="thumbslider">
+                                                    <div id="carouselslider" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li><img src="images/content/products/p-1.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-2.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-3.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-4.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-5.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-6.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-7.jpg" alt="" /></li>
+                                                            <li><img src="images/content/products/p-8.jpg" alt="" /></li>
+                                                        </ul>
+                                                    </div>
+                                            </div>
+                                            -->
+
+                                            <ul id="usefull_link_block">   
+                                                <!--
+                                            	<li class="print"><a href="#">Print</a></li>  
+                                                -->
+                                                <li class="share_fb"><a href="#">分享</a> </li>
+                                                <li class="favoriteproducts"><a href="#">收藏</a></li>			
+                                                
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                	<div class="three_fourth columns"> 
+                                        <p>$!skill.introduce</p> 
+									<div class="price">
+									#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
+										￥ $!skill.normalPrice 
+									#else
+										￥ $!skill.downBoundPrice  ~ ￥ $!skill.upBoundPrice 
+									#end 
+									<span>/
+									#if($!skill.per == "SECONDARY")
+										次
+									#elseif($!skill.per == "SECOND")
+										秒
+									#elseif($!skill.per == "MINUTE")
+										分钟
+									#elseif($!skill.per == "HOUR")
+										小时
+									#elseif($!skill.per == "DAY")
+										天
+									#elseif($!skill.per == "WEEK")
+										周 
+									#end 
+									</span></div>
+                                    <form action="#" method="get" class="product_attributes">
+                                        <fieldset class="attribute_fieldset">
+                                            <label class="attribute_label">见面类型:</label>
+                                            <div class="attribute_list">
+                                            <select>
+                                                  <option title="White" selected="selected">师傅上门</option>
+                                                  <option title="Red">自己上门</option> 
+                                            </select>
+                                            </div>
+                                            <br> 
+                                        </fieldset>
+                                    </form>
+                                    
+									<a href="checkout.html" class="cart">立刻下单</a> 
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="separator"></div>
+                                
+                                
+                                <div class="tabcontainer">
+                                    <ul class="tabs">
+                                        <li><a href="#tab0">详细介绍</a></li>
+                                        <li><a href="#tab1">评价($!rateList.size())</a></li>
+                                    </ul>
+                                    <div class="tab-body">
+                                        <div id="tab0" class="tab-content">
+                                        <p>xxx</p>
+                                        </div>
+                                        <div id="tab1" class="tab-content">
+                                            <section id="comment"> 
+                                                <ol class="commentlist">
+                                                	#foreach($!rate in $!rateList)
+                                                    <li>
+                                                        <div class="comment-body">
+                                                            <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar frame"></div>
+                                                            <cite class="fn">$!rate.displayUserNick</cite>
+                                                            <div class="dr">
+                                                                <span class="tdate">$!rate.rateTime</span>
+                                                            </div>
+                                                            <div class="commenttext">
+                                                                <p>$!rate.rateText.</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>  
+                                                    #end
+                                                </ol>
+                    
+                                            </section>
+                                        </div> 
+                                    </div>
+                                </div>
+                               
+							</section>
+                         
+                        </div>
+                    </section>
+                    
+                    <aside class="two columns">
+                    
+                    	<div class="sidebar">
+                        <ul>
+                            <li class="widget-container">
+                                <h2 class="widget-title">Categories</h2>
+                                <ul>
+                                    <li><a href="#">Clothing (8)</a>
+                                    	<ul>
+                                            <li><a href="#">Woman Dress (4)</a></li>
+                                            <li><a href="#">Man Suit (4)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Furniture (4)</a></li>
+                                    <li><a href="#">Electronics (4)</a></li>
+                                    <li><a href="#">Accessories (4)</a></li>
+                                    <li><a href="#">Shoes (4)</a></li>
+                                </ul>
+                            </li>  
+                        </ul>
+                        </div>
+                        
+                    </aside>
+                    
+                </div>
+            </div>
+        </div>

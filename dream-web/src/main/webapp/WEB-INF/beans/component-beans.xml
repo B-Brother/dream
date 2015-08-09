@@ -15,8 +15,7 @@
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
 	default-autowire="byType">
 
-	<import resource="biz-bean.xml"/>
+	<import resource="biz-beans.xml"/>
 	
-	<import resource="datasource.xml"/>
-	<import resource="logback.xml"/> 
+	<import resource="datasource.xml"/> 
 </beans>

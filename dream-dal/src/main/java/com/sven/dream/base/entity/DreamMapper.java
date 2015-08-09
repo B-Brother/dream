@@ -2,13 +2,13 @@ package com.sven.dream.base.entity;
 
 public interface DreamMapper<D extends DreamDo> {
 	  
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
  
     int insert(D record);
  
     int insertSelective(D record);
  
-    D selectByPrimaryKey(Integer id);
+    D selectByPrimaryKey(Long id);
  
     int updateByPrimaryKeySelective(D record);
  

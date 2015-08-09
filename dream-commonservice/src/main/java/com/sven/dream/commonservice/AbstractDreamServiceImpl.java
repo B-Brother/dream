@@ -39,8 +39,8 @@ public class AbstractDreamServiceImpl<D extends DreamDo, K extends DreamMapper<D
      * @param id
      * @return
      */
-    public D selectByPrimaryKey(Integer id) {
-        return mapper.selectByPrimaryKey(id.intValue());
+    public D selectByPrimaryKey(Long id) {
+        return mapper.selectByPrimaryKey(id);
     }
 
     /**

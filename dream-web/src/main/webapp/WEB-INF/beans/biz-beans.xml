@@ -16,4 +16,7 @@
 	default-autowire="byType">
      
    	<bean id="dreamUserBo" class="com.sven.dream.user.bo.impl.DreamUserBoImpl" /> 
+   	
+   	<bean id="dreamRateBo" class="com.sven.dream.order.bo.impl.DreamRateBoImpl" />
+   	<bean id="dreamSkillBo" class="com.sven.dream.order.bo.impl.DreamSkillBoImpl" /> 
 </beans>

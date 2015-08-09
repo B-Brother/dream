@@ -46,18 +46,18 @@
                <generatedKey column="id" sqlStatement="MySql"/> 
         </table>
         -->
-        <!--  
-        <javaModelGenerator targetPackage="com.sven.dream.dal.trade"
+        <!--  -->
+        <javaModelGenerator targetPackage="com.sven.dream.dal.order"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="com.sven.dream.dal.trade.mapper"
+        <sqlMapGenerator targetPackage="com.sven.dream.dal.order.mapper"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.sven.dream.dal.trade.mapper" targetProject="src/main/java">
+                             targetPackage="com.sven.dream.dal.order.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 		
@@ -66,6 +66,7 @@
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
                <generatedKey column="id" sqlStatement="MySql"/> 
         </table> 
+        <!--  
 		<table tableName="dream_skill" domainObjectName="DreamSkillDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
@@ -75,8 +76,9 @@
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
                <generatedKey column="id" sqlStatement="MySql"/> 
-        </table>
-        -->
+        </table>-->
+        
+        <!--  
         <javaModelGenerator targetPackage="com.sven.dream.dal.common"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
@@ -96,6 +98,7 @@
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
                <generatedKey column="id" sqlStatement="MySql"/> 
         </table> 
+        -->
     </context>
 </generatorConfiguration>
 

@@ -15,7 +15,8 @@
         <module>dream-commonservice</module>
 		<module>dream-order</module> 
 		<module>dream-user</module> 
-		<module>dream-web</module> 
+		<module>dream-web</module>
+		<module>dream-deploy</module>	
   </modules>
 
     <properties>
@@ -174,12 +175,7 @@
 				<groupId>io.netty</groupId>
 				<artifactId>netty-all</artifactId>
 				<version>4.0.26.Final</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>druid</artifactId>
-				<version>1.0.8</version>
-			</dependency>
+			</dependency> 
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
@@ -201,6 +197,11 @@
                 <artifactId>freemarker</artifactId>
                 <version>2.3.20</version>
             </dependency>
+            <dependency>
+                <groupId>c3p0</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>0.9.1.2</version>
+            </dependency> 
 		</dependencies>
 	</dependencyManagement>
     <build>
