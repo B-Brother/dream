@@ -1,4 +1,5 @@
-<div id="outermain">
+<!-- MAIN CONTENT -->
+        <div id="outermain">
         	<div class="container">
                 <div class="row">
                 
@@ -7,93 +8,82 @@
                     
                         	<section class="content" id="product-detail">
                             
-                                <div class="breadcrumb"><a href="index.html">首页</a> / 产品 </div>
-                                <h1 class="pagetitle">$!skill.name</h1>
+                                <div class="breadcrumb"><a href="index.html">Home</a> / products / Woman's Dress Flower</div>
+                                <h1 class="pagetitle">Woman's Dress Flower</h1>
                                 
                                 <div class="row">
                                 	<div class="one_fourth columns">
                                         <div id="pb-right-column">
-                                            
                                             <div class="image-block">                                               
                                                     <div id="imageitems" class="flexslider">
                                                         <ul class="slides">
                                                         	#foreach($!file in $!fileList)
                                                             <li>
-	                                                            <a class="image" href="$!file.url" data-rel="prettyPhoto[mixed]" >                                      
-	                                                           		<img src="$!file.url" alt="" />
-	                                                            </a>
+                                                            <a class="image" href="$!file.url" data-rel="prettyPhoto[mixed]" >
+                                                           		<img src="$!file.url" alt="" />
+                                                            </a>
                                                             </li> 
                                                             #end
                                                         </ul>
                                                     </div>
                                             </div>
-                                                <!--
+                                                
                                             <div id="thumbslider">
                                                     <div id="carouselslider" class="flexslider">
                                                         <ul class="slides">
-                                                       	    #foreach($!file in $!fileList)
-                                                            	<li><img src="$!file.url" alt="" /></li>
-															#end
+                                                        	#foreach($!file in $!fileList)
+                                                            <li><img src="$!file.url" alt="" /></li> 
+                                                            #end
                                                         </ul>
                                                     </div>
                                             </div>
-                                            -->
-
+                                            
                                             <ul id="usefull_link_block">   
-                                                <!--
                                             	<li class="print"><a href="#">Print</a></li>  
-                                                -->
-                                                <li class="share_fb"><a href="#">分享</a> </li>
-                                                <li class="favoriteproducts"><a href="#">收藏</a></li>			
+                                                <li class="share_fb"><a href="#">Share on Facebook</a> </li>
+                                                <li class="favoriteproducts"><a href="#">my favorites</a></li>			
                                                 
                                             </ul>
                                             
                                         </div>
                                     </div>
                                     
-                                	<div class="three_fourth columns"> 
-                                        <p>$!skill.introduce</p> 
-									<div class="price">
-									#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
-										￥ $!skill.normalPrice 
-									#else
-										￥ $!skill.downBoundPrice  ~ ￥ $!skill.upBoundPrice 
-									#end 
-									<span>/
-									#if($!skill.per == "SECONDARY")
-										次
-									#elseif($!skill.per == "SECOND")
-										秒
-									#elseif($!skill.per == "MINUTE")
-										分钟
-									#elseif($!skill.per == "HOUR")
-										小时
-									#elseif($!skill.per == "DAY")
-										天
-									#elseif($!skill.per == "WEEK")
-										周 
-									#end 
-									</span></div>
-                                    <form action="#" method="post" id="PayForm" class="product_attributes">
-                                    	<input type="hidden" name="action" value="PayAction"/>
-                                    	<input type="hidden" name="event_submit_do_ready" value="1"/>
-                                    	<input type="hidden" name="skillId" value="$!skill.id"/>
+                                	<div class="three_fourth columns">
+                                    
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis purus a arcu porta convallis ut in nunc. Donec elementum erat ipsum, eu consectetur tellus. Morbi et venenatis dui. Quisque at arcu ante, in placerat arcu. Curabitur scelerisque imperdiet elementum. </p>
+
+<p>Cras sed tortor a tortor malesuada tempus eget non ante. Pellentesque cursus, elit nec semper porttitor, nisi magna adipiscing quam, nec convallis leo erat a nunc. Nulla libero urna, faucibus eget fermentum tempus, porttitor ac urna. In tempus lacinia neque id auctor. </p>
+									<div class="price">$120.00 <span>tax excl</span></div>
+                                    <form action="#" method="get" class="product_attributes">
                                         <fieldset class="attribute_fieldset">
-                                            <label class="attribute_label">数量:</label>
+                                            <label class="attribute_label">Color:</label>
                                             <div class="attribute_list">
-	                                            <select name="amount">
-	                                                  <option title="White" selected="selected">1</option>
-	                                                  <option title="Red">2</option>
-	                                                  <option title="Red">3</option> 
-	                                            </select>
+                                            <select>
+                                                  <option title="White" selected="selected">White</option>
+                                                  <option title="Red">Red</option>
+                                                  <option title="Green">Green</option>
+                                                  <option title="Blue">Blue</option>
+                                            </select>
                                             </div>
-                                            <br> 
+                                            <br>
+                                            <label class="qty_label">Qty:</label>
+                                            <div class="qty_list">
+                                            <select>
+                                                  <option title="1" selected="selected">1</option>
+                                                  <option title="2">2</option>
+                                                  <option title="3">3</option>
+                                                  <option title="4">4</option>
+                                            </select>
+                                            </div>
                                         </fieldset>
-                                          
                                     </form>
-
-									<a href="#" id="cart" class="cart">立刻下单</a>
-
+                                    
+									<a href="checkout.html" class="cart">Add to cart</a>
+                                    <form action="index.html" class="compare">
+                                    <input type="checkbox" class="comparator"> 
+                                    <label>Add to Compare</label>
+                                    </form>
+                                    
                                     </div>
                                 </div>
                                 
@@ -102,33 +92,37 @@
                                 
                                 <div class="tabcontainer">
                                     <ul class="tabs">
-                                        <li><a href="#tab0">详细介绍</a></li>
+                                        <li><a href="#tab0">More Info</a></li>
                                         <li><a href="#tab1">评价($!rateList.size())</a></li>
                                     </ul>
                                     <div class="tab-body">
                                         <div id="tab0" class="tab-content">
-                                        <p>xxx</p>
+                                        <p>Ut ac tristique quam. Aenean tincidunt ipsum et magna consequat in auctor nisi molestie. Duis ornare, nibh quis accumsan ullamcorper, lacus lacus posuere purus, eget auctor velit velit sed arcu. Phasellus a gravida quam. Mauris tristique lectus metus. Aenean lorem leo, rhoncus eget varius a, adipiscing in turpis. Vivamus egestas euismod nisi ut bibendum. In faucibus, massa in porta venenatis, diam enim suscipit lorem, vitae ultrices urna turpis et lectus.</p> 
+
+<p>Nullam tortor orci, tempus ut eleifend vestibulum, vulputate eu ante. Phasellus vestibulum, est et mollis hendrerit, elit diam fermentum leo, et ultrices quam est eget enim. In turpis nisi, rutrum lobortis auctor id, congue eget est. Phasellus semper mauris et odio volutpat placerat. In tellus diam, aliquam quis hendrerit nec, scelerisque sit amet urna. Donec nunc erat, luctus at mattis vel, rutrum ac nunc. Morbi pretium suscipit suscipit. Aliquam id mi tellus. Ut vitae dolor nunc. Donec ullamcorper dapibus ante eu hendrerit. Sed vitae felis in lacus iaculis fermentum. </p>
                                         </div>
                                         <div id="tab1" class="tab-content">
-                                            <section id="comment"> 
-                                                <ol class="commentlist">
-                                                	#foreach($!rate in $!rateList)
-                                                    <li>
-                                                        <div class="comment-body">
-                                                            <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar frame"></div>
-                                                            <cite class="fn">$!rate.displayUserNick</cite>
-                                                            <div class="dr">
-                                                                <span class="tdate">$!rate.rateTime</span>
-                                                            </div>
-                                                            <div class="commenttext">
-                                                                <p>$!rate.rateText.</p>
-                                                            </div>
-                                                        </div>
-                                                    </li>  
-                                                    #end
-                                                </ol> 
-                                            </section>
-                                        </div> 
+                                        	<section id="comment">
+			                                    <h3>4 Comments</h3>
+			                                    <ol class="commentlist"> 
+			                                    	#foreach($!rate in $!rateList)
+			                                        <li>
+			                                            <div class="comment-body">
+			                                                <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar frame"></div>
+			                                                <cite class="fn">$!rate.displayUserNick</cite>
+			                                                <div class="dr">
+			                                                    <span class="tdate">$!rate.rateTime</span>
+			                                                </div>
+			                                                <div class="commenttext">
+			                                                    <p>$!rate.rateText</p>
+			                                                </div>
+			                                            </div>
+			                                        </li> 
+			                                        #end
+			                                    </ol> 
+			                                </section> 
+                                        </div>
+
                                     </div>
                                 </div>
                                
@@ -155,7 +149,23 @@
                                     <li><a href="#">Accessories (4)</a></li>
                                     <li><a href="#">Shoes (4)</a></li>
                                 </ul>
-                            </li>  
+                            </li>
+                            <li class="widget-container">
+                                <h2 class="widget-title">Special Offers</h2>
+                                <ul class="sp-widget">
+                                    <li>
+                                        <img src="images/content/products/p-28.jpg" alt="" />
+                                        <h3><a href="#">Woman's Couple Shoes</a></h3>
+										<div class="price">$120.00</div>
+                                    </li>
+                                    <li>
+                                        <img src="images/content/products/p-20.jpg" alt="" />
+                                        <h3><a href="#">Modern Chair</a></h3>
+                                        <div class="price">$120.00</div>
+                                    </li>
+                                </ul>
+                            </li>
+
                         </ul>
                         </div>
                         
@@ -163,5 +173,5 @@
                     
                 </div>
             </div>
-        </div> 
-        
+        </div>
+        <!-- END MAIN CONTENT -->
