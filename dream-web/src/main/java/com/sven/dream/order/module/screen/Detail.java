@@ -9,8 +9,8 @@ import com.alibaba.citrus.turbine.Navigator;
 import com.alibaba.citrus.turbine.dataresolver.Param;
 import com.sven.dream.common.constants.UploadConstants;
 import com.sven.dream.commonservice.service.UploadFileService;
-import com.sven.dream.dal.common.UploadFileDo;
-import com.sven.dream.dal.order.DreamRateDo;
+import com.sven.dream.commonservice.vo.DreamUserRateVo;
+import com.sven.dream.dal.common.UploadFileDo; 
 import com.sven.dream.dal.order.DreamSkillDo;
 import com.sven.dream.order.bo.DreamRateBo;
 import com.sven.dream.order.bo.DreamSkillBo;
@@ -37,7 +37,7 @@ public class Detail {
 		DreamSkillDo skill = dreamSkillBo.selectByPrimaryKey(skillId);
 		
 		// 评价
-		List<DreamRateDo> rateList = dreamRateBo.getRateBySkillId(skillId);
+		List<DreamUserRateVo> rateList = dreamRateBo.getRateDetailBySkillId(skillId);
 		
 		// 图片展示层
 		List<UploadFileDo> fileList = uploadFileService.getFileListByType(UploadConstants.BIZ_TYPE_SKILL, (long)skill.getId());

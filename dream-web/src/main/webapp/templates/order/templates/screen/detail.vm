@@ -108,13 +108,13 @@
 			                                    	#foreach($!rate in $!rateList)
 			                                        <li>
 			                                            <div class="comment-body">
-			                                                <div class="avatar-img"><img src="images/content/avatar.gif" alt="" class="avatar frame"></div>
-			                                                <cite class="fn">$!rate.displayUserNick</cite>
+			                                                <div class="avatar-img"><img src="$!rate.userPic.url" alt="" class="avatar frame"></div>
+			                                                <cite class="fn">$!rate.user.displayUserNick</cite>
 			                                                <div class="dr">
-			                                                    <span class="tdate">$!rate.rateTime</span>
+			                                                    <span class="tdate">$!rate.rate.rateTime</span>
 			                                                </div>
 			                                                <div class="commenttext">
-			                                                    <p>$!rate.rateText</p>
+			                                                    <p>$!rate.rate.rateText</p>
 			                                                </div>
 			                                            </div>
 			                                        </li> 

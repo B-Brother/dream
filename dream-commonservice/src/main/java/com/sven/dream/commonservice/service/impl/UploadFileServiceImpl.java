@@ -1,5 +1,5 @@
 package com.sven.dream.commonservice.service.impl;
-
+ 
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,4 +26,19 @@ public class UploadFileServiceImpl extends
 		return mapper.getFileListByType(paramMap);
 	}
 
+	@Override
+	public UploadFileDo getFileListByTypeAndSpec(String type,
+			Long businessId, String spec) {
+		List<UploadFileDo> fileList = getFileListByType(type, businessId);
+
+		UploadFileDo returnFile = null;
+		for(UploadFileDo file : fileList){
+			if(file.getSizeType().equals(spec)){
+				returnFile = file;
+				break;
+			}
+		}
+		
+		return returnFile; 
+	} 
 }

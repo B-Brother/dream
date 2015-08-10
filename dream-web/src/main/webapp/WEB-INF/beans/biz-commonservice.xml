@@ -15,5 +15,6 @@
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
 	default-autowire="byType">
      
-   	<bean id="uploadFileService" class="com.sven.dream.commonservice.service.impl.UploadFileServiceImpl" />  
+   	<bean id="uploadFileService" class="com.sven.dream.commonservice.service.impl.UploadFileServiceImpl" />
+   	<bean id="userOperationService" class="com.sven.dream.commonservice.service.impl.UserOperationServiceImpl" />  
 </beans>

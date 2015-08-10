@@ -21,4 +21,13 @@ public interface UploadFileService extends DreamBo<UploadFileDo>{
 	 * @return
 	 */
 	public List<UploadFileDo> getFileListByType(String type, Long businessId);
+	
+	/**
+	 * 根据业务场景和对应的业务ID 和图片规范 获取到附件列表。
+	 * 
+	 * @param type			附件类型
+	 * @param businessId	业务ID
+	 * @return
+	 */
+	public UploadFileDo getFileListByTypeAndSpec(String type, Long businessId, String spec);
 }
