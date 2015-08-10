@@ -16,10 +16,7 @@
 		<pull-factories:form-tool />-->
 		<pull-factories:control-tool />
 		<pull-factories:uris-tool />
-		
-
-		<!-- 字符串工具类
-		<pull-factories:bean-tool id="stringUtil"
-			class="org.apache.commons.lang.StringUtils" scope="global" />  -->
+		 
+		<pull-factories:bean-tool id="dateUtil" class="com.sven.dream.common.util.DateUtil" scope="global" />   
 	</services:pull>
 </beans:beans>

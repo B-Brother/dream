@@ -102,8 +102,7 @@
 <p>Nullam tortor orci, tempus ut eleifend vestibulum, vulputate eu ante. Phasellus vestibulum, est et mollis hendrerit, elit diam fermentum leo, et ultrices quam est eget enim. In turpis nisi, rutrum lobortis auctor id, congue eget est. Phasellus semper mauris et odio volutpat placerat. In tellus diam, aliquam quis hendrerit nec, scelerisque sit amet urna. Donec nunc erat, luctus at mattis vel, rutrum ac nunc. Morbi pretium suscipit suscipit. Aliquam id mi tellus. Ut vitae dolor nunc. Donec ullamcorper dapibus ante eu hendrerit. Sed vitae felis in lacus iaculis fermentum. </p>
                                         </div>
                                         <div id="tab1" class="tab-content">
-                                        	<section id="comment">
-			                                    <h3>4 Comments</h3>
+                                        	<section id="comment"> 
 			                                    <ol class="commentlist"> 
 			                                    	#foreach($!rate in $!rateList)
 			                                        <li>
@@ -111,7 +110,7 @@
 			                                                <div class="avatar-img"><img src="$!rate.userPic.url" alt="" class="avatar frame"></div>
 			                                                <cite class="fn">$!rate.user.displayUserNick</cite>
 			                                                <div class="dr">
-			                                                    <span class="tdate">$!rate.rate.rateTime</span>
+			                                                    <span class="tdate">$!dateUtil.formateDatetime($!rate.rate.rateTime)</span>
 			                                                </div>
 			                                                <div class="commenttext">
 			                                                    <p>$!rate.rate.rateText</p>

@@ -35,7 +35,8 @@
         <property key="component">common</property>
     </services:property-placeholder>
 
-	<beans:import resource="webxcommon/webx-component-and-root.xml" />    
+	<beans:import resource="webxcommon/webx-component-and-root.xml" />  
+	<beans:import resource="webxcommon/dream-pulltools.xml" />  
     <beans:import resource="webxcommon/resources.xml" /> 
     <beans:import resource="webxcommon/uris.xml" />
     
