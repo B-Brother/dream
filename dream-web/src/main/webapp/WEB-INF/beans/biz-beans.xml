@@ -18,5 +18,6 @@
    	<bean id="dreamUserBo" class="com.sven.dream.user.bo.impl.DreamUserBoImpl" /> 
    	
    	<bean id="dreamRateBo" class="com.sven.dream.order.bo.impl.DreamRateBoImpl" />
-   	<bean id="dreamSkillBo" class="com.sven.dream.order.bo.impl.DreamSkillBoImpl" /> 
+   	<bean id="dreamSkillBo" class="com.sven.dream.order.bo.impl.DreamSkillBoImpl" />
+   	<bean id="dreamOrderBo" class="com.sven.dream.order.bo.impl.DreamOrderBoImpl" /> 
 </beans>

@@ -1,0 +1,158 @@
+<!-- MAIN CONTENT -->
+        <div id="outermain">
+        	<div class="container">
+                <div class="row">
+                
+                    <section id="maincontent" class="ten columns positionleft">
+                    	<div class="padcontent">
+                    
+                        	<section class="content">
+                            
+                                <div class="breadcrumb"><a href="index.html">首页</a> / 付款</div>
+                                <h1 class="pagetitle">付款明细</h1>
+  
+                                <div class="table_block" id="order-detail-content">
+                                    <table id="cart_summary">
+                                        <thead>
+                                            <tr>
+                                                <th class="cart_product first_item">服务项目</th>
+                                                <th class="cart_description item">描述</th> 
+                                                <th class="cart_avail item">数量</th>
+                                                <th class="cart_avail item">折扣</th>
+                                                <th class="cart_unit item">价格</th>
+                                                <th class="cart_quantity item">上门类型</th>
+                                                <th class="cart_total item">总计</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr class="cart_item" >
+                                                <td class="cart_product">
+                                                    <a href="#"><img alt="" src="images/content/products/p-small1.jpg"></a>
+                                                </td>
+                                                <td class="cart_description">
+                                                    花式撸管培训
+                                                </td>
+                                                <td class="cart_ref">3</td>
+                                                <td class="cart_ref">无</td> 
+                                                <td class="cart_unit"> ￥120.00 </td>
+                                                <td class="cart_quantity"> 师傅上门 </td>
+                                                <td class="cart_total">
+                                                    <span class="price">￥360</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="cart_item" >
+                                                <td class="cart_product">
+                                                    <a href="#"><img alt="" src="images/content/products/p-small1.jpg"></a>
+                                                </td>
+                                                <td class="cart_description">
+                                                    花式撸管培训
+                                                </td>
+                                                <td class="cart_ref">3</td> 
+                                                <td class="cart_ref">无</td> 
+                                                <td class="cart_unit"> ￥120.00 </td>
+                                                <td class="cart_quantity"> 师傅上门 </td>
+                                                <td class="cart_total">
+                                                    <span class="price">￥360</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                        <tfoot>
+                                            <tr class="cart_total price">
+                                            	<td colspan="2" class="none1"> </td>
+                                                <td class="none2"> </td>
+                                                <td class="none3"> </td>
+                                                <td colspan="2">服务费用:</td>
+                                                <td id="total_product" class="price">￥720.00</td>
+                                            </tr>
+                                            <tr class="cart_total delivery">
+                                            	<td colspan="2" class="none1"> </td>
+                                                <td class="none2"> </td>
+                                                <td class="none3"> </td>
+                                                <td colspan="2">中介费用:</td>
+                                                <td id="total_shipping" class="price">￥10.00</td>
+                                            </tr>								
+                                            <tr class="cart_total excl">
+                                            	<td colspan="2" class="none1"> </td>
+                                                <td class="none2"> </td>
+                                                <td class="none3"> </td>
+                                                <td colspan="2">报销师傅打车费用:</td>
+                                                <td id="total_price_without_tax" class="price">￥10.00</td>
+                                            </tr>
+                                            <tr class="cart_total tax">
+                                            	<td colspan="2" class="none1"> </td>
+                                                <td class="none2"> </td>
+                                                <td class="none3"> </td>
+                                                <td colspan="2">其他:</td>
+                                                <td id="total_tax" class="price">0</td>
+                                            </tr>
+                                            <tr class="cart_total total">
+                                            	<td colspan="2" class="none1"> </td>
+                                                <td class="none2"> </td>
+                                                <td class="none3"> </td>
+                                                <td colspan="2">Total:</td>
+                                                <td id="total_price_container" class="price total_price_container"><span id="total_price"><b>￥740.00</b></span></td>
+                                            </tr>
+                                            <!--
+                                            <tr class="cart_total_price">
+                                                <td class="cart_voucher" id="cart_voucher" colspan="7">
+                                                <form id="voucher" method="post" action="#">
+                                                  <fieldset>
+                                                      <h3><label>Vouchers</label></h3>
+                                                      <p>
+                                                      <label>code: </label>
+                                                      <input type="text" value="" name="discount_name" class="discount_name">
+                                                      <input type="hidden" name="submitDiscount"><input type="submit" class="button" value="Add Code" name="submitAddDiscount">
+                                                      </p>
+                                                  </fieldset>
+                                                </form>
+                                                </td>
+                                            </tr>
+                                            -->
+                                        </tfoot>
+                                        </table>
+                                </div>
+								<!--
+                                <a href="#" class="button">Continue  Shopping</a>&nbsp;
+                                <a href="#" class="button exclusive">Next</a>
+                                -->
+                                <br>
+
+                                <H2>请选择您的支付方式:</H2>
+                                <div id="payment"> 
+                                    <ul class="payment_methods"> 
+                                        <li>
+                                        <input type="radio" id="payment_method_paypal" class="input-radio" name="payment_method" value="paypal"  checked=checked/>
+                                        <img src="images/facebook/friend/alipay.gif" alt="PayPal" /> 				
+                                        </li>
+                                    </ul>
+                                
+                                    <div class="form-row">		
+                                        <a href="#" class="button">付款</a>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+
+							</section>
+                         
+                        </div>
+                    </section>
+                    
+                    <aside class="two columns">
+                    
+                    	<div class="sidebar">
+                        <ul>  
+                            <li class="widget-container">
+                                <a href="#"><img src="images/content/banner.gif" alt="" /></a>
+                            </li>
+                        </ul>
+                        </div>
+                        
+                    </aside>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->

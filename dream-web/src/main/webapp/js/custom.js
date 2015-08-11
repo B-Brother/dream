@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
 
 	//=================================== FOR READY PAY ===================================//
 	jQuery("#cart").click(function() {
-		document.getElementById("PayForm").submit();
+		document.getElementById("BuyForm").submit();
 	});
 });
 

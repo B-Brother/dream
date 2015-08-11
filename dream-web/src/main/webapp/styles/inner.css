@@ -70,7 +70,7 @@ USE THIS STYLE SHEET FOR INNER PAGE
 }
 .avatar{display:block}
 .fn{font-size:11px; text-transform:uppercase;}
-/* .tdate{padding-left:20px;}  comments by bbrother. 这个样式影响到了detail的评价时间title。*/
+.tdate{padding-left:20px;}
 .dr{ display: inline-block;}
 .tdate, .reply{ font-size:11px;}
 .reply a, .reply a:visited{}

@@ -1,12 +1,12 @@
 package com.sven.dream.order.module.action;
 
-import java.util.Random;
-
-import org.springframework.beans.factory.annotation.Autowired; 
-
 import static com.sven.dream.common.constants.OrderConstants.*;
 
-import com.alibaba.citrus.turbine.Navigator; 
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.alibaba.citrus.turbine.Navigator;
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.commonservice.service.UserOperationService;
 import com.sven.dream.dal.order.DreamOrderDo;
@@ -15,8 +15,8 @@ import com.sven.dream.dal.user.DreamUserDo;
 import com.sven.dream.order.bo.DreamOrderBo;
 import com.sven.dream.order.bo.DreamSkillBo;
 
-public class PayAction extends BaseRender{
-	 
+public class BuyAction extends BaseRender{
+	
 	@Autowired
 	private DreamOrderBo dreamOrderBo;
 	
@@ -25,21 +25,28 @@ public class PayAction extends BaseRender{
 	
 	@Autowired
 	private UserOperationService userOperationService;
-	 
-	public void doReady(Navigator nav) {
+	
+	/**
+	 * 提交订单
+	 * 
+	 * @param nav
+	 */
+	public void doBuy(Navigator nav) {
         Long skillId = Long.parseLong(request.getParameter("skillId")); 
-        String amount = request.getParameter("amount");
-        Long buyerId = Long.parseLong(request.getParameter("amount"));
-        
+        String amount = request.getParameter("amount"); 
+         
         DreamOrderDo order = new DreamOrderDo(); 
         order.setAmount(Integer.parseInt(amount));
         order.setBizType(BIZ_TYPE_NORMAL); 
-        order.setBuyerId(buyerId);
         
-        DreamUserDo buyer = userOperationService.selectByPrimaryKey(buyerId);
+        DreamUserDo buyer = getUser();
+        order.setBuyerId((long)buyer.getId());
+         
         order.setBuyerNick(buyer.getLastName());
         order.setMeetingType(1);
-        order.setOrderId(new Random().nextLong());
+        
+        long orderId = new Random().nextLong();
+        order.setOrderId(orderId);
         order.setPayStatus(STATUS_PAY_WAITING_SURE); 
         
         DreamSkillDo dreamSkillDo = dreamSkillBo.selectByPrimaryKey(skillId);
@@ -56,21 +63,7 @@ public class PayAction extends BaseRender{
         int isOrderSuccess = dreamOrderBo.insert(order);
          
         if(isOrderSuccess > 0){
-        	nav.redirectToLocation("");
+        	nav.redirectToLocation("/order/buy.htm?orderId=" + orderId);
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

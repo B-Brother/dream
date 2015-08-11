@@ -8,8 +8,8 @@
                     
                         	<section class="content" id="product-detail">
                             
-                                <div class="breadcrumb"><a href="index.html">Home</a> / products / Woman's Dress Flower</div>
-                                <h1 class="pagetitle">Woman's Dress Flower</h1>
+                                <div class="breadcrumb"><a href="index.html">首页</a> / 技能详情</div>
+                                <h1 class="pagetitle">$!skill.name</h1>
                                 
                                 <div class="row">
                                 	<div class="one_fourth columns">
@@ -49,26 +49,30 @@
                                     </div>
                                     
                                 	<div class="three_fourth columns">
-                                    
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis purus a arcu porta convallis ut in nunc. Donec elementum erat ipsum, eu consectetur tellus. Morbi et venenatis dui. Quisque at arcu ante, in placerat arcu. Curabitur scelerisque imperdiet elementum. </p>
-
-<p>Cras sed tortor a tortor malesuada tempus eget non ante. Pellentesque cursus, elit nec semper porttitor, nisi magna adipiscing quam, nec convallis leo erat a nunc. Nulla libero urna, faucibus eget fermentum tempus, porttitor ac urna. In tempus lacinia neque id auctor. </p>
-									<div class="price">$120.00 <span>tax excl</span></div>
-                                    <form action="#" method="get" class="product_attributes">
-                                        <fieldset class="attribute_fieldset">
-                                            <label class="attribute_label">Color:</label>
-                                            <div class="attribute_list">
-                                            <select>
-                                                  <option title="White" selected="selected">White</option>
-                                                  <option title="Red">Red</option>
-                                                  <option title="Green">Green</option>
-                                                  <option title="Blue">Blue</option>
-                                            </select>
-                                            </div>
-                                            <br>
-                                            <label class="qty_label">Qty:</label>
+									<p>$!skill.introduce</p>
+									<div class="price">
+										#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
+											￥$!skill.normalPrice
+										#else
+											￥$!skill.downBoundPrice ~ ￥$!skill.upBoundPrice
+										#end 
+										<span>/
+											#if($!skill.per == "HOUR")
+												小时
+											#elseif($!skill.per == "DAY")
+												天
+											#end 			
+										</span>
+									</div>
+                                    <form action="#" method="post" id="BuyForm" class="product_attributes">
+                                    	<input type="hidden" name="action" value="BuyAction"/>
+                                    	<input type="hidden" name="event_submit_do_buy" value="1"/>
+                                    	<input type="hidden" name="skillId" value="$!skill.id"/>
+                                    	
+                                        <fieldset class="attribute_fieldset">  
+                                            <label class="qty_label">数量:</label>
                                             <div class="qty_list">
-                                            <select>
+                                            <select name="amount">
                                                   <option title="1" selected="selected">1</option>
                                                   <option title="2">2</option>
                                                   <option title="3">3</option>
@@ -78,11 +82,7 @@
                                         </fieldset>
                                     </form>
                                     
-									<a href="checkout.html" class="cart">Add to cart</a>
-                                    <form action="index.html" class="compare">
-                                    <input type="checkbox" class="comparator"> 
-                                    <label>Add to Compare</label>
-                                    </form>
+									<a href="#" id="cart" class="cart">购买</a> 
                                     
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
 			                                        <li>
 			                                            <div class="comment-body">
 			                                                <div class="avatar-img"><img src="$!rate.userPic.url" alt="" class="avatar frame"></div>
-			                                                <cite class="fn">$!rate.user.displayUserNick</cite>
+			                                                <cite class="fn">$!rate.rate.displayUserNick</cite>
 			                                                <div class="dr">
 			                                                    <span class="tdate">$!dateUtil.formateDatetime($!rate.rate.rateTime)</span>
 			                                                </div>

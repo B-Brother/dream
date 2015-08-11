@@ -24,6 +24,7 @@ public class AbstractDreamServiceImpl<D extends DreamDo, K extends DreamMapper<D
         if (isValidDo(dataObject)) {
             dataObject.setCreator("system");
             dataObject.setModifier("system");
+            dataObject.setIsDeleted("n");
             dataObject.setGmtCreate(new Date());
             dataObject.setGmtModified(new Date());
             int v = mapper.insertSelective(dataObject);
