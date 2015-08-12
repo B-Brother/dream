@@ -9,7 +9,7 @@
                         	<section class="content" id="product-detail">
                             
                                 <div class="breadcrumb"><a href="index.html">首页</a> / 技能详情</div>
-                                <h1 class="pagetitle">$!skill.name</h1>
+                                <h1 class="pagetitle">$!skill.title</h1>
                                 
                                 <div class="row">
                                 	<div class="one_fourth columns">
@@ -38,18 +38,15 @@
                                                     </div>
                                             </div>
                                             
-                                            <ul id="usefull_link_block">   
-                                            	<li class="print"><a href="#">Print</a></li>  
-                                                <li class="share_fb"><a href="#">Share on Facebook</a> </li>
-                                                <li class="favoriteproducts"><a href="#">my favorites</a></li>			
-                                                
-                                            </ul>
-                                            
+                                            <ul id="usefull_link_block">    
+                                                <li class="share_fb"><a href="#">分享到微博</a> </li>
+                                                <li class="favoriteproducts"><a href="#">收藏</a></li>	 
+                                            </ul> 
                                         </div>
                                     </div>
                                     
                                 	<div class="three_fourth columns">
-									<p>$!skill.introduce</p>
+									<p>$!skill.subTitle</p>
 									<div class="price">
 										#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
 											￥$!skill.normalPrice
@@ -92,14 +89,12 @@
                                 
                                 <div class="tabcontainer">
                                     <ul class="tabs">
-                                        <li><a href="#tab0">More Info</a></li>
+                                        <li><a href="#tab0">详细介绍</a></li>
                                         <li><a href="#tab1">评价($!rateList.size())</a></li>
                                     </ul>
                                     <div class="tab-body">
                                         <div id="tab0" class="tab-content">
-                                        <p>Ut ac tristique quam. Aenean tincidunt ipsum et magna consequat in auctor nisi molestie. Duis ornare, nibh quis accumsan ullamcorper, lacus lacus posuere purus, eget auctor velit velit sed arcu. Phasellus a gravida quam. Mauris tristique lectus metus. Aenean lorem leo, rhoncus eget varius a, adipiscing in turpis. Vivamus egestas euismod nisi ut bibendum. In faucibus, massa in porta venenatis, diam enim suscipit lorem, vitae ultrices urna turpis et lectus.</p> 
-
-<p>Nullam tortor orci, tempus ut eleifend vestibulum, vulputate eu ante. Phasellus vestibulum, est et mollis hendrerit, elit diam fermentum leo, et ultrices quam est eget enim. In turpis nisi, rutrum lobortis auctor id, congue eget est. Phasellus semper mauris et odio volutpat placerat. In tellus diam, aliquam quis hendrerit nec, scelerisque sit amet urna. Donec nunc erat, luctus at mattis vel, rutrum ac nunc. Morbi pretium suscipit suscipit. Aliquam id mi tellus. Ut vitae dolor nunc. Donec ullamcorper dapibus ante eu hendrerit. Sed vitae felis in lacus iaculis fermentum. </p>
+                                        <p>$!skill.introduce</p>
                                         </div>
                                         <div id="tab1" class="tab-content">
                                         	<section id="comment"> 
@@ -135,18 +130,12 @@
                     	<div class="sidebar">
                         <ul>
                             <li class="widget-container">
-                                <h2 class="widget-title">Categories</h2>
-                                <ul>
-                                    <li><a href="#">Clothing (8)</a>
-                                    	<ul>
-                                            <li><a href="#">Woman Dress (4)</a></li>
-                                            <li><a href="#">Man Suit (4)</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Furniture (4)</a></li>
-                                    <li><a href="#">Electronics (4)</a></li>
-                                    <li><a href="#">Accessories (4)</a></li>
-                                    <li><a href="#">Shoes (4)</a></li>
+                                <h2 class="widget-title">行者简介</h2>
+                                <ul> 
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">信誉:五颗星</a></li>
+                                    <li><a href="#">资质:金牌行者</a></li>
+                                    <li><a href="#">消息:xxxx</a></li>
                                 </ul>
                             </li>
                             <li class="widget-container">

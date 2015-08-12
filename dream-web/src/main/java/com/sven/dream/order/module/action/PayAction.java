@@ -45,7 +45,7 @@ public class PayAction extends BaseRender{
         DreamSkillDo dreamSkillDo = dreamSkillBo.selectByPrimaryKey(skillId);
         order.setSellerId(dreamSkillDo.getSellerId());
         order.setSkillId(skillId);
-        order.setSkillName(dreamSkillDo.getName());
+        order.setSkillName(dreamSkillDo.getTitle());
         
         DreamUserDo seller = userOperationService.selectByPrimaryKey(dreamSkillDo.getSellerId());
         

@@ -61,17 +61,28 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 		
+		<!--  
         <table tableName="dream_rate" domainObjectName="DreamRateDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
                <generatedKey column="id" sqlStatement="MySql"/> 
-        </table> 
-        <!--  
+        </table> -->
+                 
+          
 		<table tableName="dream_skill" domainObjectName="DreamSkillDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
-               <generatedKey column="id" sqlStatement="MySql"/> 
+               <generatedKey column="id" sqlStatement="MySql"/>
+               <columnOverride column="ID" property="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="DOWN_BOUND_PRICE" property="downBoundPrice" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="UP_BOUND_PRICE" property="upBoundPrice" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="NORMAL_PRICE" property="normalPrice" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="OPTIONS" property="options" javaType="java.lang.Long" jdbcType="BIGINT" />               
+               <columnOverride column="SELLER_ID" property="sellerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="SOLD_QUANTITY" property="soldQuantity" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="COME_FEE" property="comeFee" javaType="java.lang.Long" jdbcType="BIGINT" />   
         </table>
+        <!--
         <table tableName="dream_order" domainObjectName="DreamOrderDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
