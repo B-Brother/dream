@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:util="http://www.springframework.org/schema/util"
+             xmlns:p="http://www.springframework.org/schema/p"
+             xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/util http://localhost:8080/schema/www.springframework.org/schema/util/spring-util.xsd
+             ">
+
+    <util:map id="provinceDistrictMap" map-class="java.util.LinkedHashMap">
+        <beans:entry key="P110000" value="北京" />
+        <beans:entry key="P110000-C110100" value="昌平" />
+        <beans:entry key="P110000-C110200" value="朝阳" />
+        <beans:entry key="P110000-C110300" value="东城" />
+        <beans:entry key="P110000-C110400" value="大兴" />
+        <beans:entry key="P110000-C110500" value="房山" />
+        <beans:entry key="P110000-C110600" value="丰台" />
+        <beans:entry key="P110000-C110700" value="海淀" />
+        <beans:entry key="P110000-C110800" value="怀柔" />
+        <beans:entry key="P110000-C110900" value="门头沟" />
+        <beans:entry key="P110000-C111000" value="密云" />
+        <beans:entry key="P110000-C111100" value="平谷" />
+        <beans:entry key="P110000-C111200" value="石景山" />
+        <beans:entry key="P110000-C111300" value="顺义" />
+        <beans:entry key="P110000-C111400" value="通州" />
+        <beans:entry key="P110000-C111500" value="西城" />
+        <beans:entry key="P110000-C111600" value="延庆" />
+        
+        <beans:entry key="P120000" value="安徽" />
+        <beans:entry key="P120000-C120100" value="安庆" />
+        <beans:entry key="P120000-C120200" value="蚌埠" />
+        <beans:entry key="P120000-C120300" value="毫州" />
+        <beans:entry key="P120000-C120400" value="巢湖" />
+        <beans:entry key="P120000-C120500" value="池州" />
+        <beans:entry key="P120000-C120600" value="滁州" />
+        <beans:entry key="P120000-C120700" value="阜阳" />
+        <beans:entry key="P120000-C120800" value="淮北" />
+        <beans:entry key="P120000-C120900" value="合肥" />
+        <beans:entry key="P120000-C121000" value="淮南" />
+        <beans:entry key="P120000-C121100" value="黄山" />
+        <beans:entry key="P120000-C121200" value="六安" />
+        <beans:entry key="P120000-C121300" value="马鞍山" />
+        <beans:entry key="P120000-C121400" value="宿州" />
+        <beans:entry key="P120000-C121500" value="铜陵" />
+        <beans:entry key="P120000-C121600" value="芜湖" />
+        <beans:entry key="P120000-C121700" value="宣城" />
+        
+        <beans:entry key="P130000" value="重庆" />
+        <beans:entry key="P130000-C130100" value="北碚" /> 
+        <beans:entry key="P130000-C130200" value="巴南" /> 
+        <beans:entry key="P130000-C130300" value="璧山" /> 
+        <beans:entry key="P130000-C130400" value="城口" />
+        <beans:entry key="P130000-C130500" value="长寿" />
+        <beans:entry key="P130000-C130600" value="大渡口" />
+        <beans:entry key="P130000-C130700" value="垫江" />
+        <beans:entry key="P130000-C130800" value="大足" />
+        <beans:entry key="P130000-C130900" value="丰都" /> 
+        <beans:entry key="P130000-C131000" value="奉节" />
+        <beans:entry key="P130000-C131100" value="涪陵" />
+        <beans:entry key="P130000-C131200" value="合川" />
+        <beans:entry key="P130000-C131300" value="江北" />
+        <beans:entry key="P130000-C131400" value="江津" />
+        <beans:entry key="P130000-C131500" value="九龙坡" />
+        <beans:entry key="P130000-C131600" value="开县" />
+        <beans:entry key="P130000-C131700" value="两江新区" />
+        <beans:entry key="P130000-C131800" value="梁平" />
+        <beans:entry key="P130000-C131900" value="南岸" />
+        <beans:entry key="P130000-C132000" value="南川" />
+        <beans:entry key="P130000-C132100" value="彭水" />
+        <beans:entry key="P130000-C132200" value="綦江" />
+        <beans:entry key="P130000-C132300" value="黔江" />
+        <beans:entry key="P130000-C132400" value="荣昌" />
+        <beans:entry key="P130000-C132500" value="沙坪坝" />
+        <beans:entry key="P130000-C132600" value="双桥" />
+        <beans:entry key="P130000-C132700" value="石柱" />
+        <beans:entry key="P130000-C132800" value="铜梁" />    
+        <beans:entry key="P130000-C132900" value="潼南" />
+        <beans:entry key="P130000-C133000" value="武隆" />
+        <beans:entry key="P130000-C133100" value="万盛" />
+        <beans:entry key="P130000-C133200" value="巫山" />
+        <beans:entry key="P130000-C133300" value="巫溪" />
+        <beans:entry key="P130000-C133400" value="万州" />
+        <beans:entry key="P130000-C133500" value="秀山" />
+        <beans:entry key="P130000-C133600" value="渝北" />
+        <beans:entry key="P130000-C133700" value="永川" />
+        <beans:entry key="P130000-C133800" value="云阳" />
+        <beans:entry key="P130000-C133900" value="酉阳" />
+        <beans:entry key="P130000-C134000" value="渝中" />
+        <beans:entry key="P130000-C134100" value="忠县" />   
+        
+        <beans:entry key="P140000" value="福建" />
+        <beans:entry key="P140000-C140100" value="福州" />
+        <beans:entry key="P140000-C140200" value="龙岩" /> 
+        <beans:entry key="P140000-C140300" value="宁德" /> 
+        <beans:entry key="P140000-C140400" value="南平" /> 
+        <beans:entry key="P140000-C140500" value="莆田" /> 
+        <beans:entry key="P140000-C140600" value="泉州" /> 
+        <beans:entry key="P140000-C140700" value="三明" /> 
+        <beans:entry key="P140000-C140800" value="厦门" /> 
+        <beans:entry key="P140000-C140900" value="漳州" />    
+        
+        <beans:entry key="P150000" value="广东" />
+        <beans:entry key="P150000-C150100" value="潮州" />
+        <beans:entry key="P150000-C150200" value="东莞" />
+        <beans:entry key="P150000-C150300" value="佛山" />
+        <beans:entry key="P150000-C150400" value="广州" />
+        <beans:entry key="P150000-C150500" value="河源" />
+        <beans:entry key="P150000-C150600" value="惠州" />
+        <beans:entry key="P150000-C150700" value="江门" />
+        <beans:entry key="P150000-C150800" value="揭阳" />
+        <beans:entry key="P150000-C150900" value="茂名" />
+        <beans:entry key="P150000-C151000" value="梅州" />
+        <beans:entry key="P150000-C151100" value="清远" />
+        <beans:entry key="P150000-C151200" value="韶关" />
+        <beans:entry key="P150000-C151300" value="汕头" />
+        <beans:entry key="P150000-C151400" value="汕尾" />
+        <beans:entry key="P150000-C151500" value="深圳" />
+        <beans:entry key="P150000-C151600" value="云浮" />
+        <beans:entry key="P150000-C151700" value="阳江" />
+        <beans:entry key="P150000-C151800" value="珠海" />
+        <beans:entry key="P150000-C151900" value="湛江" />
+        <beans:entry key="P150000-C152000" value="肇庆" />
+        <beans:entry key="P150000-C152100" value="中山" /> 
+        
+        <beans:entry key="P160000" value="甘肃" />
+        <beans:entry key="P160000-C160100" value="白银" />  
+        <beans:entry key="P160000-C160200" value="定西" />  
+        <beans:entry key="P160000-C160300" value="甘南" />  
+        <beans:entry key="P160000-C160400" value="金昌" />  
+        <beans:entry key="P160000-C160500" value="酒泉" />  
+        <beans:entry key="P160000-C160600" value="嘉峪关" />  
+        <beans:entry key="P160000-C160700" value="陇南" />  
+        <beans:entry key="P160000-C160800" value="临夏" />  
+        <beans:entry key="P160000-C160900" value="兰州" />  
+        <beans:entry key="P160000-C161000" value="平凉" />  
+        <beans:entry key="P160000-C161100" value="庆阳" />  
+        <beans:entry key="P160000-C161200" value="天水" />  
+        <beans:entry key="P160000-C161300" value="武威" />  
+        <beans:entry key="P160000-C161400" value="张掖" />   
+        
+        <beans:entry key="P170000" value="广西" />
+        <beans:entry key="P170000-C170100" value="北海" />
+        <beans:entry key="P170000-C170200" value="百色" />
+        <beans:entry key="P170000-C170300" value="崇左" />
+        <beans:entry key="P170000-C170400" value="防城港" />
+        <beans:entry key="P170000-C170500" value="桂林" />
+        <beans:entry key="P170000-C170600" value="河池" />
+        <beans:entry key="P170000-C170700" value="贺州" />
+        <beans:entry key="P170000-C170800" value="来宾" />
+        <beans:entry key="P170000-C170900" value="柳州" />
+        <beans:entry key="P170000-C171000" value="南宁" />
+        <beans:entry key="P170000-C171100" value="钦州" />
+        <beans:entry key="P170000-C171200" value="梧州" />
+        <beans:entry key="P170000-C171300" value="玉林" /> 
+        
+        <beans:entry key="P180000" value="贵州" />
+        <beans:entry key="P180000-C180100" value="安顺" /> 
+        <beans:entry key="P180000-C180200" value="毕节" /> 
+        <beans:entry key="P180000-C180300" value="贵阳" /> 
+        <beans:entry key="P180000-C180400" value="六盘水" /> 
+        <beans:entry key="P180000-C180500" value="黔东南" /> 
+        <beans:entry key="P180000-C180600" value="黔南" /> 
+        <beans:entry key="P180000-C180700" value="同仁" /> 
+        <beans:entry key="P180000-C180800" value="遵义" />   
+        
+        <beans:entry key="P190000" value="湖北" />
+        <beans:entry key="P190000-C190100" value="恩施" />
+        <beans:entry key="P190000-C190200" value="鄂州" />
+        <beans:entry key="P190000-C190300" value="黄冈" />
+        <beans:entry key="P190000-C190400" value="黄石" />
+        <beans:entry key="P190000-C190500" value="荆门" />
+        <beans:entry key="P190000-C190600" value="荆州" />
+        <beans:entry key="P190000-C190700" value="潜江" />
+        <beans:entry key="P190000-C190800" value="神龙架" />
+        <beans:entry key="P190000-C190900" value="十堰" />
+        <beans:entry key="P190000-C191000" value="随州" />
+        <beans:entry key="P190000-C191100" value="天门" />
+        <beans:entry key="P190000-C191200" value="武汉" />
+        <beans:entry key="P190000-C191300" value="孝感" />
+        <beans:entry key="P190000-C191400" value="咸宁" />
+        <beans:entry key="P190000-C191500" value="仙桃" />
+        <beans:entry key="P190000-C191600" value="襄阳" />
+        <beans:entry key="P190000-C191700" value="宜昌" />
+        
+        
+        <beans:entry key="P200000" value="河北" />
+        <beans:entry key="P200000-C200100" value="保定" />
+        <beans:entry key="P200000-C200200" value="承德" />
+        <beans:entry key="P200000-C200300" value="沧州" />
+        <beans:entry key="P200000-C200400" value="邯郸" />
+        <beans:entry key="P200000-C200500" value="衡水" />
+        <beans:entry key="P200000-C200600" value="廊坊" />
+        <beans:entry key="P200000-C200700" value="秦皇岛" />
+        <beans:entry key="P200000-C200800" value="石家庄" />
+        <beans:entry key="P200000-C200900" value="唐山" />
+        <beans:entry key="P200000-C201000" value="邢台" />
+        <beans:entry key="P200000-C201100" value="张家口" />
+        
+        <beans:entry key="P210000" value="黑龙江" />
+        <beans:entry key="P210000-C210100" value="大庆" />
+        <beans:entry key="P210000-C210200" value="大兴安岭" />
+        <beans:entry key="P210000-C210300" value="鹤岗" />
+        <beans:entry key="P210000-C210400" value="黑河" />
+        <beans:entry key="P210000-C210500" value="佳木斯" />
+        <beans:entry key="P210000-C210600" value="鸡西" />
+        <beans:entry key="P210000-C210700" value="牡丹江" />
+        <beans:entry key="P210000-C210800" value="齐齐哈尔" />
+        <beans:entry key="P210000-C210900" value="七台河" />
+        <beans:entry key="P210000-C211000" value="绥化" />
+        <beans:entry key="P210000-C211100" value="双鸭山" />
+        <beans:entry key="P210000-C211200" value="伊春" /> 
+        
+        <beans:entry key="P220000" value="湖南" />
+        <beans:entry key="P220000-C220100" value="常德" />
+        <beans:entry key="P220000-C220200" value="长沙" />
+        <beans:entry key="P220000-C220300" value="郴州" />
+        <beans:entry key="P220000-C220400" value="怀化" />
+        <beans:entry key="P220000-C220500" value="衡阳" />
+        <beans:entry key="P220000-C220600" value="娄底" />
+        <beans:entry key="P220000-C220700" value="邵阳" />
+        <beans:entry key="P220000-C220800" value="湘潭" />
+        <beans:entry key="P220000-C220900" value="湘西" />
+        <beans:entry key="P220000-C221000" value="益阳" />
+        <beans:entry key="P220000-C221100" value="岳阳" />
+        <beans:entry key="P220000-C221200" value="永州" />
+        <beans:entry key="P220000-C221300" value="张家界" />
+        <beans:entry key="P220000-C221400" value="株洲" />  
+        
+        <beans:entry key="P230000" value="河南" />
+        <beans:entry key="P230000-C230100" value="安阳" /> 
+        <beans:entry key="P230000-C230100" value="鹤壁" /> 
+        <beans:entry key="P230000-C230100" value="济源" /> 
+        <beans:entry key="P230000-C230100" value="焦作" /> 
+        <beans:entry key="P230000-C230100" value="开封" /> 
+        <beans:entry key="P230000-C230100" value="漯河" /> 
+        <beans:entry key="P230000-C230100" value="洛阳" /> 
+        <beans:entry key="P230000-C230100" value="南阳" /> 
+        <beans:entry key="P230000-C230100" value="平顶山" /> 
+        <beans:entry key="P230000-C230100" value="濮阳" /> 
+        <beans:entry key="P230000-C230100" value="三门峡" /> 
+        <beans:entry key="P230000-C230100" value="商丘" /> 
+        <beans:entry key="P230000-C230100" value="许昌" /> 
+        <beans:entry key="P230000-C230100" value="新乡" /> 
+        <beans:entry key="P230000-C230100" value="信阳" /> 
+        <beans:entry key="P230000-C230100" value="周口" /> 
+        <beans:entry key="P230000-C230100" value="驻马店" /> 
+        <beans:entry key="P230000-C230100" value="郑州" />  
+        
+        
+        <beans:entry key="P240000" value="海南" />
+        <beans:entry key="P240000-C240100" value="白沙" />
+        <beans:entry key="P240000-C240200" value="保亭" />
+        <beans:entry key="P240000-C240300" value="昌江" />
+        <beans:entry key="P240000-C240400" value="澄迈" />
+        <beans:entry key="P240000-C240500" value="定安" />
+        <beans:entry key="P240000-C240600" value="东方" />
+        <beans:entry key="P240000-C240700" value="儋州" />
+        <beans:entry key="P240000-C240800" value="海口" />  
+        <beans:entry key="P240000-C240900" value="乐东" />
+        <beans:entry key="P240000-C241000" value="临高" />
+        <beans:entry key="P240000-C241100" value="陵水" />
+        <beans:entry key="P240000-C241200" value="南沙" />
+        <beans:entry key="P240000-C241300" value="琼海" />
+        <beans:entry key="P240000-C241400" value="琼中" />
+        <beans:entry key="P240000-C241500" value="三亚" />
+        <beans:entry key="P240000-C241600" value="屯昌" />
+        <beans:entry key="P240000-C241700" value="文昌" />
+        <beans:entry key="P240000-C241800" value="万宁" />
+        <beans:entry key="P240000-C241900" value="五指山" />
+        <beans:entry key="P240000-C242000" value="西沙" />
+        <beans:entry key="P240000-C242100" value="中沙" />
+        
+        <beans:entry key="P250000" value="吉林" />
+        <beans:entry key="P250000-C250100" value="白城" />
+        <beans:entry key="P250000-C250200" value="白山" />
+        <beans:entry key="P250000-C250300" value="长春" />
+        <beans:entry key="P250000-C250400" value="吉林" />
+        <beans:entry key="P250000-C250500" value="辽源" />
+        <beans:entry key="P250000-C250600" value="四平" />
+        <beans:entry key="P250000-C250700" value="松原" />
+        <beans:entry key="P250000-C250800" value="通化" />
+        <beans:entry key="P250000-C250900" value="延边" />
+        
+        <beans:entry key="P260000" value="江苏" />
+        <beans:entry key="P260000-C260100" value="常州" /> 
+        <beans:entry key="P260000-C260200" value="淮安" /> 
+        <beans:entry key="P260000-C260300" value="连云港" /> 
+        <beans:entry key="P260000-C260400" value="南京" /> 
+        <beans:entry key="P260000-C260500" value="南通" /> 
+        <beans:entry key="P260000-C260600" value="宿迁" /> 
+        <beans:entry key="P260000-C260700" value="苏州" /> 
+        <beans:entry key="P260000-C260800" value="泰州" /> 
+        <beans:entry key="P260000-C260900" value="无锡" /> 
+        <beans:entry key="P260000-C261000" value="徐州" /> 
+        <beans:entry key="P260000-C261100" value="盐城" /> 
+        <beans:entry key="P260000-C261200" value="扬州" /> 
+        <beans:entry key="P260000-C261300" value="镇江" />  
+        
+        <beans:entry key="P270000" value="江西" />
+        <beans:entry key="P270000-C270100" value="抚州" />
+        <beans:entry key="P270000-C270200" value="赣州" />
+        <beans:entry key="P270000-C270300" value="吉安" />
+        <beans:entry key="P270000-C270400" value="景德镇" />
+        <beans:entry key="P270000-C270500" value="九江" />
+        <beans:entry key="P270000-C270600" value="南昌" />
+        <beans:entry key="P270000-C270700" value="萍乡" />
+        <beans:entry key="P270000-C270800" value="上饶" />
+        <beans:entry key="P270000-C270900" value="新余" />
+        <beans:entry key="P270000-C271000" value="宜春" />
+        <beans:entry key="P270000-C271100" value="鹰潭" /> 
+        
+        
+        <beans:entry key="P280000" value="辽宁" />
+        <beans:entry key="P280000-C280100" value="鞍山" />
+        <beans:entry key="P280000-C280200" value="本溪" />
+        <beans:entry key="P280000-C280300" value="朝阳" />
+        <beans:entry key="P280000-C280400" value="丹东" />
+        <beans:entry key="P280000-C280500" value="大连" />
+        <beans:entry key="P280000-C280600" value="抚顺" />
+        <beans:entry key="P280000-C280700" value="阜新" />
+        <beans:entry key="P280000-C280800" value="葫芦岛" />
+        <beans:entry key="P280000-C280900" value="锦州" />
+        <beans:entry key="P280000-C281000" value="辽阳" />
+        <beans:entry key="P280000-C281100" value="盘锦" />
+        <beans:entry key="P280000-C281200" value="沈阳" />
+        <beans:entry key="P280000-C281300" value="铁岭" />
+        <beans:entry key="P280000-C281400" value="营口" /> 
+        
+        <beans:entry key="P290000" value="内蒙古" />
+        <beans:entry key="P290000-C290100" value="阿拉善" /> 
+        <beans:entry key="P290000-C290100" value="包头" /> 
+        <beans:entry key="P290000-C290100" value="巴彦淖尔" /> 
+        <beans:entry key="P290000-C290100" value="赤峰" /> 
+        <beans:entry key="P290000-C290100" value="鄂尔多斯" /> 
+        <beans:entry key="P290000-C290100" value="呼和浩特" /> 
+        <beans:entry key="P290000-C290100" value="呼伦贝尔" /> 
+        <beans:entry key="P290000-C290100" value="通辽" /> 
+        <beans:entry key="P290000-C290100" value="乌海" /> 
+        <beans:entry key="P290000-C290100" value="乌兰察布" /> 
+        <beans:entry key="P290000-C290100" value="兴安" /> 
+        <beans:entry key="P290000-C290100" value="锡林郭勒" /> 
+         
+        <beans:entry key="P300000" value="宁夏" />
+        <beans:entry key="P300000-C300100" value="固原" /> 
+        <beans:entry key="P300000-C300200" value="石嘴山" /> 
+        <beans:entry key="P300000-C300300" value="吴忠" /> 
+        <beans:entry key="P300000-C300400" value="银川" /> 
+        <beans:entry key="P300000-C300500" value="中卫" />  
+        
+        <beans:entry key="P310000" value="青海" />
+        <beans:entry key="P310000-C310100" value="果洛" />
+        <beans:entry key="P310000-C310200" value="海北" />
+        <beans:entry key="P310000-C310300" value="海东" />
+        <beans:entry key="P310000-C310400" value="海西" />
+        <beans:entry key="P310000-C310500" value="海南" />
+        <beans:entry key="P310000-C310600" value="黄南" />
+        <beans:entry key="P310000-C310700" value="西宁" />
+        <beans:entry key="P310000-C310800" value="玉树" />
+        
+        <beans:entry key="P320000" value="四川" />
+        <beans:entry key="P320000-C320100" value="阿坝" />
+        <beans:entry key="P320000-C320200" value="巴中" />
+        <beans:entry key="P320000-C320300" value="成都" />
+        <beans:entry key="P320000-C320400" value="德阳" />
+        <beans:entry key="P320000-C320500" value="德州" />
+        <beans:entry key="P320000-C320600" value="广安" />
+        <beans:entry key="P320000-C320700" value="广元" />
+        <beans:entry key="P320000-C320800" value="甘孜" />
+        <beans:entry key="P320000-C320900" value="凉山" />
+        <beans:entry key="P320000-C321000" value="乐山" />
+        <beans:entry key="P320000-C321100" value="泸州" />
+        <beans:entry key="P320000-C321200" value="眉山" />
+        <beans:entry key="P320000-C321300" value="绵阳" />
+        <beans:entry key="P320000-C321400" value="南充" />
+        <beans:entry key="P320000-C321500" value="内江" />
+        <beans:entry key="P320000-C321600" value="攀枝花" />
+        <beans:entry key="P320000-C321700" value="遂宁" />
+        <beans:entry key="P320000-C321800" value="雅安" />
+        <beans:entry key="P320000-C321900" value="宜宾" />
+        <beans:entry key="P320000-C322000" value="自贡" />
+        <beans:entry key="P320000-C322100" value="资阳" />
+         
+        <beans:entry key="P330000" value="山东" />
+        <beans:entry key="P330000-C330100" value="滨州" />
+        <beans:entry key="P330000-C330200" value="东营" />
+        <beans:entry key="P330000-C330300" value="德州" />
+        <beans:entry key="P330000-C330400" value="菏泽" />
+        <beans:entry key="P330000-C330500" value="济南" />
+        <beans:entry key="P330000-C330600" value="济宁" />
+        <beans:entry key="P330000-C330700" value="聊城" />
+        <beans:entry key="P330000-C330800" value="莱芜" />
+        <beans:entry key="P330000-C330900" value="临沂" />
+        <beans:entry key="P330000-C331000" value="青岛" />
+        <beans:entry key="P330000-C331100" value="日照" />
+        <beans:entry key="P330000-C331200" value="泰安" />
+        <beans:entry key="P330000-C331300" value="潍坊" />
+        <beans:entry key="P330000-C331400" value="威海" />
+        <beans:entry key="P330000-C331500" value="烟台" />
+        <beans:entry key="P330000-C331600" value="淄博" />
+        <beans:entry key="P330000-C331700" value="枣庄" />
+
+        <beans:entry key="P340000" value="上海" />
+        <beans:entry key="P340000-C340100" value="宝山" />
+        <beans:entry key="P340000-C340200" value="崇明" />
+        <beans:entry key="P340000-C340300" value="长宁" />
+        <beans:entry key="P340000-C340400" value="奉贤" />
+        <beans:entry key="P340000-C340500" value="虹口" />
+        <beans:entry key="P340000-C340600" value="黄浦" />
+        <beans:entry key="P340000-C340700" value="静安" />
+        <beans:entry key="P340000-C340800" value="嘉定" />
+        <beans:entry key="P340000-C340900" value="金山" />
+        <beans:entry key="P340000-C341000" value="闵行" />
+        <beans:entry key="P340000-C341100" value="浦东新区" />
+        <beans:entry key="P340000-C341200" value="普陀" />
+        <beans:entry key="P340000-C341300" value="青浦" />
+        <beans:entry key="P340000-C341400" value="松江" />
+        <beans:entry key="P340000-C341500" value="徐汇" />
+        <beans:entry key="P340000-C341600" value="杨浦" />
+        <beans:entry key="P340000-C341700" value="闸北" /> 
+        
+        <beans:entry key="P350000" value="陕西" />
+        <beans:entry key="P350000-C350100" value="安康" /> 
+        <beans:entry key="P350000-C350200" value="宝鸡" /> 
+        <beans:entry key="P350000-C350300" value="汉中" /> 
+        <beans:entry key="P350000-C350400" value="商洛" /> 
+        <beans:entry key="P350000-C350500" value="铜川" /> 
+        <beans:entry key="P350000-C350600" value="渭南" /> 
+        <beans:entry key="P350000-C350700" value="西安" /> 
+        <beans:entry key="P350000-C350800" value="咸阳" /> 
+        <beans:entry key="P350000-C350900" value="延安" /> 
+        <beans:entry key="P350000-C351000" value="榆林" /> 
+        
+        
+        <beans:entry key="P360000" value="山西" /> 
+        <beans:entry key="P360000-C360100" value="长治" /> 
+        <beans:entry key="P360000-C360200" value="大同" /> 
+        <beans:entry key="P360000-C360300" value="晋城" /> 
+        <beans:entry key="P360000-C360400" value="晋中" /> 
+        <beans:entry key="P360000-C360500" value="临汾" /> 
+        <beans:entry key="P360000-C360600" value="吕梁" />
+        <beans:entry key="P360000-C360700" value="朔州" /> 
+        <beans:entry key="P360000-C360800" value="太原" /> 
+        <beans:entry key="P360000-C360900" value="忻州" /> 
+        <beans:entry key="P360000-C361000" value="运城" />  
+        <beans:entry key="P360000-C361100" value="阳泉" />  
+        
+        <beans:entry key="P370000" value="天津" />
+        <beans:entry key="P370000-C370100" value="北辰" /> 
+        <beans:entry key="P370000-C370200" value="宝坻" /> 
+        <beans:entry key="P370000-C370300" value="滨海新区" /> 
+        <beans:entry key="P370000-C370400" value="东丽" /> 
+        <beans:entry key="P370000-C370500" value="河北" /> 
+        <beans:entry key="P370000-C370600" value="和平" /> 
+        <beans:entry key="P370000-C370700" value="红桥" /> 
+        <beans:entry key="P370000-C370800" value="河西" /> 
+        <beans:entry key="P370000-C370900" value="静海" /> 
+        <beans:entry key="P370000-C371000" value="津南" /> 
+        <beans:entry key="P370000-C371100" value="蓟县" /> 
+        <beans:entry key="P370000-C371200" value="宁河" /> 
+        <beans:entry key="P370000-C371300" value="南开" /> 
+        <beans:entry key="P370000-C371400" value="武清" /> 
+        <beans:entry key="P370000-C371500" value="西青" /> 
+        
+        <beans:entry key="P380000" value="西藏" />
+        <beans:entry key="P380000-C380100" value="阿里" /> 
+        <beans:entry key="P380000-C380200" value="昌都" /> 
+        <beans:entry key="P380000-C380300" value="拉萨" /> 
+        <beans:entry key="P380000-C380400" value="林芝" /> 
+        <beans:entry key="P380000-C380500" value="那曲" /> 
+        <beans:entry key="P380000-C380600" value="日喀则" /> 
+        <beans:entry key="P380000-C380700" value="山南" /> 
+        
+        <beans:entry key="P390000" value="新疆" />
+        <beans:entry key="P390000-C390100" value="阿克苏" />
+        <beans:entry key="P390000-C390200" value="阿拉尔" /> 
+        <beans:entry key="P390000-C390300" value="阿勒泰" /> 
+        <beans:entry key="P390000-C390400" value="博尔塔拉" /> 
+        <beans:entry key="P390000-C390500" value="巴音郭楞" /> 
+        <beans:entry key="P390000-C390600" value="昌吉" /> 
+        <beans:entry key="P390000-C390700" value="哈密" /> 
+        <beans:entry key="P390000-C390800" value="和田" /> 
+        <beans:entry key="P390000-C390900" value="克拉玛依" /> 
+        <beans:entry key="P390000-C391000" value="喀什" /> 
+        <beans:entry key="P390000-C391100" value="克孜勒苏" /> 
+        <beans:entry key="P390000-C391200" value="石河子" /> 
+        <beans:entry key="P390000-C391300" value="塔城" /> 
+        <beans:entry key="P390000-C391400" value="吐鲁番" /> 
+        <beans:entry key="P390000-C391500" value="图木舒克" /> 
+        <beans:entry key="P390000-C391600" value="五家渠" /> 
+        <beans:entry key="P390000-C391700" value="乌鲁木齐" /> 
+        <beans:entry key="P390000-C391800" value="伊犁" />  
+        
+        <beans:entry key="P400000" value="云南" />
+        <beans:entry key="P400000-C400100" value="保山" /> 
+        <beans:entry key="P400000-C400200" value="楚雄" /> 
+        <beans:entry key="P400000-C400300" value="德宏" />  
+        <beans:entry key="P400000-C400400" value="大理" /> 
+        <beans:entry key="P400000-C400500" value="迪庆" /> 
+        <beans:entry key="P400000-C400600" value="红河" /> 
+        <beans:entry key="P400000-C400700" value="昆明" /> 
+        <beans:entry key="P400000-C400800" value="临沧" /> 
+        <beans:entry key="P400000-C400900" value="丽江" /> 
+        <beans:entry key="P400000-C401000" value="怒江" /> 
+        <beans:entry key="P400000-C401100" value="普洱" /> 
+        <beans:entry key="P400000-C401200" value="曲靖" /> 
+        <beans:entry key="P400000-C401300" value="文山" /> 
+        <beans:entry key="P400000-C401400" value="西双版纳" /> 
+        <beans:entry key="P400000-C401500" value="玉溪" /> 
+        <beans:entry key="P400000-C401600" value="昭通" /> 
+        
+        <beans:entry key="P410000" value="浙江" />
+        <beans:entry key="P410000-C410100" value="湖州" />
+        <beans:entry key="P410000-C410200" value="杭州" />
+        <beans:entry key="P410000-C410300" value="金华" />
+        <beans:entry key="P410000-C410400" value="嘉兴" />
+        <beans:entry key="P410000-C410500" value="丽水" />
+        <beans:entry key="P410000-C410600" value="宁波" />
+        <beans:entry key="P410000-C410700" value="衢州" />
+        <beans:entry key="P410000-C410800" value="绍兴" />
+        <beans:entry key="P410000-C410900" value="台州" />
+        <beans:entry key="P410000-C411000" value="温州" />
+        <beans:entry key="P410000-C411100" value="舟山" /> 
+        
+        <beans:entry key="P420000" value="澳门" />
+        <beans:entry key="P420000-C420100" value="大堂区" /> 
+        <beans:entry key="P420000-C420200" value="氹仔" /> 
+        <beans:entry key="P420000-C420300" value="风顺堂区" /> 
+        <beans:entry key="P420000-C420400" value="花地玛堂区" /> 
+        <beans:entry key="P420000-C420500" value="路环岛" /> 
+        <beans:entry key="P420000-C420600" value="圣安多尼堂区" /> 
+        <beans:entry key="P420000-C420700" value="望德堂区" /> 
+        
+        <beans:entry key="P430000" value="台湾" />
+        <beans:entry key="P430000-C430100" value="高雄市" />
+        <beans:entry key="P430000-C430200" value="花莲市" />
+        <beans:entry key="P430000-C430300" value="基隆市" />
+        <beans:entry key="P430000-C430400" value="金门县" />
+        <beans:entry key="P430000-C430500" value="嘉义市" />
+        <beans:entry key="P430000-C430600" value="嘉义县" />
+        <beans:entry key="P430000-C430700" value="连江县" />
+        <beans:entry key="P430000-C430800" value="苗栗县" />
+        <beans:entry key="P430000-C430900" value="南投县" />
+        <beans:entry key="P430000-C431000" value="屏东县" />
+        <beans:entry key="P430000-C431100" value="澎湖县" />
+        <beans:entry key="P430000-C431200" value="台北市" />
+        <beans:entry key="P430000-C431300" value="台东县" />
+        <beans:entry key="P430000-C431400" value="台南市" />
+        <beans:entry key="P430000-C431500" value="桃园县" />
+        <beans:entry key="P430000-C431600" value="台中市" />
+        <beans:entry key="P430000-C431700" value="新北市" />
+        <beans:entry key="P430000-C431800" value="新竹市" />
+        <beans:entry key="P430000-C431900" value="新竹县" />
+        <beans:entry key="P430000-C432000" value="云林县" />
+        <beans:entry key="P430000-C432100" value="宜兰县" />
+        <beans:entry key="P430000-C432200" value="彰化县" /> 
+        
+        <beans:entry key="P440000" value="香港" />
+        <beans:entry key="P440000-C440100" value="北区" /> 
+        <beans:entry key="P440000-C440200" value="大埔区" /> 
+        <beans:entry key="P440000-C440300" value="东区" /> 
+        <beans:entry key="P440000-C440400" value="观塘区" /> 
+        <beans:entry key="P440000-C440500" value="黄大仙区" /> 
+        <beans:entry key="P440000-C440600" value="九龙城区" /> 
+        <beans:entry key="P440000-C440700" value="葵青区" /> 
+        <beans:entry key="P440000-C440800" value="离岛区" /> 
+        <beans:entry key="P440000-C440900" value="南区" /> 
+        <beans:entry key="P440000-C441000" value="荃湾区" /> 
+        <beans:entry key="P440000-C441100" value="深水埗区" /> 
+        <beans:entry key="P440000-C441200" value="沙田区" /> 
+        <beans:entry key="P440000-C441300" value="屯门区" /> 
+        <beans:entry key="P440000-C441400" value="湾仔区" /> 
+        <beans:entry key="P440000-C441500" value="西贡区" /> 
+        <beans:entry key="P440000-C441600" value="油尖旺区" /> 
+        <beans:entry key="P440000-C441700" value="元朗区" /> 
+        <beans:entry key="P440000-C441800" value="中西区" /> 
+    </util:map>
+</beans:beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
