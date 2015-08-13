@@ -7,5 +7,5 @@ import com.sven.dream.dal.user.DreamUserDo;
 
 @Resource
 public interface DreamUserDoMapper extends DreamMapper<DreamUserDo>{
-    
+   
 }

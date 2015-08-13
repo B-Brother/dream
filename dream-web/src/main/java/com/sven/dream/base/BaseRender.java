@@ -34,7 +34,8 @@ public class BaseRender {
 	protected DreamUserDo getUser(){
 		DreamUserDo user = new DreamUserDo();
 		user.setId(1);
-		user.setLastName("fuckme");
+		user.setName("fuckme");
+		user.setNick("ok.");
 		return user;
 	}
 }

@@ -5,70 +5,79 @@
                 
                     <section id="maincontent" class="ten columns positionleft">
                     	<div class="padcontent">
-                    
-                        	<section class="content" id="register">
-                            
-                                <div class="breadcrumb"><a href="index.html">首页</a> / 注册</div>
-                                <h1 class="pagetitle">注册</h1>
-                                
-								<div class="alert">已经有账号? <a href="account.html">点击这里登录</a></div> 
-
-                                <div class="row">
-                                	<div class="ten columns ">
-                                        <label for="billing_company" class="">用户名</label>
-                                        <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">密码</label>
-                                        <input type="password" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">重复密码</label>
-                                        <input type="password" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">姓名</label>
-                                        <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">公司名称</label>
-                                        <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">家庭地址</label>
-                                        <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div> 
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">公司名称</label>
-                                        <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">国家</label>
-                                        <select name="billing_country" id="billing_country" class="country_to_state" rel="billing_state">
-                                        <option value="">Select a country&hellip;</option><option value="AF" >Afghanistan</option><option value="AX" >Aland Islands</option><option value="AL" >Albania</option><option value="DZ" >Algeria</option><option value="AS" >American Samoa</option><option value="AD" >China</option><option value="AO" >Angola</option><option value="AI" >Anguilla</option><option value="AQ" >Antarctica</option></select>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">Email</label>
-                                    	<input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div>
-                                    <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">手机</label>
-                                    	<input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
-                                    </div> 
-                                    <div class="clear"></div>
-                                     
-                                    <h3 class="margin_bottom_middle">个人简介</h3> 
-                                    <textarea name="order_comments" class="input-text" id="order_comments"  rows="6"></textarea>
-                                    <input type="submit" name="submit" class="button mini" id="submit_btn" value="提交"/>
-                                
-							</section>
-                         
+                    		<form method="post" id="registerForm">
+                    			<input type="hidden" name="action" value="RegisterAction" />
+                    		    <input type="hidden" name="event_submit_do_register" value="1" />
+	                        	<section class="content" id="register">
+	                            
+	                                <div class="breadcrumb"><a href="index.html">首页</a> / 注册</div>
+	                                <h1 class="pagetitle">注册</h1>
+	                                
+									<div class="alert">已经有账号? <a href="account.html">点击这里登录</a></div> 
+	
+	                                <div class="row">
+	                                	<div class="ten columns ">
+	                                        <label for="billing_company" class="">用户名</label>
+	                                        <input type="text" class="input-text" name="username" id="billing_company"  value="" minlength="2" required />
+	                                    </div>
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">密码</label>
+	                                        <input type="password" class="input-text" name="password" id="billing_company"  value="" minlength="5" required />
+	                                    </div>
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">重复密码</label>
+	                                        <input type="password" class="input-text" name="repassword" id="billing_company"  value="" minlength="5" required />
+	                                    </div>
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">昵称</label>
+	                                        <input type="text" class="input-text" name="nick" id="billing_company"  value="" minlength="2" required />
+	                                    </div>
+	                                    <div class="clear"></div> 
+	                                    
+	                                    <div id="city_1">
+		                                    <div class="five columns ">
+		                                        <label for="billing_first_name" class="">省 <span class="required">*</span></label>
+		                                        <select class="prov" name="prov" required></select> 
+		                                    </div>
+		                                    <div class="five columns ">
+		                                        <label for="billing_last_name" class="">市 <span class="required">*</span></label>
+		                                        <select class="city" name="dist" disabled="disabled" required></select>
+		                                    </div>
+	                                    </div>
+	                                     
+	                                    
+	                                    
+	                                    <div class="clear"></div>
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">Email</label>
+	                                    	<input type="text" class="input-text" name="email" id="billing_company"  value="" required/>
+	                                    </div>
+	                                    <div class="clear"></div>
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">手机</label>
+	                                    	<input type="text" class="input-text" name="mobile" id="billing_company"  value="" required/>
+	                                    </div> 
+	                                    
+	                                    <div class="clear"></div>  
+	                                    
+	                                    <div class="ten columns ">
+	                                        <label for="billing_company" class="">性别</label>
+	                                    	<select name="sex">
+	                                        	<option name="M" selected="selected">男</option> 
+	                                        	<option name="F">女</option> 
+	                                        </select> 
+	                                    </div> 
+	                                     
+	                                    
+	                                    <div class="clear"></div>
+	                                     
+	                                    <div class="ten columns "> 
+	                                    <h3 class="margin_bottom_middle">个人简介</h3> 
+	                                    <textarea name="introduce" class="input-text" id="introduce"  rows="6"></textarea>
+	                                    <input type="button" class="button mini" id="submit_btn" value="提交"/> 
+	                                    </div>
+								</section>
+                         	</form>
                         </div>
                     </section> 
                     
@@ -76,3 +85,92 @@
             </div>
         </div>
         <!-- END MAIN CONTENT -->
+        
+<script type="text/javascript" src="/js/select/cityselect.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.js"></script>        
+<script type="text/javascript">
+	
+	jQuery().ready(function() {
+		 // 初始化表单验证  
+		jQuery("#registerForm").validate({
+			rules: {
+				username: {
+					required: true,
+					minlength: 2
+				},  
+				password: {
+					required: true,
+					minlength: 5
+				},
+				repassword: {
+					required: true,
+					minlength: 5,
+					equalTo: "#password"
+				}, 
+				nick: {
+					required: true,
+					minlength: 2
+				},
+				prov: "required",
+				dist: "required",
+				email: {
+					required: true,
+					email: true
+				}, 
+				mobile: "required",
+				introduce: "required"
+			},
+			messages: { 
+				username: {
+					required: "请输入用户名",
+					minlength: "用户名长度必须大于2个字符"
+				},
+				password: {
+					required: "请输入密码",
+					minlength: "密码长度必须大于5个字符"
+				},
+				repassword: {
+					required: "请重复输入密码",
+					minlength: "密码长度必须大于5个字符",
+					equalTo: "两次密码输入不一致"
+				},
+				nick: {
+					required: "请输入昵称",
+					minlength: "昵称长度必须大于2个字符"
+				},
+				prov: {
+					required: "请选择省份"
+				},
+				dist: {
+					required: "请选择城市"
+				},
+				email: {
+					required: "请输入邮件",
+					email: "输入的email需要符合规范"
+				},
+				mobile: {
+					required: "请输入手机号码" 
+				},
+				introduce: {
+					required: "请输入个人简介"
+				}
+			}
+		}); 
+	});
+	
+
+	jQuery(window).load(function() { 
+		// 初始化省市选择器
+		jQuery("#city_1").citySelect({
+			nodata:"none",
+			required:false
+		}); 
+		
+		jQuery("#submit_btn").click(function() {
+			document.getElementById("registerForm").submit();
+		});  
+	}); 
+</script>	 
+
+
+

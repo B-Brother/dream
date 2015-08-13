@@ -37,7 +37,7 @@ public class PayAction extends BaseRender{
         order.setBuyerId(buyerId);
         
         DreamUserDo buyer = userOperationService.selectByPrimaryKey(buyerId);
-        order.setBuyerNick(buyer.getLastName());
+        order.setBuyerNick(buyer.getNick());
         order.setMeetingType(1);
         order.setOrderId(new Random().nextLong());
         order.setPayStatus(STATUS_PAY_WAITING_SURE); 
@@ -49,7 +49,7 @@ public class PayAction extends BaseRender{
         
         DreamUserDo seller = userOperationService.selectByPrimaryKey(dreamSkillDo.getSellerId());
         
-        order.setSellerNick(seller.getLastName());
+        order.setSellerNick(seller.getNick());
         
         order.setVisibleStatus(STATUS_VISIBLE_YES);
         

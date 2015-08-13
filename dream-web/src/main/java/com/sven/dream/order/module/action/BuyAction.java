@@ -42,7 +42,7 @@ public class BuyAction extends BaseRender{
         DreamUserDo buyer = getUser();
         order.setBuyerId((long)buyer.getId());
          
-        order.setBuyerNick(buyer.getLastName());
+        order.setBuyerNick(buyer.getNick());
         order.setMeetingType(1);
         
         long orderId = new Random().nextLong();
@@ -56,7 +56,7 @@ public class BuyAction extends BaseRender{
         
         DreamUserDo seller = userOperationService.selectByPrimaryKey(dreamSkillDo.getSellerId());
         
-        order.setSellerNick(seller.getLastName());
+        order.setSellerNick(seller.getNick());
         
         order.setVisibleStatus(STATUS_VISIBLE_YES);
         
