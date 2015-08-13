@@ -46,11 +46,20 @@
                                         <input type="text" class="input-text" name="billing_company" id="billing_company"  value="" />
                                     </div>
                                     <div class="clear"></div>
-                                    <div class="ten columns ">
-                                        <label for="billing_company" class="">国家</label>
-                                        <select name="billing_country" id="billing_country" class="country_to_state" rel="billing_state">
-                                        <option value="">Select a country&hellip;</option><option value="AF" >Afghanistan</option><option value="AX" >Aland Islands</option><option value="AL" >Albania</option><option value="DZ" >Algeria</option><option value="AS" >American Samoa</option><option value="AD" >China</option><option value="AO" >Angola</option><option value="AI" >Anguilla</option><option value="AQ" >Antarctica</option></select>
+                                     
+                                    
+                                    <div id="city_1">
+                                    <div class="five columns ">
+                                        <label for="billing_first_name" class="">省 <span class="required">*</span></label>
+                                        <select class="prov"></select> 
                                     </div>
+                                    <div class="five columns ">
+                                        <label for="billing_last_name" class="">市 <span class="required">*</span></label>
+                                        <select class="city" disabled="disabled"></select>
+                                    </div>
+                                    </div>
+                                    
+                                    
                                     <div class="clear"></div>
                                     <div class="ten columns ">
                                         <label for="billing_company" class="">Email</label>
@@ -76,3 +85,16 @@
             </div>
         </div>
         <!-- END MAIN CONTENT -->
+<script type="text/javascript" src="/js/select/cityselect.js"></script>        
+<script type="text/javascript">
+	jQuery(window).load(function() { 
+		jQuery("#city_1").citySelect({
+			nodata:"none",
+			required:false
+		}); 
+	}); 
+</script>	
+
+
+
+

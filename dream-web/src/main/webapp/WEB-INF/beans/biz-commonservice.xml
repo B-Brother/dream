@@ -17,4 +17,6 @@
      
    	<bean id="uploadFileService" class="com.sven.dream.commonservice.service.impl.UploadFileServiceImpl" />
    	<bean id="userOperationService" class="com.sven.dream.commonservice.service.impl.UserOperationServiceImpl" />  
+   	
+   	<bean id="geographyCache" class="com.sven.dream.commonservice.cache.GeographyCache" init-method="init"/>  
 </beans>
