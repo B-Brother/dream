@@ -78,14 +78,13 @@
 	                                    </div>
 								</section>
                          	</form>
+ 
                         </div>
-                    </section> 
-                    
+                    </section>  
                 </div>
             </div>
         </div>
-        <!-- END MAIN CONTENT -->
-        
+        <!-- END MAIN CONTENT --> 
 <script type="text/javascript" src="/js/select/cityselect.js"></script>
 <script type="text/javascript" src="/js/jquery.validate.js"></script>        
 <script type="text/javascript">
@@ -160,17 +159,19 @@
 	
 
 	jQuery(window).load(function() { 
-		// 初始化省市选择器
+		// 初始化省市选择器   
 		jQuery("#city_1").citySelect({
 			nodata:"none",
 			required:false
-		}); 
+		});  
 		
 		jQuery("#submit_btn").click(function() {
 			document.getElementById("registerForm").submit();
 		});  
-	}); 
-</script>	 
+	});  
+}); 
+</script>	
+ 
 
 
 
