@@ -60,10 +60,8 @@ public class BuyAction extends BaseRender{
         
         order.setVisibleStatus(STATUS_VISIBLE_YES);
         
-        int isOrderSuccess = dreamOrderBo.insert(order);
-         
-        if(isOrderSuccess > 0){
-        	nav.redirectToLocation("/order/buy.htm?orderId=" + orderId);
-        }
+        dreamOrderBo.insert(order);
+          
+        nav.redirectToLocation("/order/buy.htm?orderId=" + orderId); 
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.citrus.turbine.Navigator;
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.constants.CommonConstants;
+import com.sven.dream.common.util.CookieUtil;
 import com.sven.dream.commonservice.service.UserOperationService;
 import com.sven.dream.dal.user.DreamUserDo;
 
@@ -36,7 +37,14 @@ public class RegisterAction extends BaseRender{
 		user.setProvinceCode(prov);
 		user.setSex(sex);
 		user.setTag(0L);
+		
+		// 用户新增
 		userOperationService.insert(user);
+		
+		// 获取到刚才新增的用户
+		DreamUserDo currentUser = userOperationService.getLoginDreamUser(username);
+		
+		CookieUtil.addCookie(CommonConstants.COOKIE_USER_KEY, String.valueOf(currentUser.getId()), response);
 		
 		nav.redirectToLocation("/user/registerSuccess.htm");
 	} 

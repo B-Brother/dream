@@ -67,11 +67,8 @@
                 <session-interceptors:lifecycle-logger />
                 <session-interceptors:attribute-whitelist>
                     <attribute name="_csrf_token" />
-                    <attribute name="_lang" />
-                    <!-- 
-                    <attribute name="petstoreUser" type="com.alibaba.sample.petstore.web.common.PetstoreUser" />
-                    <attribute name="petstoreCart" type="com.alibaba.sample.petstore.dal.dataobject.Cart" />
-                    -->
+                    <attribute name="_lang" /> 
+                    <attribute name="dreamUser" type="com.sven.dream.commonservice.auth.DreamUser" /> 
                 </session-interceptors:attribute-whitelist>
             </interceptors>
         </request-contexts:session>

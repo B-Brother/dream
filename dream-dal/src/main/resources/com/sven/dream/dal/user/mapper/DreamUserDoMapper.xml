@@ -71,6 +71,7 @@
   </insert>
   <insert id="insertSelective" parameterType="com.sven.dream.dal.user.DreamUserDo"
   	useGeneratedKeys="true" keyProperty="id">
+  	 
     insert into dream_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       ID,
@@ -249,4 +250,32 @@
       TAG = #{tag,jdbcType=BIGINT}
     where ID = #{id,jdbcType=BIGINT}
   </update>
+   
+  <select id="getLoginDreamUser" parameterType="java.lang.String" resultMap="BaseResultMap"> 
+	    select 
+	    <include refid="Base_Column_List" />
+	    from dream_user
+	    where name = #{name}
+	    and is_deleted = 'n'
+   </select>
+   
+   <select id="getUserListByQuery" parameterType="com.sven.dream.common.query.UserQuery" resultMap="BaseResultMap">  
+   	    select 
+	    <include refid="Base_Column_List" />
+	    from dream_user
+	    <where>  
+	        <if test="loginName != null">  
+	            name = #{loginName}  
+	        </if>  
+	        <if test="password != null">  
+	            and password = #{password}  
+	        </if>    
+	    </where>  
+</select>  
 </mapper>
+
+
+
+
+
+

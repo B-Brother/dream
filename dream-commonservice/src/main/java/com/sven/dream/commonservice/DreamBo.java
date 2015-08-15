@@ -3,7 +3,7 @@ package com.sven.dream.commonservice;
 import com.sven.dream.base.entity.DreamDo;
  
 public interface DreamBo<D extends DreamDo> {
-	int insert(D dataObject); 
+	void insert(D dataObject); 
 	  
 	int update(D dataObject);
 	  

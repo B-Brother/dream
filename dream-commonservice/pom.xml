@@ -58,10 +58,6 @@
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId> 
 		</dependency>  
-
-		<!-- ================================================= -->
-		<!-- Spring框架 -->
-		<!-- ================================================= -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId> 
@@ -106,5 +102,20 @@
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId> 
         </dependency> 
+        <dependency>
+			<groupId>com.alibaba.citrus</groupId>
+			<artifactId>citrus-webx-all</artifactId> 
+		</dependency>
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId> 
+        </dependency>
   </dependencies>
 </project>
+
+
+
+
+
+
+

@@ -20,15 +20,14 @@ public class AbstractDreamServiceImpl<D extends DreamDo, K extends DreamMapper<D
      * @param dataObject
      * @return
      */
-    public int insert(D dataObject) {
+    public void insert(D dataObject) {
         if (isValidDo(dataObject)) {
             dataObject.setCreator("system");
             dataObject.setModifier("system");
             dataObject.setIsDeleted("n");
             dataObject.setGmtCreate(new Date());
             dataObject.setGmtModified(new Date());
-            int v = mapper.insertSelective(dataObject);
-            return v;
+            mapper.insertSelective(dataObject); 
         } else {
             throw new RuntimeException("Invalid do:" + dataObject.toString());
         }
