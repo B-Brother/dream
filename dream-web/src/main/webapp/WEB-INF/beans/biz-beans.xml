@@ -15,7 +15,8 @@
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
 	default-autowire="byType">
      
-   	<bean id="dreamUserBo" class="com.sven.dream.user.bo.impl.DreamUserBoImpl" /> 
+   	<bean id="dreamUserBo" class="com.sven.dream.user.bo.impl.DreamUserBoImpl" />
+   	<bean id="dreamUserExperienceBo" class="com.sven.dream.user.bo.impl.DreamUserExperienceBoImpl" /> 
    	
    	<bean id="dreamRateBo" class="com.sven.dream.order.bo.impl.DreamRateBoImpl" />
    	<bean id="dreamSkillBo" class="com.sven.dream.order.bo.impl.DreamSkillBoImpl" />

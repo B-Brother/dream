@@ -1,4 +1,2 @@
 $rundata.setLayoutEnabled(false)
-#noescape()
-$!result
-#end
+#noescape()$!result#end

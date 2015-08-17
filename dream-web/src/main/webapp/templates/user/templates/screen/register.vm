@@ -155,21 +155,19 @@
 				}
 			}
 		}); 
-	});
-	
-
-	jQuery(window).load(function() { 
-		// 初始化省市选择器   
-		jQuery("#city_1").citySelect({
-			nodata:"none",
-			required:false
-		});  
 		
-		jQuery("#submit_btn").click(function() {
-			document.getElementById("registerForm").submit();
+		jQuery(window).load(function() { 
+			// 初始化省市选择器   
+			jQuery("#city_1").citySelect({
+				nodata:"none",
+				required:false
+			});  
+			
+			jQuery("#submit_btn").click(function() {
+				document.getElementById("registerForm").submit();
+			});  
 		});  
-	});  
-}); 
+	}); 
 </script>	
  
 

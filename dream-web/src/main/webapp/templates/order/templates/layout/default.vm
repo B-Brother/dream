@@ -21,8 +21,7 @@
 
 	<!-- CSS
   	================================================== -->
-  	<link href='http://fonts.useso.com/css?family=Ubuntu:400,700,500,300,400italic,300italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/styles/style.css" />
+  	<link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/inner.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/flexslider.css" />
@@ -52,85 +51,8 @@
         <div id="outerheader">
         
             <header>
-            	<div id="top">
-                    <div class="container">
-                    <div class="row">
-                    	<div id="topmenu" class=" six columns">
-                            <ul id="topnav">
-                                <li><a href="#">登录</a></li> 
-                                <li><a href="#">注册</a></li>
-                                <li><a href="#">个人中心</a></li> 
-                                <li><a href="#">联系我们</a></li> 
-                            </ul>
-                        </div>
-                        <div id="topright" class="six columns">
-                            <!--
-                        	<div class="language"> 
-                           		Language:  <a href="#"><img src="/images/eng.png" alt=""/></a> <a href="#"><img src="images/fr.png" alt=""/></a> <a href="#"><img src="images/gr.png" alt=""/></a>
-                            </div>
-                        	<div class="currency"> Currency : <a href="#">€</a> <a href="#">£</a> <a href="#">$</a></div>
-                            -->
-                        </div>
-                    </div>
-                    </div>
-            	</div>
-                
-                <div id="logo-wrapper">
-                    <div class="container">
-                    <div class="row">
-                        <div id="logo" class="six columns">
-                            <a href="index.html"><img src="/images/logo.png" alt=""/></a>
-                            <span class="desc">最完美的解决方案</span>
-                        </div>
-                        <div class="right six columns">
-
-                            <form action="#" id="searchform" method="get">
-                                
-                                <input type="text" onBlur="if (this.value == '')this.value = '输入关键字搜索';" 
-                                        onFocus="if (this.value == '输入关键字搜索')this.value = '';" value="输入关键字搜索" id="s" name="s" class="field">
-                                <input type="submit" value="" class="searchbutton">
-                               
-                            </form> 
-
-                            <div class="clear"></div>    
-                            <!--
-                            <div class="login">Welcome Visitor, you can <a href="login.html"><strong>login</strong></a> or <a href="register.html"><strong>create an account</strong></a></div>
-                            -->
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                
-                <section id="navigation">
-                    <div class="container">
-                    <div class="row">
-                    <nav id="nav-wrap" class="twelve columns">
-                        <ul id="sf-nav" class="sf-menu">
-                            <li class="current"><a href="index.html">首页</a></li>
-                            <li><a href="about.html">教育</a>
-                                <ul>
-                                    <li><a href="element.html">家教</a></li>
-                                    <li><a href="single.html">培训</a></li>
-                                    <li><a href="#">技能</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="product-grid.html">帮忙</a>
-                                <ul>
-                                	<li><a href="product-grid.html">举手之劳</a></li>
-                                    <li><a href="product-list.html">有点麻烦</a></li>
-                                    <li><a href="product-details.html">挺难弄的</a></li>
-                                    <li><a href="checkout.html">非常麻烦</a></li>
-                                </ul>
-                            </li> 
-                            <li><a href="blog.html">我有一技之长</a></li>
-                            <li><a href="contact.html">联系我们</a></li>
-                        </ul><!-- topnav -->
-                    </nav><!-- nav -->	
-                    </div>
-                    </div>
-                </section>
-                
-                <div class="clear"></div>
+            	## 引入common包的header 
+                $control.setTemplate("common:header.vm")
             </header>        
            
         </div>
@@ -143,18 +65,18 @@
             <div id="carousel"  class="es-carousel-wrapper">
                 <div class="es-carousel">
                     <ul>
-                        <li><a title="Audio Jungle"  href="#"><img alt="Audio Jungle" src="images/content/audiojungle.png"></a></li>
-                        <li><a title="Active Den"  href="#"><img alt="Active Den" src="images/content/activeden.png"></a></li>
-                        <li><a title="Graphic River"  href="#"><img alt="Graphic River" src="images/content/graphicriver.png"></a></li>
-                        <li><a title="Photo Dune"  href="#"><img alt="Photo Dune" src="images/content/photodune.png"></a></li>
-                        <li><a title="Theme Forest"  href="#"><img alt="Theme Forest" src="images/content/themeforest.png"></a></li>
-                        <li><a title="Video Hive"  href="#"><img alt="Video Hive" src="images/content/videohive.png"></a></li>
-                        <li><a title="Audio Jungle"  href="#"><img alt="Audio Jungle" src="images/content/audiojungle.png"></a></li>
-                        <li><a title="Active Den"  href="#"><img alt="Active Den" src="images/content/activeden.png"></a></li>
-                        <li><a title="Graphic River"  href="#"><img alt="Graphic River" src="images/content/graphicriver.png"></a></li>
-                        <li><a title="Photo Dune"  href="#"><img alt="Photo Dune" src="images/content/photodune.png"></a></li>
-                        <li><a title="Theme Forest"  href="#"><img alt="Theme Forest" src="images/content/themeforest.png"></a></li>
-                        <li><a title="Video Hive"  href="#"><img alt="Video Hive" src="images/content/videohive.png"></a></li>
+                        <li><a title="Audio Jungle"  href="#"><img alt="Audio Jungle" src="/images/content/audiojungle.png"></a></li>
+                        <li><a title="Active Den"  href="#"><img alt="Active Den" src="/images/content/activeden.png"></a></li>
+                        <li><a title="Graphic River"  href="#"><img alt="Graphic River" src="/images/content/graphicriver.png"></a></li>
+                        <li><a title="Photo Dune"  href="#"><img alt="Photo Dune" src="/images/content/photodune.png"></a></li>
+                        <li><a title="Theme Forest"  href="#"><img alt="Theme Forest" src="/images/content/themeforest.png"></a></li>
+                        <li><a title="Video Hive"  href="#"><img alt="Video Hive" src="/images/content/videohive.png"></a></li>
+                        <li><a title="Audio Jungle"  href="#"><img alt="Audio Jungle" src="/images/content/audiojungle.png"></a></li>
+                        <li><a title="Active Den"  href="#"><img alt="Active Den" src="/images/content/activeden.png"></a></li>
+                        <li><a title="Graphic River"  href="#"><img alt="Graphic River" src="/images/content/graphicriver.png"></a></li>
+                        <li><a title="Photo Dune"  href="#"><img alt="Photo Dune" src="/images/content/photodune.png"></a></li>
+                        <li><a title="Theme Forest"  href="#"><img alt="Theme Forest" src="/images/content/themeforest.png"></a></li>
+                        <li><a title="Video Hive"  href="#"><img alt="Video Hive" src="/images/content/videohive.png"></a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -249,7 +171,7 @@
 <script type="text/javascript" src="/js/supersubs.js"></script>
 
 <!-- jQuery Carosel Slider -->
-<script type="text/javascript" src="js/jquery.elastislide.js"></script>
+<script type="text/javascript" src="/js/jquery.elastislide.js"></script>
 <script type="text/javascript">
 	jQuery('#carousel').elastislide({
 		imageW 	: 135,

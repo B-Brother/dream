@@ -7,15 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.citrus.turbine.Context;  
 import com.alibaba.citrus.turbine.Navigator;
 import com.alibaba.citrus.turbine.dataresolver.Param;
+import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.constants.UploadConstants;
 import com.sven.dream.commonservice.service.UploadFileService;
 import com.sven.dream.commonservice.vo.DreamUserRateVo;
 import com.sven.dream.dal.common.UploadFileDo; 
 import com.sven.dream.dal.order.DreamSkillDo;
+import com.sven.dream.dal.user.DreamUserExperienceDo;
 import com.sven.dream.order.bo.DreamRateBo;
 import com.sven.dream.order.bo.DreamSkillBo;
+import com.sven.dream.user.bo.DreamUserExperienceBo;
 
-public class Detail {
+public class Detail extends BaseRender{
 	
 	@Autowired
 	private DreamSkillBo dreamSkillBo;
@@ -25,6 +28,9 @@ public class Detail {
 	
 	@Autowired
 	private UploadFileService uploadFileService;
+	
+	@Autowired
+	private DreamUserExperienceBo dreamUserExperienceBo;
 	
 	public void execute(
 			@Param("skillId") Long skillId, 
@@ -42,9 +48,13 @@ public class Detail {
 		// 图片展示层
 		List<UploadFileDo> fileList = uploadFileService.getFileListByType(UploadConstants.BIZ_TYPE_SKILL, (long)skill.getId());
 		
+		// 技能经验
+		List<DreamUserExperienceDo> expList = dreamUserExperienceBo.getExperienceListByUser(getUser().getId());
+		
 		context.put("skill", skill);
 		context.put("rateList", rateList);
 		context.put("fileList", fileList);
+		context.put("expList", expList);
 	}
 }
 

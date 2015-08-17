@@ -1,4 +1,1 @@
-$rundata.setLayoutEnabled(false)
-#noescape()
-$!result
-#end
+$rundata.setLayoutEnabled(false)#noescape()$!result#end

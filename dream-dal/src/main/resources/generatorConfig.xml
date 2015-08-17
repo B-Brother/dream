@@ -34,6 +34,14 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 		
+		<table tableName="dream_user_experience" domainObjectName="DreamUserExperienceDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
+               <generatedKey column="id" sqlStatement="MySql"/>
+               <columnOverride column="ID" property="id" javaType="java.lang.Long" jdbcType="BIGINT" /> 
+        </table>
+		
+		<!-- 
         <table tableName="dream_user" domainObjectName="DreamUserDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
@@ -41,8 +49,7 @@
                <columnOverride column="ID" property="id" javaType="java.lang.Long" jdbcType="BIGINT" />
                <columnOverride column="TAG" property="tag" javaType="java.lang.Long" jdbcType="BIGINT" />
         </table>
-	
-		<!-- 
+	 	
 		<table tableName="dream_opinion" domainObjectName="DreamOpinionDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 

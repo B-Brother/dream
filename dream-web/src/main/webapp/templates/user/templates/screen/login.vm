@@ -30,6 +30,7 @@
                                     <!-- TODO TEXT-PASSWORD -->
                                     <input type="text" name="password" id="password"/><br />
                                     <input type="button" class="button" id="loginButton" value="登录" />
+                                    <div id="loginError" style="font-size:red"></div>
                                 </fieldset>
                             </form><br>
                             <a href="#">忘记密码?</a>
@@ -63,7 +64,8 @@
 	            }, 
 	            
 	            success:function(data){
-	            	alert(data);	        
+	            	alert(data.code);	
+	            	alert(data.errorMessage)        
 	            }, 
 
 	            error: function(){

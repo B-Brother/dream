@@ -264,8 +264,9 @@
 	    <include refid="Base_Column_List" />
 	    from dream_user
 	    <where>  
+	    	is_deleted = 'n'
 	        <if test="loginName != null">  
-	            name = #{loginName}  
+	            and name = #{loginName}  
 	        </if>  
 	        <if test="password != null">  
 	            and password = #{password}  
