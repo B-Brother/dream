@@ -19,7 +19,7 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
-		<!--  -->
+		<!--  
         <javaModelGenerator targetPackage="com.sven.dream.dal.user"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
@@ -39,7 +39,7 @@
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
                <generatedKey column="id" sqlStatement="MySql"/>
                <columnOverride column="ID" property="id" javaType="java.lang.Long" jdbcType="BIGINT" /> 
-        </table>
+        </table>-->
 		
 		<!-- 
         <table tableName="dream_user" domainObjectName="DreamUserDo"
@@ -54,7 +54,7 @@
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
                <generatedKey column="id" sqlStatement="MySql"/> 
-        </table>
+        </table>-->
          
         <javaModelGenerator targetPackage="com.sven.dream.dal.order"
                             targetProject="src/main/java">
@@ -68,14 +68,14 @@
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.sven.dream.dal.order.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
-        </javaClientGenerator> -->
+        </javaClientGenerator> 
 		
 		<!--  
         <table tableName="dream_rate" domainObjectName="DreamRateDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
                <generatedKey column="id" sqlStatement="MySql"/> 
-        </table> 
+        </table> -->
                  
           
 		<table tableName="dream_skill" domainObjectName="DreamSkillDo"
@@ -89,8 +89,9 @@
                <columnOverride column="OPTIONS" property="options" javaType="java.lang.Long" jdbcType="BIGINT" />               
                <columnOverride column="SELLER_ID" property="sellerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
                <columnOverride column="SOLD_QUANTITY" property="soldQuantity" javaType="java.lang.Long" jdbcType="BIGINT" />  
-               <columnOverride column="COME_FEE" property="comeFee" javaType="java.lang.Long" jdbcType="BIGINT" />   
-        </table>-->
+               <columnOverride column="COME_FEE" property="comeFee" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="SCHEDULE" property="schedule" javaType="java.lang.Long" jdbcType="BIGINT" />   
+        </table> 
         <!--
         <table tableName="dream_order" domainObjectName="DreamOrderDo"
                enableCountByExample="false" enableUpdateByExample="false"	

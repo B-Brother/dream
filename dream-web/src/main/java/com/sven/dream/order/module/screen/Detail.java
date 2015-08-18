@@ -11,6 +11,7 @@ import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.constants.UploadConstants;
 import com.sven.dream.commonservice.service.UploadFileService;
 import com.sven.dream.commonservice.vo.DreamUserRateVo;
+import com.sven.dream.commonservice.vo.SkillScheduleVo;
 import com.sven.dream.dal.common.UploadFileDo; 
 import com.sven.dream.dal.order.DreamSkillDo;
 import com.sven.dream.dal.user.DreamUserExperienceDo;
@@ -50,11 +51,48 @@ public class Detail extends BaseRender{
 		
 		// 技能经验
 		List<DreamUserExperienceDo> expList = dreamUserExperienceBo.getExperienceListByUser(getUser().getId());
-		
+		 
 		context.put("skill", skill);
 		context.put("rateList", rateList);
 		context.put("fileList", fileList);
 		context.put("expList", expList);
+		
+		long schedule = skill.getSchedule();
+		parseSchedule(context, schedule);
+	}
+	
+	private void parseSchedule(Context context, long schedule){
+		SkillScheduleVo scheduleVo = new SkillScheduleVo();
+		scheduleVo.setSchedule1((schedule & 1) == 1);
+		scheduleVo.setSchedule2((schedule & 2) == 2);
+		scheduleVo.setSchedule3((schedule & 4) == 4);
+		scheduleVo.setSchedule4((schedule & 8) == 8);
+		scheduleVo.setSchedule5((schedule & 16) == 16);
+		scheduleVo.setSchedule6((schedule & 32) == 32);
+		scheduleVo.setSchedule7((schedule & 64) == 64);
+		scheduleVo.setSchedule8((schedule & 128) == 128);
+		scheduleVo.setSchedule9((schedule & 256) == 256);
+		scheduleVo.setSchedule10((schedule & 512) == 512);
+		scheduleVo.setSchedule11((schedule & 1024) == 1024);
+		scheduleVo.setSchedule12((schedule & 2048) == 2048);
+		scheduleVo.setSchedule13((schedule & 4096) == 4096);
+		scheduleVo.setSchedule14((schedule & 8192) == 8192);
+		scheduleVo.setSchedule15((schedule & 16384) == 16384);
+		scheduleVo.setSchedule16((schedule & 32768) == 32768);
+		scheduleVo.setSchedule17((schedule & 65536) == 65536);
+		scheduleVo.setSchedule18((schedule & 131072) == 131072);
+		scheduleVo.setSchedule19((schedule & 262144) == 262144);
+		scheduleVo.setSchedule20((schedule & 524288) == 524288);
+		scheduleVo.setSchedule21((schedule & 1048576) == 1048576);
+		scheduleVo.setSchedule22((schedule & 2097152) == 2097152);
+		scheduleVo.setSchedule23((schedule & 4194304) == 4194304);
+		scheduleVo.setSchedule24((schedule & 8388608) == 8388608);
+		scheduleVo.setSchedule25((schedule & 16777216) == 16777216);
+		scheduleVo.setSchedule26((schedule & 33554432) == 33554432);
+		scheduleVo.setSchedule27((schedule & 67108864) == 67108864);
+		scheduleVo.setSchedule28((schedule & 134217728) == 134217728); 
+		
+		context.put("schedule", scheduleVo);
 	}
 }
 

@@ -272,43 +272,43 @@
 			                    </div>
 			                    <div class="td">
 			                        <div class="left">0-6点</div>
-			                        <span></span>
-			                        <span></span>
-			                        <span></span>
-			                        <span></span>
-			                        <span></span>
-			                        <span></span>
-			                        <span></span>
+			                        <span>#if($!schedule.schedule1) <img src="http://s3.laoshilaile.cn/assets/gou.png" /> #end</span>
+			                        <span>#if($!schedule.schedule2) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span>#if($!schedule.schedule3) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span>#if($!schedule.schedule4) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span>#if($!schedule.schedule5) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span>#if($!schedule.schedule6) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span>#if($!schedule.schedule7) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
 			                    </div>
 			                    <div class="td">
 			                        <div class="left">6-12点</div>
-			                        <span rel="2-1"></span>
-			                        <span rel="2-2"></span>
-			                        <span rel="2-3"></span>
-			                        <span rel="2-4"></span>
-			                        <span rel="2-5"></span>
-			                        <span rel="2-6"></span>
-			                        <span rel="2-7"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
+			                        <span rel="2-1">#if($!schedule.schedule8) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-2">#if($!schedule.schedule9) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-3">#if($!schedule.schedule10) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-4">#if($!schedule.schedule11) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-5">#if($!schedule.schedule12) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-6">#if($!schedule.schedule13) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="2-7">#if($!schedule.schedule14) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
 			                    </div>
 			                    <div class="td">
 			                        <div class="left">12-18点</div>
-			                        <span rel="3-1"></span>
-			                        <span rel="3-2"></span>
-			                        <span rel="3-3"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
-			                        <span rel="3-4"></span>
-			                        <span rel="3-5"></span>
-			                        <span rel="3-6"></span>
-			                        <span rel="3-7"></span>
+			                        <span rel="3-1">#if($!schedule.schedule15) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-2">#if($!schedule.schedule16) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-3">#if($!schedule.schedule17) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-4">#if($!schedule.schedule18) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-5">#if($!schedule.schedule19) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-6">#if($!schedule.schedule20) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="3-7">#if($!schedule.schedule21) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
 			                    </div>
 			                    <div class="td">
 			                        <div class="left">18-24点</div>
-			                        <span rel="4-1"></span>
-			                        <span rel="4-2"></span>
-			                        <span rel="4-3"></span>
-			                        <span rel="4-4"></span>
-			                        <span rel="4-5"></span>
-			                        <span rel="4-6"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
-			                        <span rel="4-7"></span>
+			                        <span rel="4-1">#if($!schedule.schedule22) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-2">#if($!schedule.schedule23) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-3">#if($!schedule.schedule24) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-4">#if($!schedule.schedule25) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-5">#if($!schedule.schedule26) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-6">#if($!schedule.schedule27) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+			                        <span rel="4-7">#if($!schedule.schedule28) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
 			                    </div> 
 		                    </div>
 		                </div>
