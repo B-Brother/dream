@@ -1,6 +1,10 @@
 <!-- MAIN CONTENT --> 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=DOoQITfGQK3xYXSazVKdYPfk"></script>   
 <style>
+	img {
+    	vertical-align: middle; 
+	}
+
 	.side-bar .preorder-time {
 	    width: 262px;
 	    border: 2px solid rgb(217, 227, 229);
@@ -8,8 +12,7 @@
 	    border-image-slice: initial;
 	    border-image-width: initial;
 	    border-image-outset: initial;
-	    border-image-repeat: initial;
-	    min-height: 230px;
+	    border-image-repeat: initial; 
 	    color: rgb(139, 138, 138);
 	    font-size: 14px;
 	    font-weight: 700;
@@ -65,6 +68,14 @@
 	    line-height: 45px;
 	    border-right: 1px solid #e6eff1;
 	}
+	
+	.side-bar .preorder-time .td span {
+	    float: left;
+	    width: 28px;
+	    height: 27px;
+	    line-height: 27px;
+	    border-right: 1px solid #e6eff1;
+	}
 </style>
 <div id="outermain">
 	<div class="container">
@@ -104,55 +115,74 @@
                                                 </ul>
                                             </div>
                                     </div>
-                                    
-                                    <!--
+                                     
                                     <ul id="usefull_link_block">    
-                                        <li class="share_fb"><a href="#">分享到微博</a> </li>
-                                        <li class="favoriteproducts"><a href="#">收藏</a></li>	 
-                                    </ul> -->
+                                        <li class="share_fb"><a href="#">分享</a> </li>
+                                        <li class="favoriteproducts"><a href="#">收藏技能(301人气)</a></li>	 
+                                    </ul> 
                                 </div>
                             </div>
                             
                         	<div class="three_fourth columns">
-							<p>$!skill.subTitle</p>
-							<div class="price">
-								#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
-									￥$!skill.normalPrice
-								#else
-									￥$!skill.downBoundPrice ~ ￥$!skill.upBoundPrice
-								#end 
-								<span>/
-									#if($!skill.per == "HOUR")
-										小时
-									#elseif($!skill.per == "DAY")
-										天
-									#end 			
-								</span>
-							</div>
-							
-							<div>支持地区:杭州，西安，南京，巴厘岛</div>
-							<div>付款方式:支持线下、支付宝</div>
-							<div>交付方式:支持买家上门、行者上门、中立地点</div>
-							
-                            <form action="#" method="post" id="BuyForm" class="product_attributes">
-                            	<input type="hidden" name="action" value="BuyAction"/>
-                            	<input type="hidden" name="event_submit_do_buy" value="1"/>
-                            	<input type="hidden" name="skillId" value="$!skill.id"/>
-                            	
-                                <fieldset class="attribute_fieldset">  
-                                    <label class="qty_label">数量:</label>
-                                    <div class="qty_list">
-                                    <select name="amount">
-                                          <option title="1" selected="selected">1</option>
-                                          <option title="2">2</option>
-                                          <option title="3">3</option>
-                                          <option title="4">4</option>
-                                    </select>
+                        		<p>$!skill.subTitle</p>
+                        	
+                        		<div id="toggle">
+                                    <h2 class="trigger"><span>X</span>地区支持</h2>
+                                    <div class="toggle_container" style="display: none;">
+                                        <div class="block"> 
+                                            <p>支持山西，山西，杭州，南京上门服务</p> 
+                                        </div>
                                     </div>
-                                </fieldset>
-                            </form>
-                            
-							<a href="#" id="cart" class="cart">购买</a> 
+
+                                    <h2 class="trigger"><span>X</span>付款方式</h2>
+                                    <div class="toggle_container" style="display: none;">
+                                        <div class="block"> 
+                                            <p>支付宝、银联、当面付现</p> 
+                                        </div>
+                                    </div>
+                                     
+                                    <h2 class="trigger"><span>X</span>交付方式</h2>
+                                    <div class="toggle_container" style="display: none;">
+                                        <div class="block"> 
+                                            <p>支持买家上门、行者上门、中立地点</p> 
+                                        </div>
+                                    </div> 
+                                </div>
+                        	 
+								<div class="price" style="margin-top:30px;">
+									#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
+										￥$!skill.normalPrice
+									#else
+										￥$!skill.downBoundPrice ~ ￥$!skill.upBoundPrice
+									#end 
+									<span>/
+										#if($!skill.per == "HOUR")
+											小时
+										#elseif($!skill.per == "DAY")
+											天
+										#end 			
+									</span>
+								</div> 
+ 
+								<form action="#" method="post" id="BuyForm" class="product_attributes">
+	                            	<input type="hidden" name="action" value="BuyAction"/>
+	                            	<input type="hidden" name="event_submit_do_buy" value="1"/>
+	                            	<input type="hidden" name="skillId" value="$!skill.id"/>
+	                            	
+	                                <fieldset class="attribute_fieldset">  
+	                                    <label class="qty_label">数量:</label>
+	                                    <div class="qty_list">
+	                                    <select name="amount">
+	                                          <option title="1" selected="selected">1</option>
+	                                          <option title="2">2</option>
+	                                          <option title="3">3</option>
+	                                          <option title="4">4</option>
+	                                    </select>
+	                                    </div>
+	                                </fieldset>
+	                            </form>
+	                            
+								<a href="#" id="cart" class="cart">购买</a> 
                             
                             </div>
                         </div>
@@ -208,7 +238,7 @@
                         <ul>  
                             <li><a href="#">信誉:五颗星</a></li>
                             <li><a href="#">总评:93分</a></li> 
-                            <li><a href="#">行者:兰师傅</a></li>
+                            <li><a href="#">行者:张师傅</a></li>
                             <li><a href="#">手机:159****3984</a></li>
                         </ul>
                     </li>
@@ -217,7 +247,7 @@
                         <h2 class="widget-title">行者经历</h2>
                         <ul> 
                         	#foreach($!exp in $!expList) 
-                        		#if($!exp.endYear == '' || $!exp.endDate == '') 
+                        		#if(!$!exp.endYear || !$!exp.endDate) 
                             		<li>$!{exp.startYear}.$!{exp.startMonth}至今 $!{exp.experience}</li>
                             	#else
                             		<li>$!{exp.startYear}.$!{exp.startMonth}-$!{exp.endYear}.$!{exp.endDate} $!{exp.experience}</li>
@@ -227,9 +257,9 @@
                     </li>
                     
                     <li class="widget-container">
+                    	<h2 class="widget-title">时间分配</h2>
                     	<div class="side-bar">
-	                    	<div class="preorder-time" id="J_preorderTime">
-			                    <div class="name"><img src="http://s3.laoshilaile.cn/assets/time.png">行者时间</div>
+	                    	<div class="preorder-time" id="J_preorderTime"> 
 			                    <div class="th">
 			                       <div class="th-bg"></div>
 			                       <span>一</span>
@@ -241,7 +271,7 @@
 			                       <span>日</span>
 			                    </div>
 			                    <div class="td">
-			                        <div class="left">8-10点</div>
+			                        <div class="left">0-6点</div>
 			                        <span></span>
 			                        <span></span>
 			                        <span></span>
@@ -251,7 +281,7 @@
 			                        <span></span>
 			                    </div>
 			                    <div class="td">
-			                        <div class="left">10-12点</div>
+			                        <div class="left">6-12点</div>
 			                        <span rel="2-1"></span>
 			                        <span rel="2-2"></span>
 			                        <span rel="2-3"></span>
@@ -261,7 +291,7 @@
 			                        <span rel="2-7"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
 			                    </div>
 			                    <div class="td">
-			                        <div class="left">13-15点</div>
+			                        <div class="left">12-18点</div>
 			                        <span rel="3-1"></span>
 			                        <span rel="3-2"></span>
 			                        <span rel="3-3"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
@@ -271,7 +301,7 @@
 			                        <span rel="3-7"></span>
 			                    </div>
 			                    <div class="td">
-			                        <div class="left">15-17点</div>
+			                        <div class="left">18-24点</div>
 			                        <span rel="4-1"></span>
 			                        <span rel="4-2"></span>
 			                        <span rel="4-3"></span>
@@ -279,37 +309,7 @@
 			                        <span rel="4-5"></span>
 			                        <span rel="4-6"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
 			                        <span rel="4-7"></span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">17-19点</div>
-			                        <span rel="5-1"></span>
-			                        <span rel="5-2"></span>
-			                        <span rel="5-3"></span>
-			                        <span rel="5-4"></span>
-			                        <span rel="5-5"></span>
-			                        <span rel="5-6"></span>
-			                        <span rel="5-7"></span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">19-21点</div>
-			                        <span rel="6-1"></span>
-			                        <span rel="6-2"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
-			                        <span rel="6-3"></span>
-			                        <span rel="6-4"><img src="http://s3.laoshilaile.cn/assets/gou.png"></span>
-			                        <span rel="6-5"></span>
-			                        <span rel="6-6"></span>
-			                        <span rel="6-7"></span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">21-23点</div>
-			                        <span rel="7-1"></span>
-			                        <span rel="7-2"></span>
-			                        <span rel="7-3"></span>
-			                        <span rel="7-4"></span>
-			                        <span rel="7-5"></span>
-			                        <span rel="7-6"></span>
-			                        <span rel="7-7"></span>
-			                    </div>
+			                    </div> 
 		                    </div>
 		                </div>
                     </li>
