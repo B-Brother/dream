@@ -393,46 +393,27 @@
 									    <dt class="size-name">类型：</dt> 
 									    <dd class="size-list">
 									        <ul>
-									            <li class="size-list-item J-sizeID sli-selected" data-size-name="220" data-hover="size-list-item-hover" data-id="170399711" mars_sead="m_te_goods_buy_size_check" style="z-index: 7;">
-									                
-									                <span class="size-list-item-name">日京巴狗</span>
-									                <span class="i-select"></span> 
-									            </li>
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日大狼狗</span>
-									                <span class="i-select"></span> 
-									            </li>
+									        	#if($!skuList.size() != 0)
+									        		#foreach($!sku in $!skuList) 
+										            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">										                
+										                <span class="size-list-item-name">$!sku.title</span>
+										                <span class="i-select"></span> 
+										            </li>
+										            #end
+										        #end 
+									        	
+									        	
+									            <!--
+									            <li class="size-list-item J-sizeID sli-selected" data-size-name="220" data-hover="size-list-item-hover" data-id="170399711" mars_sead="m_te_goods_buy_size_check" style="z-index: 7;">							                
+										                <span class="size-list-item-name"></span>
+										                <span class="i-select"></span> 
+										            </li>
+										            
 									            <li class="size-list-item J-sizeID" id="J-cartAdd-sizeID-170399713" data-size-name="230" data-hover="size-list-item-hover" data-id="170399713" mars_sead="m_te_goods_buy_size_check" style="z-index: 5;">
 									                
 									                <span class="size-list-item-name">日藏獒</span>
 									                <span class="i-select"></span> 
-									            </li> 
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日比熊犬</span>
-									                <span class="i-select"></span> 
-									            </li>
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日大狼狗</span>
-									                <span class="i-select"></span> 
-									            </li>
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日萨摩耶</span>
-									                <span class="i-select"></span> 
-									            </li>
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日拉布拉多</span>
-									                <span class="i-select"></span> 
-									            </li>
-									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
-									                
-									                <span class="size-list-item-name">日吉娃娃</span>
-									                <span class="i-select"></span> 
-									            </li>
+									            </li>  -->
 							                </ul>
 									    </dd> 
 									</dl>

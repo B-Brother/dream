@@ -68,6 +68,25 @@ CREATE TABLE dream_skill
   primary key(id)
 ) ;  
 
+CREATE TABLE dream_skill_sku
+   (    
+   ID int not null auto_increment, 
+  GMT_CREATE datetime NOT NULL, 
+  CREATOR VARCHAR(128) NOT NULL, 
+  GMT_MODIFIED datetime NOT NULL, 
+  MODIFIER VARCHAR(128) NOT NULL, 
+  IS_DELETED CHAR(1) NOT NULL,  
+
+  SELLER_ID BIGINT NOT NULL,
+  SKILL_ID BIGINT NOT NULL, 
+  SKU_CODE VARCHAR(128) NOT NULL,   
+  STATUS INT NOT NULL,
+  PRICE BIGINT NOT NULL,
+  MEMO VARCHAR(1000) NOT NULL,
+  PROPERTIES VARCHAR(2000), 
+  primary key(id)
+) ;  
+
 CREATE TABLE dream_ORDER
    (    
        ID int not null auto_increment, 

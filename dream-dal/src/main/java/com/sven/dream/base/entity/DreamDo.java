@@ -2,6 +2,8 @@ package com.sven.dream.base.entity;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class DreamDo {
 	 
     private Long id;
@@ -63,4 +65,17 @@ public class DreamDo {
 	public void setIsDeleted(String isDeleted) {
 		this.isDeleted = isDeleted;
 	} 
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
 }
+
+
+
+
+
+
+
+

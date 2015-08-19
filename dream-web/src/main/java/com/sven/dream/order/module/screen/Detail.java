@@ -14,9 +14,11 @@ import com.sven.dream.commonservice.vo.DreamUserRateVo;
 import com.sven.dream.commonservice.vo.SkillScheduleVo;
 import com.sven.dream.dal.common.UploadFileDo; 
 import com.sven.dream.dal.order.DreamSkillDo;
+import com.sven.dream.dal.order.DreamSkillSkuDo;
 import com.sven.dream.dal.user.DreamUserExperienceDo;
 import com.sven.dream.order.bo.DreamRateBo;
 import com.sven.dream.order.bo.DreamSkillBo;
+import com.sven.dream.order.bo.DreamSkillSkuBo;
 import com.sven.dream.user.bo.DreamUserExperienceBo;
 
 public class Detail extends BaseRender{
@@ -26,6 +28,9 @@ public class Detail extends BaseRender{
 	
 	@Autowired
 	private DreamRateBo dreamRateBo;
+	
+	@Autowired
+	private DreamSkillSkuBo dreamSkillSkuBo;
 	
 	@Autowired
 	private UploadFileService uploadFileService;
@@ -59,8 +64,18 @@ public class Detail extends BaseRender{
 		
 		long schedule = skill.getSchedule();
 		parseSchedule(context, schedule);
+		
+		// SKU
+		List<DreamSkillSkuDo> skuList = dreamSkillSkuBo.getSkuBySkillId(skillId);
+		context.put("skuList", skuList);
 	}
 	
+	/**
+	 * 计算行者什么时候有空
+	 * 
+	 * @param context
+	 * @param schedule
+	 */
 	private void parseSchedule(Context context, long schedule){
 		SkillScheduleVo scheduleVo = new SkillScheduleVo();
 		scheduleVo.setSchedule1((schedule & 1) == 1);
