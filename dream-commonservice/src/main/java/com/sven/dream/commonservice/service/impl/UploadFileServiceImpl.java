@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sven.dream.commonservice.AbstractDreamServiceImpl;
 import com.sven.dream.commonservice.service.UploadFileService;
-import com.sven.dream.dal.common.UploadFileDo;
-import com.sven.dream.dal.common.mapper.UploadFileDoMapper;
+import com.sven.dream.dal.common.UploadFileDo; 
+import com.sven.dream.dal.common.mapper.UploadFileDoMapperExt;
 
 public class UploadFileServiceImpl extends
-	AbstractDreamServiceImpl<UploadFileDo, UploadFileDoMapper> implements UploadFileService{
+	AbstractDreamServiceImpl<UploadFileDo, UploadFileDoMapperExt> implements UploadFileService{
 
 	@Autowired
-    public void setBaseMapper(UploadFileDoMapper mapper) {
+    public void setBaseMapper(UploadFileDoMapperExt mapper) {
         setMapper(mapper);
     }
 	

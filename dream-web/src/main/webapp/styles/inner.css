@@ -132,6 +132,7 @@ USE THIS STYLE SHEET FOR INNER PAGE
 	font-size:13px;
 	width:70px;
 	margin-bottom:15px;	
+	margin-top:20px;
 }
 #product-detail .price{ font-size:20px; margin-bottom:15px;}
 #product-detail .price span{ font-size:12px;}

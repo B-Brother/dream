@@ -5,6 +5,15 @@
     	vertical-align: middle; 
 	}
 
+	dt {
+	    float: left;
+	    font-size: 12px;
+	    width: 62px;
+	    text-align: left;
+	    color: grey;
+	    line-height: 32px;
+	}
+
 	.side-bar .preorder-time {
 	    width: 262px;
 	    border: 2px solid rgb(217, 227, 229);
@@ -76,6 +85,234 @@
 	    line-height: 27px;
 	    border-right: 1px solid #e6eff1;
 	}
+	
+	
+	.size-list {
+	    float: left;
+	    max-width: 360px;
+	    _width: 360px;
+	    position: relative;
+	    zoom: 1;
+	    margin:0;
+	    padding:0;
+	}
+	
+	.size-list ul{
+		list-style: none;
+		margin:0;
+	}
+	
+	.size-list li{
+		list-style: none;
+	}
+	 
+	.size-list-item {
+	    float: left;
+	    position: relative;
+	    min-width: 52px;
+	    max-width: 304px;
+	    _width: 52px;
+	    height: 26px;
+	    font-size: 6px;
+	    padding: 1px 10px;
+	    margin: 0 10px 10px 0;
+	    border: 1px solid #b5b5b5;
+	    text-align: center;
+	    line-height: 26px;
+	    cursor: pointer;
+	    background-color: #fff;
+	}
+	
+	.size-list-item-name {
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    max-width: 304px;
+	    display: inline-block;
+	} 
+	
+	.sli-selected {
+	    border: 2px solid #f43499;
+	    height: 26px;
+	    color: #f43499;
+	    padding: 0 9px; 
+	}
+	
+	.sli-selected .i-select {
+	    display: block;
+	}
+	 
+	.i-select {
+	    position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    width: 17px;
+	    height: 16px;
+	    background-position: -50px -100px;
+	    display: none;
+	    
+	    background-image: url(//s2.vipstatic.com/img/te/detail_imgs_new.png?fd778b54);
+    	background-repeat: no-repeat;
+	} 
+	
+	
+	 
+	
+	.i-num {
+	    padding: 11px 10px;
+	    position: relative;
+	    height: 30px;
+	    margin: -1px 0 0 -10px;
+	    padding-bottom: 10px;
+	}
+	
+	.num-box {
+		border:1px solid #b3b3b3;
+		float:left;
+		height:28px;
+		position:relative;
+	}
+	
+	.num-add,.num-input,.num-reduce { 
+		float:left;
+		height:28px;
+		width:24px; 
+	}
+	
+	.num-add, .num-reduce {  
+		background-image:url(//s2.vipstatic.com/img/te/detail_imgs_new.png?fd778b54);
+		background-repeat:no-repeat;
+	}
+	
+	.num-input {
+		background-color:#fff;
+		line-height:28px;
+		text-align:center;
+		width:28px;
+		font-style:normal;
+	}
+	
+	.num-reduce {
+		background-position:-100px -150px;
+		cursor:pointer;
+	}
+	
+	.num-reduce-disabled {
+		background-position:0 -150px;
+		cursor:default;
+	}
+	
+	.num-add {
+		background-position:-50px -150px;
+		cursor:pointer;
+	}
+	
+	.num-add-disabled {
+		background-position:-150px -150px;
+		cursor:default;
+	}
+	
+	.num-msg {
+		color:#333;
+		float:left;
+		font-size:14px;
+		height:28px;
+		line-height:28px;
+		padding-left:10px;
+	}
+	
+	.i-notice-msg {
+	    position: absolute;
+	    height: 26px;
+	    line-height: 26px;
+	    bottom: -26px;
+	    right: 0;
+	    padding-left: 20px;
+	    color: #f43499;
+	    background-position: -500px -250px;
+	    display: none;
+	    
+	    background-image: url(//s2.vipstatic.com/img/te/detail_imgs_new.png?fd778b54);
+    	background-repeat: no-repeat;
+	}
+	
+	
+	.i-price {  
+	    background-repeat: no-repeat;
+	    backgroung-position: left 0;
+	    position: relative;
+	    left: 0;
+	    z-index: 10;
+	    font: 12px/1.5 "Microsoft Yahei",tahoma,arial;
+	    padding: 11px 10px; 
+    	padding-bottom: 20px;
+	    margin-right: 20px; 
+	}
+	
+	tm-price-cur {
+	    line-height: 30px;
+	}
+	
+	.tm-price-panel {
+	    position: static;
+	    color: #333;
+	    padding-left: 0;
+	}
+	
+	 .tb-metatit {
+	    color: #999;
+	    font-size: 12px;
+	    text-align: left;
+	    float: left;
+	    width: 50px;
+	    margin: 0 10px;
+	 } 
+	
+	 .tm-yen {
+	    vertical-align: middle;
+	    color: #f43499;
+	    font-size: 18px;
+	    font-family: Arial;
+	    -webkit-font-smoothing: antialiased;
+	    text-decoration: none;
+	 }
+	
+	 .tm-price {
+	    vertical-align: middle;
+	    color: #f43499;
+	    font-size: 24px;
+	    font-family: Arial;
+	    font-weight: bolder;
+	    -webkit-font-smoothing: antialiased;
+	    text-decoration: none;
+	 }
+	 
+	 ## map
+	 .bmap-address-label { 
+	 	position:absolute;
+	    width: 260px;
+	    height: 36px;
+	    border-top: 1px solid #d9e3e5;
+	    font-size: 14px;
+	    line-height: 36px;
+	    background-color: #f5feff;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    -o-text-overflow: ellipsis;
+	    overflow: hidden;
+	    margin-top: -36px;
+	    padding: 0;
+	    border: 0;
+	    z-index:1;
+	}
+	
+	.icon-local-drop {
+	    float: left;
+	    width: 18px;
+	    height: 36px;
+	    margin: 0 5px;
+	    background: url(http://s3.laoshilaile.cn/assets/sprite20150407.png) -10px -130px;
+	}
 </style>
 <div id="outermain">
 	<div class="container">
@@ -125,45 +362,96 @@
                             
                         	<div class="three_fourth columns">
                         		<p>$!skill.subTitle</p>
-                        	
-                        		<div id="toggle">
-                                    <h2 class="trigger"><span>X</span>地区支持</h2>
-                                    <div class="toggle_container" style="display: none;">
-                                        <div class="block"> 
-                                            <p>支持山西，山西，杭州，南京上门服务</p> 
-                                        </div>
-                                    </div>
-
-                                    <h2 class="trigger"><span>X</span>付款方式</h2>
-                                    <div class="toggle_container" style="display: none;">
-                                        <div class="block"> 
-                                            <p>支付宝、银联、当面付现</p> 
-                                        </div>
-                                    </div>
-                                     
-                                    <h2 class="trigger"><span>X</span>交付方式</h2>
-                                    <div class="toggle_container" style="display: none;">
-                                        <div class="block"> 
-                                            <p>支持买家上门、行者上门、中立地点</p> 
-                                        </div>
-                                    </div> 
-                                </div>
                         	 
-								<div class="price" style="margin-top:30px;">
-									#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
-										￥$!skill.normalPrice
-									#else
-										￥$!skill.downBoundPrice ~ ￥$!skill.upBoundPrice
-									#end 
-									<span>/
-										#if($!skill.per == "HOUR")
-											小时
-										#elseif($!skill.per == "DAY")
-											天
-										#end 			
-									</span>
-								</div> 
+                        	
+                        		<form method="post"> 
+									
+									<dl class="i-num i-price" id="J-num-select">
+									    <dt class="num-name">价格：</dt>
+									    <dd class="i-notice-msg J-num-tips"></dd>
+									    <dd>
+								        	<em class="tm-yen">¥</em> 
+								        	<span class="tm-price">
+												#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
+													$!skill.normalPrice
+												#else
+													$!skill.downBoundPrice ~ $!skill.upBoundPrice
+												#end 
+												<span>/
+													#if($!skill.per == "HOUR")
+														小时
+													#elseif($!skill.per == "DAY")
+														天
+													#end 			
+												</span>
+											</span>
+								        	<div class="staticPromoTip"></div>
+								        </dd>
+									</dl>
+				                     
+				 					<dl class="i-size clearfix J-sizeArea-wrap " id="J-sizeArea-wrap">
+									    <dt class="size-name">类型：</dt> 
+									    <dd class="size-list">
+									        <ul>
+									            <li class="size-list-item J-sizeID sli-selected" data-size-name="220" data-hover="size-list-item-hover" data-id="170399711" mars_sead="m_te_goods_buy_size_check" style="z-index: 7;">
+									                
+									                <span class="size-list-item-name">日京巴狗</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日大狼狗</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" id="J-cartAdd-sizeID-170399713" data-size-name="230" data-hover="size-list-item-hover" data-id="170399713" mars_sead="m_te_goods_buy_size_check" style="z-index: 5;">
+									                
+									                <span class="size-list-item-name">日藏獒</span>
+									                <span class="i-select"></span> 
+									            </li> 
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日比熊犬</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日大狼狗</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日萨摩耶</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日拉布拉多</span>
+									                <span class="i-select"></span> 
+									            </li>
+									            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">
+									                
+									                <span class="size-list-item-name">日吉娃娃</span>
+									                <span class="i-select"></span> 
+									            </li>
+							                </ul>
+									    </dd> 
+									</dl>
+				 				
+									<dl class="i-num clearfix" id="J-num-select">
+									    <dt class="num-name">数量：</dt>
+									    <dd class="i-notice-msg J-num-tips"></dd>
+									    <dd class="num-box">
+									        <span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>
+									        <em class="num-input J-pro-num-txt">1</em>
+									        <input type="hidden" value="1" name="num" id="J-num-input">
+									        <span class="num-add J-num-act-add"></span>
+									    </dd>
+									    <dd class="num-msg hidden" id="J-proStock-type"></dd>
+									</dl>
+				                </form>
+                        	   
  
+ 								<!--	
 								<form action="#" method="post" id="BuyForm" class="product_attributes">
 	                            	<input type="hidden" name="action" value="BuyAction"/>
 	                            	<input type="hidden" name="event_submit_do_buy" value="1"/>
@@ -181,6 +469,7 @@
 	                                    </div>
 	                                </fieldset>
 	                            </form>
+	                            -->
 	                            
 								<a href="#" id="cart" class="cart">购买</a> 
                             
@@ -232,100 +521,96 @@
             <aside class="three columns">
             
             	<div class="sidebar">
-                <ul>
-                    <li class="widget-container">
-                        <h2 class="widget-title">行者简介</h2>
-                        <ul>  
-                            <li><a href="#">信誉:五颗星</a></li>
-                            <li><a href="#">总评:93分</a></li> 
-                            <li><a href="#">行者:张师傅</a></li>
-                            <li><a href="#">手机:159****3985(下单后可见)</a></li>
-                        </ul>
-                    </li>
-                     
-                    <li class="widget-container">
-                        <h2 class="widget-title">行者经历</h2>
-                        <ul> 
-                        	#foreach($!exp in $!expList) 
-                        		#if(!$!exp.endYear || !$!exp.endDate) 
-                            		<li>$!{exp.startYear}.$!{exp.startMonth}至今 $!{exp.experience}</li>
-                            	#else
-                            		<li>$!{exp.startYear}.$!{exp.startMonth}-$!{exp.endYear}.$!{exp.endDate} $!{exp.experience}</li>
-                            	#end
-                            #end 
-                        </ul>
-                    </li>
-                    
-                    <li class="widget-container">
-                    	<h2 class="widget-title">时间分配</h2>
-                    	<div class="side-bar">
-	                    	<div class="preorder-time" id="J_preorderTime"> 
-			                    <div class="th">
-			                       <div class="th-bg"></div>
-			                       <span>一</span>
-			                       <span>二</span>
-			                       <span>三</span>
-			                       <span>四</span>
-			                       <span>五</span>
-			                       <span>六</span>
-			                       <span>日</span>
+	                <ul>   
+	                    <li class="widget-container">
+	                    	<h2 class="widget-title">时间分配</h2>
+	                    	<div class="side-bar">
+		                    	<div class="preorder-time" id="J_preorderTime"> 
+				                    <div class="th">
+				                       <div class="th-bg"></div>
+				                       <span>一</span>
+				                       <span>二</span>
+				                       <span>三</span>
+				                       <span>四</span>
+				                       <span>五</span>
+				                       <span>六</span>
+				                       <span>日</span>
+				                    </div>
+				                    <div class="td">
+				                        <div class="left">0-6点</div>
+				                        <span>#if($!schedule.schedule1) <img src="http://s3.laoshilaile.cn/assets/gou.png" /> #end</span>
+				                        <span>#if($!schedule.schedule2) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span>#if($!schedule.schedule3) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span>#if($!schedule.schedule4) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span>#if($!schedule.schedule5) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span>#if($!schedule.schedule6) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span>#if($!schedule.schedule7) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                    </div>
+				                    <div class="td">
+				                        <div class="left">6-12点</div>
+				                        <span rel="2-1">#if($!schedule.schedule8) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-2">#if($!schedule.schedule9) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-3">#if($!schedule.schedule10) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-4">#if($!schedule.schedule11) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-5">#if($!schedule.schedule12) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-6">#if($!schedule.schedule13) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="2-7">#if($!schedule.schedule14) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                    </div>
+				                    <div class="td">
+				                        <div class="left">12-18点</div>
+				                        <span rel="3-1">#if($!schedule.schedule15) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-2">#if($!schedule.schedule16) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-3">#if($!schedule.schedule17) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-4">#if($!schedule.schedule18) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-5">#if($!schedule.schedule19) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-6">#if($!schedule.schedule20) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="3-7">#if($!schedule.schedule21) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                    </div>
+				                    <div class="td">
+				                        <div class="left">18-24点</div>
+				                        <span rel="4-1">#if($!schedule.schedule22) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-2">#if($!schedule.schedule23) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-3">#if($!schedule.schedule24) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-4">#if($!schedule.schedule25) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-5">#if($!schedule.schedule26) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-6">#if($!schedule.schedule27) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                        <span rel="4-7">#if($!schedule.schedule28) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
+				                    </div> 
 			                    </div>
-			                    <div class="td">
-			                        <div class="left">0-6点</div>
-			                        <span>#if($!schedule.schedule1) <img src="http://s3.laoshilaile.cn/assets/gou.png" /> #end</span>
-			                        <span>#if($!schedule.schedule2) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span>#if($!schedule.schedule3) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span>#if($!schedule.schedule4) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span>#if($!schedule.schedule5) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span>#if($!schedule.schedule6) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span>#if($!schedule.schedule7) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">6-12点</div>
-			                        <span rel="2-1">#if($!schedule.schedule8) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-2">#if($!schedule.schedule9) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-3">#if($!schedule.schedule10) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-4">#if($!schedule.schedule11) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-5">#if($!schedule.schedule12) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-6">#if($!schedule.schedule13) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="2-7">#if($!schedule.schedule14) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">12-18点</div>
-			                        <span rel="3-1">#if($!schedule.schedule15) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-2">#if($!schedule.schedule16) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-3">#if($!schedule.schedule17) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-4">#if($!schedule.schedule18) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-5">#if($!schedule.schedule19) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-6">#if($!schedule.schedule20) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="3-7">#if($!schedule.schedule21) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                    </div>
-			                    <div class="td">
-			                        <div class="left">18-24点</div>
-			                        <span rel="4-1">#if($!schedule.schedule22) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-2">#if($!schedule.schedule23) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-3">#if($!schedule.schedule24) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-4">#if($!schedule.schedule25) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-5">#if($!schedule.schedule26) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-6">#if($!schedule.schedule27) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                        <span rel="4-7">#if($!schedule.schedule28) <img src="http://s3.laoshilaile.cn/assets/gou.png"> #end</span>
-			                    </div> 
+			                </div>
+	                    </li> 
+	                    
+	                    <li class="widget-container">
+	                        <h2 class="widget-title">行者位置</h2>
+	                        <div id="map-container" style="width:260px;height:400px;"></div> 
+	                        <div class="bmap-address-label">
+		                        <i class="icon-local-drop"></i>
+		                        <span>天安门</span>
 		                    </div>
-		                </div>
-                    </li>
-                     
-                    <!-- 
-                    <li class="widget-container">
-                        <h2 class="widget-title">Special Offers</h2>
-                        <div id="map-container"></div> 
-						<script type="text/javascript"> 
-							var map = new BMap.Map("map-container");          // 创建地图实例  
-							var point = new BMap.Point(116.404, 39.915);  // 创建点坐标  
-							map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
-						</script>  
-                    </li>
-					-->
-                </ul>
+							<script type="text/javascript"> 
+								var map = new BMap.Map("map-container");          // 创建地图实例  
+								var point = new BMap.Point(116.404, 39.915);  // 创建点坐标  
+								map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
+								
+								var marker = new BMap.Marker(point);  // 创建标注
+								map.addOverlay(marker);               // 将标注添加到地图中
+								marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+							</script>  
+	                    </li> 
+	                    
+	                    <li class="widget-container">
+	                        <h2 class="widget-title">行者经历</h2>
+	                        <ul> 
+	                        	#foreach($!exp in $!expList) 
+	                        		#if(!$!exp.endYear || !$!exp.endDate) 
+	                            		<li>$!{exp.startYear}.$!{exp.startMonth}至今 $!{exp.experience}</li>
+	                            	#else
+	                            		<li>$!{exp.startYear}.$!{exp.startMonth}-$!{exp.endYear}.$!{exp.endDate} $!{exp.experience}</li>
+	                            	#end
+	                            #end 
+	                        </ul>
+	                    </li> 
+	                </ul>
                 </div>
                 
             </aside>

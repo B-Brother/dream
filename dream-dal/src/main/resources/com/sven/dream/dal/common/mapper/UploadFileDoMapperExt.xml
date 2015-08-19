@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sven.dream.dal.common.mapper.UploadFileDoMapperExt" >
+  
+  <!-- 根据business_id和business_type获取文件信息 -->
+  <select id="getFileListByType" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+      select
+          <include refid="Base_Column_List" />
+	  from upload_file
+	  where is_deleted = 'n' 
+	  and business_type = #{businessType}
+	  and business_id = #{businessId}
+  </select> 
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

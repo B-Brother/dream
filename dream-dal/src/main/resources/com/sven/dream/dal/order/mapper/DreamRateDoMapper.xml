@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sven.dream.dal.order.mapper.DreamRateDoMapper">
+<mapper namespace="com.sven.dream.dal.order.mapper.DreamRateDoMapperExt">
   <resultMap id="BaseResultMap" type="com.sven.dream.dal.order.DreamRateDo">
     <!--
       WARNING - @mbggenerated
@@ -250,13 +250,5 @@
       USEFUL_COUNT = #{usefulCount,jdbcType=INTEGER},
       UNUSEFUL_COUNT = #{unusefulCount,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
-  </update>
-  
-  <!-- biz sql -->
-  <select id="getRateBySkillId" parameterType="java.lang.String" resultMap="BaseResultMap"> 
-	    select 
-	    <include refid="Base_Column_List" />
-	    from dream_rate
-	    where skill_id = #{skillId}
-   </select>
+  </update> 
 </mapper>

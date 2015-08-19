@@ -111,7 +111,7 @@ em{ color:#888; font-weight:normal;}
 
 /* Product Detail */
 
-#product-detail .cart{ background: url(../images/bg_productlistcart2.png) no-repeat #ff5555 14px 9px; color:#fff}
+#product-detail .cart{ background: url(../images/bg_productlistcart2.png) no-repeat #f43499 14px 9px; color:#fff}
 #product-detail .cart:hover{ background-color:#fd7979;}
 #product-detail .price{ color:#ff5555}
 

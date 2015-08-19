@@ -8,14 +8,14 @@ import com.sven.dream.common.query.UserQuery;
 import com.sven.dream.common.result.ResultBaseDo;
 import com.sven.dream.commonservice.AbstractDreamServiceImpl;
 import com.sven.dream.commonservice.service.UserOperationService;
-import com.sven.dream.dal.user.DreamUserDo;
-import com.sven.dream.dal.user.mapper.DreamUserDoMapper;
+import com.sven.dream.dal.user.DreamUserDo; 
+import com.sven.dream.dal.user.mapper.DreamUserDoMapperExt;
 
 public class UserOperationServiceImpl extends
-			AbstractDreamServiceImpl<DreamUserDo, DreamUserDoMapper> implements UserOperationService{
+			AbstractDreamServiceImpl<DreamUserDo, DreamUserDoMapperExt> implements UserOperationService{
 
 	@Autowired
-    public void setBaseMapper(DreamUserDoMapper mapper) {
+    public void setBaseMapper(DreamUserDoMapperExt mapper) {
         setMapper(mapper);
     }
 	

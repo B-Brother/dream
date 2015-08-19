@@ -11,11 +11,11 @@ import com.sven.dream.commonservice.AbstractDreamServiceImpl;
 import com.sven.dream.commonservice.service.UploadFileService;
 import com.sven.dream.commonservice.service.UserOperationService; 
 import com.sven.dream.commonservice.vo.DreamUserRateVo;
-import com.sven.dream.dal.order.DreamRateDo;
-import com.sven.dream.dal.order.mapper.DreamRateDoMapper;
+import com.sven.dream.dal.order.DreamRateDo; 
+import com.sven.dream.dal.order.mapper.DreamRateDoMapperExt;
 import com.sven.dream.order.bo.DreamRateBo;
 
-public class DreamRateBoImpl extends AbstractDreamServiceImpl<DreamRateDo, DreamRateDoMapper> implements DreamRateBo{
+public class DreamRateBoImpl extends AbstractDreamServiceImpl<DreamRateDo, DreamRateDoMapperExt> implements DreamRateBo{
    
 	@Autowired
 	private UserOperationService userOperationService;
@@ -24,7 +24,7 @@ public class DreamRateBoImpl extends AbstractDreamServiceImpl<DreamRateDo, Dream
 	private UploadFileService uploadFileService;
 	
 	@Autowired
-    public void setBaseMapper(DreamRateDoMapper mapper) {
+    public void setBaseMapper(DreamRateDoMapperExt mapper) {
         setMapper(mapper);
     }
 	

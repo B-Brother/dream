@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sven.dream.dal.order.mapper.DreamOrderDoMapper" >
+<mapper namespace="com.sven.dream.dal.order.mapper.DreamOrderDoMapperExt" >
   <resultMap id="BaseResultMap" type="com.sven.dream.dal.order.DreamOrderDo" >
     <!--
       WARNING - @mbggenerated
@@ -297,14 +297,6 @@
       ATTRIBUTES = #{attributes,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  
-  <!-- biz sql -->
-  <select id="getOrderByOrderId" parameterType="java.lang.Long" resultMap="BaseResultMap"> 
-	    select 
-	    <include refid="Base_Column_List" />
-	    from dream_order
-	    where order_id = #{orderId}
-   </select>
 </mapper>
 
 
