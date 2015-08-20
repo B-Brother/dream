@@ -34,7 +34,7 @@ public class PayAction extends BaseRender{
         DreamOrderDo order = new DreamOrderDo(); 
         order.setAmount(Integer.parseInt(amount));
         order.setBizType(BIZ_TYPE_NORMAL); 
-        order.setBuyerId(buyerId);
+        order.setBuyerId(buyerId); 
         
         DreamUserDo buyer = userOperationService.selectByPrimaryKey(buyerId);
         order.setBuyerNick(buyer.getNick());

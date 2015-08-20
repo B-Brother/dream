@@ -1,5 +1,78 @@
 <!-- MAIN CONTENT --> 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=DOoQITfGQK3xYXSazVKdYPfk"></script>   
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	    $(".size-list-item").mouseover(function(){
+	    	var cls = $(this).attr("class");
+	    	
+	    	var isNowSelected = false;
+	    	if(cls.indexOf("sli-selected") > -1){
+	        	isNowSelected = true;
+	        }
+			 
+			## 如果未选择才进行简单边框描红 
+	    	if(!isNowSelected){
+	        	$(this).css("border","1px solid #f43499");
+	        }
+	    });
+	    $(".size-list-item").mouseleave(function(){
+	    	var cls = $(this).attr("class");
+	    	
+	    	var isNowSelected = false;
+	    	if(cls.indexOf("sli-selected") > -1){
+	        	isNowSelected = true;
+	        }
+	        
+	        if(!isNowSelected){
+	    		$(this).css("border","1px solid #b5b5b5");
+	    	}
+	    });
+	    
+	    $(".size-list-item").click(function(){
+	    	## 清除选中的所有样式
+	    	$(".size-list-item").css("border","1px solid #b5b5b5");
+	    	$(".size-list-item").attr("class","size-list-item");
+	    	
+	    	## 加上选中的边框样式
+	    	$(this).css("border","2px solid #f43499");
+	        $(this).attr("class","size-list-item sli-selected");
+	        
+	        ## sku信息
+	        var skuId = $(this).attr("data-sku-id");
+	        $("#skuId").val(skuId);
+	        
+	        ## 价格更新
+	        var price = $(this).attr("data-price");
+	        $("#J-price-num").html(price);
+	    });
+	    
+	    
+	    $(".num-reduce").click(function(){
+	    	var num = parseInt($("#S-num-input").val());
+	    	if(num <= 0){ 
+		    	$(this).attr("class","num-reduce num-reduce-disabled"); 
+	    	}else{
+	    		$("#S-num-input").val(num-1);
+	        	$("#S-num-input-em").html(num-1); 
+	    	} 
+	    });
+	    
+	    $(".num-add").click(function(){
+	    	var num = parseInt($("#S-num-input").val());
+	    	if(num >= 50){
+		    	$(this).attr("class","num-add num-add-disabled");
+	    	}else{
+		    	$("#S-num-input").val(num+1);
+		        $("#S-num-input-em").html(num+1); 
+	    	}
+	        
+	    });
+	    
+	    jQuery("#cart").click(function() {
+			document.getElementById("buyForm").submit();
+		}); 
+	});
+</script>
 <style>
 	img {
     	vertical-align: middle; 
@@ -364,19 +437,25 @@
                         		<p>$!skill.subTitle</p>
                         	 
                         	
-                        		<form method="post"> 
-									
+                        		<form method="post" id="buyForm"> 
+									<input type="hidden" name="action" value="BuyAction" />
+	                            	<input type="hidden" name="event_submit_do_buy" value="1" />
+	                            	<input type="hidden" name="skillId" value="$!skill.id" />
+	                            	<input type="hidden" name="skuId" id="skuId"/>
+	                            	
 									<dl class="i-num i-price" id="J-num-select">
 									    <dt class="num-name">价格：</dt>
 									    <dd class="i-notice-msg J-num-tips"></dd>
 									    <dd>
 								        	<em class="tm-yen">¥</em> 
 								        	<span class="tm-price">
+								        		<span id="J-price-num">
 												#if(($!skill.downBoundPrice == $!skill.upBoundPrice) && ($!skill.downBoundPrice == $!skill.normalPrice))
 													$!skill.normalPrice
 												#else
 													$!skill.downBoundPrice ~ $!skill.upBoundPrice
 												#end 
+												</span>
 												<span>/
 													#if($!skill.per == "HOUR")
 														小时
@@ -395,25 +474,12 @@
 									        <ul>
 									        	#if($!skuList.size() != 0)
 									        		#foreach($!sku in $!skuList) 
-										            <li class="size-list-item J-sizeID" data-size-name="225" data-hover="size-list-item-hover" data-id="170399712" mars_sead="m_te_goods_buy_size_check" style="z-index: 6;">										                
+										            <li class="size-list-item J-sizeID" data-sku-id="$!sku.id" data-price="$!sku.price" style="z-index: 6;">										                
 										                <span class="size-list-item-name">$!sku.title</span>
 										                <span class="i-select"></span> 
 										            </li>
 										            #end
-										        #end 
-									        	
-									        	
-									            <!--
-									            <li class="size-list-item J-sizeID sli-selected" data-size-name="220" data-hover="size-list-item-hover" data-id="170399711" mars_sead="m_te_goods_buy_size_check" style="z-index: 7;">							                
-										                <span class="size-list-item-name"></span>
-										                <span class="i-select"></span> 
-										            </li>
-										            
-									            <li class="size-list-item J-sizeID" id="J-cartAdd-sizeID-170399713" data-size-name="230" data-hover="size-list-item-hover" data-id="170399713" mars_sead="m_te_goods_buy_size_check" style="z-index: 5;">
-									                
-									                <span class="size-list-item-name">日藏獒</span>
-									                <span class="i-select"></span> 
-									            </li>  -->
+										        #end  
 							                </ul>
 									    </dd> 
 									</dl>
@@ -422,12 +488,21 @@
 									    <dt class="num-name">数量：</dt>
 									    <dd class="i-notice-msg J-num-tips"></dd>
 									    <dd class="num-box">
-									        <span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>
-									        <em class="num-input J-pro-num-txt">1</em>
-									        <input type="hidden" value="1" name="num" id="J-num-input">
-									        <span class="num-add J-num-act-add"></span>
+									        <span class="num-reduce"></span>
+									        <em class="num-input" id="S-num-input-em">1</em>
+									        <input type="hidden" value="1" name="num" id="S-num-input">
+									        <span class="num-add"></span>
 									    </dd>
 									    <dd class="num-msg hidden" id="J-proStock-type"></dd>
+									</dl>
+									
+									<dl class="i-num">
+									    <dt class="num-name">地址：</dt> 
+									    <dd class="num-name" style="line-height:32px;"> 
+									    	<input type="hidden" id="address-city" value="$!{address.city}"/>
+									    	<input type="hidden" id="address-address" value="$!{address.address}"/>
+											$!{address.province}$!{address.city}$!{address.address} 
+										</dd>
 									</dl>
 				                </form>
                         	   
@@ -570,12 +645,31 @@
 		                    </div>
 							<script type="text/javascript"> 
 								var map = new BMap.Map("map-container");          // 创建地图实例  
-								var point = new BMap.Point(116.404, 39.915);  // 创建点坐标  
-								map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
+								var point = new BMap.Point(116.404, 39.915);  	  // 创建点坐标  
+								map.centerAndZoom(point, 11);                 	  // 初始化地图，设置中心点坐标和地图级别 
+								map.addControl(new BMap.MapTypeControl());   	  //添加地图类型控件 
+								map.enableScrollWheelZoom(true);  
+								  
+								// 创建地址解析器实例
+								var myGeo = new BMap.Geocoder();
+								 
+								// 将地址解析结果显示在地图上,并调整地图视野 
+								var city = $!("#address-city").val();
+								var address = $!("#address-address").val(); 
+								var hasException = false;
 								
-								var marker = new BMap.Marker(point);  // 创建标注
-								map.addOverlay(marker);               // 将标注添加到地图中
-								marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+								myGeo.getPoint(address, function(point){
+									if (point) {
+										map.centerAndZoom(point, 16);
+										 
+										var marker = new BMap.Marker(point);  // 创建标注 
+										marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+								
+										map.addOverlay(marker);
+									}else{
+										hasException = true;
+									}
+								}, city); 
 							</script>  
 	                    </li> 
 	                    

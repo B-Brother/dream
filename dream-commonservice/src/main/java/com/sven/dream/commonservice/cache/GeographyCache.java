@@ -128,9 +128,7 @@ public class GeographyCache {
 		
 		finallyObject.put(TAG_CITYLIST, lastArray);
 		
-		result = finallyObject;
-		
-		System.out.println(result);
+		result = finallyObject; 
 	} 
 	
 	private String getValueByKey(String key){
@@ -150,4 +148,33 @@ public class GeographyCache {
 		
 		return null;
 	}
+	
+	/**
+	 * 获取省名称
+	 * 
+	 * @param provinceCode
+	 * @return
+	 */
+	public String getNameByProvinceCode(String provinceCode){
+		return provinceDistrictMap.get(provinceCode);
+	}
+	
+	public String getNameByProvinceCodeAndCityCoe(String provinceCode, String cityCode){
+		return provinceDistrictMap.get(provinceCode + SPLIT_SYMBOL + cityCode);
+	}
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

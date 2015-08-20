@@ -7,7 +7,10 @@
 	    select 
 	    <include refid="Base_Column_List" />
 	    from dream_order
-	    where order_id = #{orderId}
+	    where
+	    order_id = #{orderId}
+	    	and
+	    is_deleted = 'n'	
    </select>
 </mapper>
 

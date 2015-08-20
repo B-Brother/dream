@@ -6,6 +6,9 @@
 	    select 
 	    <include refid="Base_Column_List" />
 	    from dream_skill_sku
-	    where skill_id = #{skillId}
+	    where 
+	    skill_id = #{skillId}
+	    	and
+	    is_deleted = 'n'	
     </select>  
 </mapper>

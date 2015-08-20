@@ -9,7 +9,9 @@ import com.alibaba.citrus.turbine.Navigator;
 import com.alibaba.citrus.turbine.dataresolver.Param;
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.constants.UploadConstants;
+import com.sven.dream.commonservice.cache.GeographyCache;
 import com.sven.dream.commonservice.service.UploadFileService;
+import com.sven.dream.commonservice.vo.AddressVo;
 import com.sven.dream.commonservice.vo.DreamUserRateVo;
 import com.sven.dream.commonservice.vo.SkillScheduleVo;
 import com.sven.dream.dal.common.UploadFileDo; 
@@ -37,6 +39,9 @@ public class Detail extends BaseRender{
 	
 	@Autowired
 	private DreamUserExperienceBo dreamUserExperienceBo;
+	
+	@Autowired
+	private GeographyCache geographyCache;
 	
 	public void execute(
 			@Param("skillId") Long skillId, 
@@ -68,6 +73,18 @@ public class Detail extends BaseRender{
 		// SKU
 		List<DreamSkillSkuDo> skuList = dreamSkillSkuBo.getSkuBySkillId(skillId);
 		context.put("skuList", skuList);
+		
+		// 解析详细地址输出
+		parseAddress(skill, context); 
+	}
+	
+	private void parseAddress(DreamSkillDo skill, Context context){
+		AddressVo address = new AddressVo();
+		address.setProvince(geographyCache.getNameByProvinceCode(skill.getProvinceCode()));
+		address.setCity(geographyCache.getNameByProvinceCodeAndCityCoe(skill.getProvinceCode(), 
+				skill.getCityCode()));
+		address.setAddress(skill.getDetailAddress());
+		context.put("address",address);
 	}
 	
 	/**

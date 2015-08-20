@@ -7,6 +7,9 @@
 	    select 
 	    <include refid="Base_Column_List" />
 	    from dream_rate
-	    where skill_id = #{skillId}
+	    where 
+	    skill_id = #{skillId}
+	    	and
+	    is_deleted = 'n'	
    </select>
 </mapper>

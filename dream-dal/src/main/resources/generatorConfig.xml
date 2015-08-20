@@ -70,6 +70,7 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator> 
 		
+		<!--  
 		<table tableName="dream_skill_sku" domainObjectName="DreamSkillSkuDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false">
@@ -77,7 +78,7 @@
                <columnOverride column="SELLER_ID" property="sellerId" javaType="java.lang.Long" jdbcType="BIGINT" />
                <columnOverride column="SKILL_ID" property="skillId" javaType="java.lang.Long" jdbcType="BIGINT" />
                <columnOverride column="PRICE" property="price" javaType="java.lang.Long" jdbcType="BIGINT" />
-        </table>   
+        </table>   -->
   
 		<!--  
         <table tableName="dream_rate" domainObjectName="DreamRateDo"
@@ -100,12 +101,21 @@
                <columnOverride column="SOLD_QUANTITY" property="soldQuantity" javaType="java.lang.Long" jdbcType="BIGINT" />  
                <columnOverride column="COME_FEE" property="comeFee" javaType="java.lang.Long" jdbcType="BIGINT" />
                <columnOverride column="SCHEDULE" property="schedule" javaType="java.lang.Long" jdbcType="BIGINT" />   
-        </table>  
+        </table>  --> 
+        
         <table tableName="dream_order" domainObjectName="DreamOrderDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
                <generatedKey column="id" sqlStatement="MySql"/> 
-        </table>-->
+               
+               <columnOverride column="ORDER_ID" property="orderId" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="SKILL_ID" property="skillId" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="SELLER_ID" property="sellerId" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="BUYER_ID" property="buyerId" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="PRICE" property="price" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="SKU_ID" property="skuId" javaType="java.lang.Long" jdbcType="BIGINT" />
+               <columnOverride column="PAY_TIME" property="payTime" javaType="java.util.Date" jdbcType="DATETIME" /> 
+        </table>
         
         <!--  
         <javaModelGenerator targetPackage="com.sven.dream.dal.common"

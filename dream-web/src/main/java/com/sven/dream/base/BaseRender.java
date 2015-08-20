@@ -13,6 +13,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.sven.dream.commonservice.auth.DreamUser;
 import com.sven.dream.dal.user.DreamUserDo;
 
+/**
+ * web层父类
+ * 
+ * @author beckham
+ *
+ */
 public class BaseRender {
 	
 	protected final String AJAX_ISSUCCESS_TAG = "code";
@@ -74,6 +80,36 @@ public class BaseRender {
 		}
 		
 		return null;
+	}
+	
+	/**
+	 * 根据参数名称获取Long类型的值
+	 * 
+	 * @param param
+	 * @return
+	 */
+	protected Long getLongParamValue(String param){
+		return Long.parseLong(request.getParameter(param));
+	}
+	
+	/**
+	 * 根据参数名称获取String类型的值
+	 * 
+	 * @param param
+	 * @return
+	 */
+	protected String getStringParamValue(String param){
+		return request.getParameter(param);
+	}
+	
+	/**
+	 * 根据参数名称获取Integer类型的值
+	 * 
+	 * @param param
+	 * @return
+	 */
+	protected Integer getIntegerParamValue(String param){
+		return Integer.parseInt(request.getParameter(param));
 	}
 }
 

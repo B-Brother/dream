@@ -11,9 +11,11 @@ import com.sven.dream.base.BaseRender;
 import com.sven.dream.commonservice.service.UserOperationService;
 import com.sven.dream.dal.order.DreamOrderDo;
 import com.sven.dream.dal.order.DreamSkillDo;
+import com.sven.dream.dal.order.DreamSkillSkuDo;
 import com.sven.dream.dal.user.DreamUserDo;
 import com.sven.dream.order.bo.DreamOrderBo;
 import com.sven.dream.order.bo.DreamSkillBo;
+import com.sven.dream.order.bo.DreamSkillSkuBo;
 
 public class BuyAction extends BaseRender{
 	
@@ -24,6 +26,9 @@ public class BuyAction extends BaseRender{
 	private DreamSkillBo dreamSkillBo;
 	
 	@Autowired
+	private DreamSkillSkuBo dreamSkillSkuBo;
+	
+	@Autowired
 	private UserOperationService userOperationService;
 	
 	/**
@@ -32,12 +37,17 @@ public class BuyAction extends BaseRender{
 	 * @param nav
 	 */
 	public void doBuy(Navigator nav) {
-        Long skillId = Long.parseLong(request.getParameter("skillId")); 
-        String amount = request.getParameter("amount"); 
+        Long skillId = getLongParamValue("skillId");
+        Long skuId = getLongParamValue("skuId"); 
+        Integer amount = getIntegerParamValue("num"); 
          
         DreamOrderDo order = new DreamOrderDo(); 
-        order.setAmount(Integer.parseInt(amount));
-        order.setBizType(BIZ_TYPE_NORMAL); 
+        order.setAmount(amount);
+        order.setBizType(BIZ_TYPE_NORMAL);  
+        order.setSkuId(skuId);
+        
+        DreamSkillSkuDo sku = dreamSkillSkuBo.selectByPrimaryKey(skuId); 
+        order.setPrice(sku.getPrice() * amount);
         
         DreamUserDo buyer = getUser();
         order.setBuyerId((long)buyer.getId());
@@ -56,8 +66,7 @@ public class BuyAction extends BaseRender{
         
         DreamUserDo seller = userOperationService.selectByPrimaryKey(dreamSkillDo.getSellerId());
         
-        order.setSellerNick(seller.getNick());
-        
+        order.setSellerNick(seller.getNick()); 
         order.setVisibleStatus(STATUS_VISIBLE_YES);
         
         dreamOrderBo.insert(order);
