@@ -61,6 +61,17 @@ public class OrderConstants {
 	
 	// 服务完成     用户操作
 	public static final int STATUS_METTING_FINISH = 3;
+	
+	
+	// =================================================
+	// ===========      服务实施见面地点         ==========
+	// =================================================
+	
+	// 在我家进行订单实施
+	public static final int MEETING_MY_HOME = 1;
+	
+	// 在行者加进行订单实施
+	public static final int MEETING_SKILLER_HOME = 2;
 }
 
 
