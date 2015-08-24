@@ -1,0 +1,72 @@
+  <div class="main content">
+    <div class="left-sider">
+      <div class="operate">
+        <h3>个人中心</h3>
+        <ul id="J_navlist">
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4> 
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+          <li >
+            <h4 >足球</h4>
+            <div class="list-item none">
+              <p ><a href="http://sc.chinaz.com/" target="_self">曼联</a></p>
+            </div>
+          </li>
+        </ul>
+        <script type="text/javascript" language="javascript">
+			navList(12);
+		</script>
+      </div>
+    </div>
+  </div>

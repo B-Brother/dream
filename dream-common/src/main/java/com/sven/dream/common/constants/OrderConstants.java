@@ -29,6 +29,9 @@ public class OrderConstants {
 	// ===========         付款状态         =============
 	// =================================================
 
+	// 初始化状态，特指当到达确定付款页面之前
+	public static final int STATUS_PAY_INIT = 1;
+	
 	// 等待付款
 	public static final int STATUS_PAY_WAITING_PAID = 1;
 	

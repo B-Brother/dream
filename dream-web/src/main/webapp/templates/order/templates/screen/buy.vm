@@ -1,9 +1,68 @@
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	    $(".size-list-item").mouseover(function(){
+	    	var cls = $(this).attr("class");
+	    	 
+	    }); 
+	    
+	    $("#meetingType").change(function(){
+	    	var meetingValue = $("#meetingType").val();
+	    	## 自己上门 改价
+	    	if(meetingValue == 1){
+	    		$("#meetingTypeFee").val("0");
+	    		$("#price_taxi").html("￥0.00");
+	    		
+	    		var orderPrice = $("#order_price").val();
+	    		$("#total_price_b").html(parseInt(orderPrice));
+	    	}else{
+	    		$("#meetingTypeFee").val("10");
+	    		$("#price_taxi").html("￥10.00");
+	    		
+	    		var orderPrice = $("#order_price").val();
+	    		$("#total_price_b").html(10 + parseInt(orderPrice));
+	    	} 
+		});
+		
+		$("#pay_button").click(function() {
+			document.getElementById("pay_form").submit();
+		}); 
+	});
+</script>
+<style>
+	.cart_service {
+    	width:25%
+	}
+	
+	.cart_price {
+    	width:15%
+	}
+	
+	.cart_num {
+    	width:10%
+	}
+	
+	.cart_discount {
+    	width:15%
+	}
+	
+	.cart_person {
+    	width:15%
+	}
+	
+	.cart_type {
+    	width:12%
+	}
+	
+	.cart_total {
+    	width:8%
+	} 
+</style>	
 <!-- MAIN CONTENT -->
         <div id="outermain">
         	<div class="container">
                 <div class="row">
                 
-                    <section id="maincontent" class="ten columns positionleft">
+                    <section id="maincontent" class="twelve columns positionleft">
                     	<div class="padcontent">
                     
                         	<section class="content">
@@ -15,30 +74,36 @@
                                     <table id="cart_summary">
                                         <thead>
                                             <tr>
-                                                <th class="cart_product first_item">行者</th>
-                                                <th class="cart_description item">描述</th> 
-                                                <th class="cart_avail item">数量</th>
-                                                <th class="cart_avail item">折扣</th>
-                                                <th class="cart_unit item">价格</th>
-                                                <th class="cart_quantity item">上门类型</th>
-                                                <th class="cart_total item">总计</th>
+                                                <th class="cart_service first_item">购买服务</th>
+                                                <th class="cart_price item">单价</th>  
+                                                <th class="cart_num item">数量</th>
+                                                <th class="cart_discount item">优惠方式</th> 
+                                                <th class="cart_person item">行者</th>
+                                                <th class="cart_type item">上门类型</th> 
+                                                <th class="cart_total item">合计</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <tr class="cart_item" >
-                                                <td class="cart_product">
-                                                    <a href="#">$!order.sellerNick</a>
+                                                <td class="cart_product" style="text-align:left;">
+                                                    <a href="#">$!skill.title</a>
+                                                    <div>分类:$!sku.title</div>
                                                 </td>
                                                 <td class="cart_description">
-                                                    $!skill.name
-                                                </td>
+                                                    ￥$!sku.price/天
+                                                </td> 
                                                 <td class="cart_ref">$!order.amount</td>
                                                 <td class="cart_ref">无</td> 
-                                                <td class="cart_unit"> ￥120.00 </td>
-                                                <td class="cart_quantity"> 师傅上门 </td>
-                                                <td class="cart_total">
-                                                    <span class="price">￥360</span>
+                                                <td class="cart_ref">张师傅</td>  
+                                                <td class="cart_quantity"> 
+											  		<select name="meetingType" id="meetingType"> 
+											  			<option value="1">自己前往</option>
+											  			<option value="2">行者上门</option>
+											  		</select>  
+											    </td>
+                                                <td class="cart_total" style="text-align:right"> 
+                                                    <span class="price" style="color:#ff5555;">￥$!order.price</span>
                                                 </td>
                                             </tr> 
                                         </tbody>
@@ -48,53 +113,26 @@
                                             	<td colspan="2" class="none1"> </td>
                                                 <td class="none2"> </td>
                                                 <td class="none3"> </td>
-                                                <td colspan="2">中介费用:</td>
-                                                <td id="total_shipping" class="price">￥10.00</td>
+                                                <td colspan="2">优惠:</td>
+                                                <td id="total_shipping" class="price">￥0.00</td>
                                             </tr>								
                                             <tr class="cart_total excl">
                                             	<td colspan="2" class="none1"> </td>
                                                 <td class="none2"> </td>
                                                 <td class="none3"> </td>
-                                                <td colspan="2">报销师傅打车费用:</td>
-                                                <td id="total_price_without_tax" class="price">￥10.00</td>
-                                            </tr>
-                                            <tr class="cart_total tax">
-                                            	<td colspan="2" class="none1"> </td>
-                                                <td class="none2"> </td>
-                                                <td class="none3"> </td>
-                                                <td colspan="2">其他:</td>
-                                                <td id="total_tax" class="price">0</td>
-                                            </tr>
+                                                <td colspan="2">上门服务费用:</td>
+                                                <td id="price_taxi" class="price">￥0.00</td>
+                                            </tr> 
                                             <tr class="cart_total total">
                                             	<td colspan="2" class="none1"> </td>
                                                 <td class="none2"> </td>
                                                 <td class="none3"> </td>
-                                                <td colspan="2">Total:</td>
-                                                <td id="total_price_container" class="price total_price_container"><span id="total_price"><b>￥740.00</b></span></td>
-                                            </tr>
-                                            <!--
-                                            <tr class="cart_total_price">
-                                                <td class="cart_voucher" id="cart_voucher" colspan="7">
-                                                <form id="voucher" method="post" action="#">
-                                                  <fieldset>
-                                                      <h3><label>Vouchers</label></h3>
-                                                      <p>
-                                                      <label>code: </label>
-                                                      <input type="text" value="" name="discount_name" class="discount_name">
-                                                      <input type="hidden" name="submitDiscount"><input type="submit" class="button" value="Add Code" name="submitAddDiscount">
-                                                      </p>
-                                                  </fieldset>
-                                                </form>
-                                                </td>
-                                            </tr>
-                                            -->
+                                                <td colspan="2">小计:</td>
+                                                <td id="total_price_container" class="price total_price_container"><span id="total_price"><b id="total_price_b">￥$!order.price</b></span></td>
+                                            </tr> 
                                         </tfoot>
                                         </table>
-                                </div>
-								<!--
-                                <a href="#" class="button">Continue  Shopping</a>&nbsp;
-                                <a href="#" class="button exclusive">Next</a>
-                                -->
+                                </div> 
                                 <br>
 
                                 <H2>请选择您的支付方式:</H2>
@@ -107,7 +145,13 @@
                                     </ul>
                                 
                                     <div class="form-row">		
-                                        <a href="paySuccess.htm" class="button">付款</a>
+                                    	<form method="post" name="pay_form" id="pay_form">
+                                    		<input type="hidden" name="action" value="PayAction" />
+                                    		<input type="hidden" name="event_submit_do_pay" value="1" />
+                                    		<input type="hidden" id="meetingTypeFee" value="0"/>
+                                    		<input type="hidden" name="order_price" id="order_price" value="$!order.price" />
+                                        	<a href="#" class="button" id="pay_button">付款</a>
+                                        </form>
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -116,20 +160,7 @@
 							</section>
                          
                         </div>
-                    </section>
-                    
-                    <aside class="two columns">
-                    
-                    	<div class="sidebar">
-                        <ul>  
-                            <li class="widget-container">
-                                <a href="#"><img src="images/content/banner.gif" alt="" /></a>
-                            </li>
-                        </ul>
-                        </div>
-                        
-                    </aside>
-                    
+                    </section> 
                 </div>
             </div>
         </div>

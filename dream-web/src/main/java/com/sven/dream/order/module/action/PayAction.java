@@ -1,61 +1,28 @@
 package com.sven.dream.order.module.action;
-
-import java.util.Random;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired; 
-
-import static com.sven.dream.common.constants.OrderConstants.*;
-
+ 
 import com.alibaba.citrus.turbine.Navigator; 
 import com.sven.dream.base.BaseRender;
-import com.sven.dream.commonservice.service.UserOperationService;
-import com.sven.dream.dal.order.DreamOrderDo;
-import com.sven.dream.dal.order.DreamSkillDo;
-import com.sven.dream.dal.user.DreamUserDo;
-import com.sven.dream.order.bo.DreamOrderBo;
-import com.sven.dream.order.bo.DreamSkillBo;
+import com.sven.dream.common.constants.OrderConstants; 
+import com.sven.dream.dal.order.DreamOrderDo; 
+import com.sven.dream.order.bo.DreamOrderBo; 
 
 public class PayAction extends BaseRender{
 	 
 	@Autowired
 	private DreamOrderBo dreamOrderBo;
-	
-	@Autowired
-	private DreamSkillBo dreamSkillBo;
-	
-	@Autowired
-	private UserOperationService userOperationService;
 	 
-	public void doReady(Navigator nav) {
-        Long skillId = Long.parseLong(request.getParameter("skillId")); 
-        String amount = request.getParameter("amount");
-        Long buyerId = Long.parseLong(request.getParameter("amount"));
-        
-        DreamOrderDo order = new DreamOrderDo(); 
-        order.setAmount(Integer.parseInt(amount));
-        order.setBizType(BIZ_TYPE_NORMAL); 
-        order.setBuyerId(buyerId); 
-        
-        DreamUserDo buyer = userOperationService.selectByPrimaryKey(buyerId);
-        order.setBuyerNick(buyer.getNick());
-        order.setMeetingType(1);
-        order.setOrderId(new Random().nextLong());
-        order.setPayStatus(STATUS_PAY_WAITING_SURE); 
-        
-        DreamSkillDo dreamSkillDo = dreamSkillBo.selectByPrimaryKey(skillId);
-        order.setSellerId(dreamSkillDo.getSellerId());
-        order.setSkillId(skillId);
-        order.setSkillName(dreamSkillDo.getTitle());
-        
-        DreamUserDo seller = userOperationService.selectByPrimaryKey(dreamSkillDo.getSellerId());
-        
-        order.setSellerNick(seller.getNick());
-        
-        order.setVisibleStatus(STATUS_VISIBLE_YES);
-        
-        dreamOrderBo.insert(order);
-          
-        nav.redirectToLocation(""); 
+	public void doPay(Navigator nav) {
+         long orderId = getLongParamValue("orderId");
+         
+         // 更改状态为待付款
+         DreamOrderDo order = dreamOrderBo.getOrderByOrderId(orderId);
+         order.setPayStatus(OrderConstants.STATUS_PAY_WAITING_PAID);
+         dreamOrderBo.update(order);
+         
+         // 买家付款完成。需要通知行者，你有新订单了
+         nav.redirectToLocation("/order/paySuccess.htm");
     }
 }
 
