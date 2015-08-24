@@ -1,5 +1,8 @@
+.width_26 {width:26%; }
+.width_74 {width:74%; }
+
 .content { width:960px; }
-.main { margin:15px auto 0 auto;  overflow:hidden; zoom:1 }
+.main { margin:0 auto 0 auto;  overflow:hidden; zoom:1 }
 .main .left-sider { float:left; width:221px; }
 .operate h3 { font-family: "Microsoft YaHei",微软雅黑; font-size:16px; background:#f7f7f7; height:43px; line-height:43px; padding-left:12px; margin-bottom:0; }
 .operate ul { margin:0; }

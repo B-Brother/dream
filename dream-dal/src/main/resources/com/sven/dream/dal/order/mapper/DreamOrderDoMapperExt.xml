@@ -12,6 +12,31 @@
 	    	and
 	    is_deleted = 'n'	
    </select>
+   
+   <select id="getOrderListByQuery" parameterType="com.sven.dream.common.query.OrderQuery" resultMap="BaseResultMap"> 
+	    select 
+	    <include refid="Base_Column_List" />
+	    from dream_order
+	    where
+	    seller_id = #{sellerId}
+	    	and
+	    pay_status = #{payStatus}	
+	    	and
+	    is_deleted = 'n'	
+	    limit ${startIndex},${pageSize}
+   </select>
+   
+   <select id="countOrderListByQuery" parameterType="com.sven.dream.common.query.OrderQuery" resultType="java.lang.Integer"> 
+	    select 
+	    count(1)
+	    from dream_order
+	    where
+	    seller_id = #{sellerId}
+	    	and
+	    pay_status = #{payStatus}	
+	    	and
+	    is_deleted = 'n'	 
+   </select>
 </mapper>
 
 

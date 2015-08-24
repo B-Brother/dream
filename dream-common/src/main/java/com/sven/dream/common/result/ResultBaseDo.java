@@ -1,4 +1,6 @@
-package com.sven.dream.common.result; 
+package com.sven.dream.common.result;
+
+import com.sven.dream.common.query.base.PaginationQuery;
 
 /**
  * 泛型包装输出对象 
@@ -18,7 +20,9 @@ public class ResultBaseDo<T> {
 	private T module; // 实际的返回结果 
 	
 	private String errorMessages;
-
+	  
+	private PaginationQuery q;
+	
 	public T getModule() {
 		return module;
 	}  
@@ -45,5 +49,13 @@ public class ResultBaseDo<T> {
 
 	public void setErrorMessages(String errorMessages) {
 		this.errorMessages = errorMessages;
-	}   
+	}
+
+	public PaginationQuery getQ() {
+		return q;
+	}
+
+	public void setQ(PaginationQuery q) {
+		this.q = q;
+	} 
 }

@@ -28,7 +28,11 @@
     <link rel="stylesheet" href="/styles/color.css" />
     
 	<link rel="stylesheet" href="/styles/menu/menu.css" />
-
+	
+	<!-- generic demo style --> 
+	<link rel="stylesheet" href="/styles/pagination/jqpagination.css" />
+		
+		 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -85,7 +89,8 @@
 	});
 	</script>	
 	 
-	<script src="/js/menu/showlist.js" type="text/javascript"></script>    
+	<script src="/js/menu/showlist.js" type="text/javascript"></script>  
+	<script src="/js/pagination/jquery.jqpagination.min.js"></script> 
 </head>
 
 
@@ -108,14 +113,12 @@
 					<div class="container">
 				        <div class="row">
 				        
-				            <section id="maincontent" class="three columns positionleft">
-				            	<div class="padcontent">
-				             		## 引入左边菜单
-		        					$control.setTemplate("menu.vm") 
-				                </div>
+				            <section id="maincontent" class="width_26 columns positionleft"> 
+			             		## 引入左边菜单
+	        					$control.setTemplate("menu.vm")  
 				            </section>
 				            
-				            <aside class="nine columns">
+				            <aside class="width_74 columns">
 				             	$screen_placeholder  
 				            </aside>
 				            

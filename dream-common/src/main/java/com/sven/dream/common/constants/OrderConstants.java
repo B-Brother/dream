@@ -33,22 +33,22 @@ public class OrderConstants {
 	public static final int STATUS_PAY_INIT = 1;
 	
 	// 等待付款
-	public static final int STATUS_PAY_WAITING_PAID = 1;
+	public static final int STATUS_PAY_WAITING_PAID = 2;
 	
 	// 等待确认
-	public static final int STATUS_PAY_WAITING_SURE = 2;
+	public static final int STATUS_PAY_WAITING_SURE = 3;
 	
 	// 已退款，交易关闭
-	public static final int STATUS_PAY_REFUND = 3;
+	public static final int STATUS_PAY_REFUND = 4;
 	
 	// 交易成功
-	public static final int STATUS_PAY_SUCCESS = 4;
+	public static final int STATUS_PAY_SUCCESS = 5;
 	
 	// 系统关闭
-	public static final int STATUS_PAY_SYSTEM_CLOSE = 5;
+	public static final int STATUS_PAY_SYSTEM_CLOSE = 6;
 	
 	// 不可付款
-	public static final int STATUS_PAY_CANNOT = 6;
+	public static final int STATUS_PAY_CANNOT = 7;
 	
 	
 	
