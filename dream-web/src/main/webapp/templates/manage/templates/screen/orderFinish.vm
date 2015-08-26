@@ -1,4 +1,4 @@
-<div class="breadcrumb"><a href="index.html">首页</a> > 订单确认</div>
+<div class="breadcrumb"><a href="index.html">首页</a> > 已完成订单</div>
 <style>
 	.confirm_table .skill_type{
 		color:#9C9C9C;
@@ -19,8 +19,7 @@
 	        <th>单价(元)</th>
 	        <th>数量</th>
 	        <th>交易状态</th>
-	        <th>实付款(元)</th>
-	        <th>操作</th>
+	        <th>实付款(元)</th> 
         </tr>
     </thead>
     <tbody class="confirm_table">  
@@ -33,10 +32,7 @@
 		        <td><strong>40.00</strong></td>
 		        <td>2</td>
 		        <td>等待确认</td>
-				<td><strong>75.99</strong></td>
-				<td>
-					<span><a href="#" class="sure" data-orderId="$!order.orderId">确认</a></span>
-				</td>
+				<td><strong>75.99</strong></td> 
 	        </tr>
         #end 
     </tbody> 
@@ -61,23 +57,7 @@
 			paged		: function(page) {
 				window.location.href="/manage/orderConfirm.htm?p=" + page;
 			}
-		}); 
-		
-		jQuery('.sure').click(function(){
-			var orderId = jQuery(this).attr('data-orderId');
-			## 订单确认框
-			var d = dialog({
-			    title: '订单确认',
-			    content: '是否要订单确认？确认后需严格按照买家要求执行。',
-			    okValue: '确定',
-			    ok: function () {
-			        window.location.href = '/manage/orderConfirm.htm?action=OrderStateChangeAction&event_submit_do_seller_sure_success=1&orderId=' + orderId;              
-			    },
-			    cancelValue: '取消',
-			    cancel: function () {}
-			});
-			d.showModal();
-		}); 
+		});  
 	});
 </script>   
 

@@ -4,9 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.alibaba.citrus.turbine.Context;  
+import com.alibaba.citrus.turbine.Context;
 import com.alibaba.citrus.turbine.Navigator;
-
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.constants.OrderConstants;
 import com.sven.dream.common.query.OrderQuery;
@@ -14,14 +13,7 @@ import com.sven.dream.common.result.ResultBaseDo;
 import com.sven.dream.dal.order.DreamOrderDo;
 import com.sven.dream.order.bo.DreamOrderBo;
 
-/**
- * 
- * 订单确认列表
- * 
- * @author beckham
- *
- */
-public class OrderConfirm extends BaseRender{
+public class OrderService extends BaseRender{
 	
 	@Autowired
 	private DreamOrderBo orderBo;
@@ -36,7 +28,7 @@ public class OrderConfirm extends BaseRender{
 		query.setCurrentPage(currentPage);
 		query.setPageSize(10);  
 		query.setSellerId(getUser().getId());
-		query.setPayStatus(OrderConstants.STATUS_PAY_WAITING_SURE);
+		query.setPayStatus(OrderConstants.STATUS_PAY_SURE);
 		
 		ResultBaseDo<List<DreamOrderDo>> orderResult = orderBo.getOrderListByQuery(query);
 		context.put("orderResult", orderResult);

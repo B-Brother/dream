@@ -27,10 +27,9 @@
     <link rel="stylesheet" href="/styles/layerslider.css" />
     <link rel="stylesheet" href="/styles/color.css" />
     
-	<link rel="stylesheet" href="/styles/menu/menu.css" />
-	
-	<!-- generic demo style --> 
+	<link rel="stylesheet" href="/styles/menu/menu.css" /> 
 	<link rel="stylesheet" href="/styles/pagination/jqpagination.css" />
+	<link rel="stylesheet" href="/styles/dialog/ui-dialog.css" />
 		
 		 
 	<!--[if lt IE 9]>
@@ -90,7 +89,8 @@
 	</script>	
 	 
 	<script src="/js/menu/showlist.js" type="text/javascript"></script>  
-	<script src="/js/pagination/jquery.jqpagination.min.js"></script> 
+	<script src="/js/pagination/jquery.jqpagination.min.js"></script>  
+	<script src="/js/dialog/dialog-min.js"></script>   
 </head>
 
 
@@ -229,11 +229,7 @@
         <!-- END FOOTER -->
         <div class="clear"></div><!-- clear float --> 
 	</div><!-- end outercontainer -->
-</div><!-- end bodychild -->
-
-
-
-
+</div><!-- end bodychild -->  
 
 </body>
 </html>

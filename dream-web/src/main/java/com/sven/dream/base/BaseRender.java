@@ -3,6 +3,7 @@ package com.sven.dream.base;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static com.sven.dream.common.constants.CommonConstants.*;
@@ -89,6 +90,10 @@ public class BaseRender {
 	 * @return
 	 */
 	protected Long getLongParamValue(String param){
+		if(StringUtils.isBlank(request.getParameter(param))){
+			return null;
+		}
+		
 		return Long.parseLong(request.getParameter(param));
 	}
 	
@@ -109,6 +114,10 @@ public class BaseRender {
 	 * @return
 	 */
 	protected Integer getIntegerParamValue(String param){
+		if(StringUtils.isBlank(request.getParameter(param))){
+			return null;
+		}
+		
 		return Integer.parseInt(request.getParameter(param));
 	}
 }

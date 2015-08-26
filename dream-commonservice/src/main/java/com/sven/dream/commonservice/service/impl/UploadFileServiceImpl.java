@@ -13,6 +13,14 @@ import com.sven.dream.dal.common.mapper.UploadFileDoMapperExt;
 public class UploadFileServiceImpl extends
 	AbstractDreamServiceImpl<UploadFileDo, UploadFileDoMapperExt> implements UploadFileService{
 
+	// 附件前缀
+	private String prefix;
+	
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+	
+	
 	@Autowired
     public void setBaseMapper(UploadFileDoMapperExt mapper) {
         setMapper(mapper);

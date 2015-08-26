@@ -38,4 +38,18 @@ public class UploadConstants {
 	
 	// 无规格图片以及非图片附件。
 	public static final String SPEC_NO = "NO_SPEC";
+	
+	// =================================================
+	// ===========       附件生效情况         ============
+	// =================================================
+	
+	// 处于上传状态。暂时没有和对应业务表关联
+	public static final String USE_UPLOAD = "UPLOAD";
+			
+	// 已经和业务关联了
+	public static final String USE_EFFECT = "EFFECT";
 }
+
+
+
+

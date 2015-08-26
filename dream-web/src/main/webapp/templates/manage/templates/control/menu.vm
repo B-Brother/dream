@@ -6,23 +6,23 @@
           <li >
             <h4 >订单管理</h4>
             <div class="list-item none">
-              <p ><a href="http://sc.chinaz.com/" target="_self">待确认订单</a></p>
-              <p ><a href="http://sc.chinaz.com/" target="_self">待服务订单</a></p>
-              <p ><a href="http://sc.chinaz.com/" target="_self">已服务订单</a></p>
+              <p ><a href="/manage/orderConfirm.htm" target="_self">待确认订单</a></p>
+              <p ><a href="/manage/orderService.htm" target="_self">待服务订单</a></p>
+              <p ><a href="/manage/orderFinish.htm" target="_self">已服务订单</a></p>
             </div>
           </li>
           <li >
             <h4 >技能管理</h4> 
             <div class="list-item none">
-              <p ><a href="http://sc.chinaz.com/" target="_self">我的技能</a></p>
-              <p ><a href="http://sc.chinaz.com/" target="_self">技能发布</a></p> 
+              <p ><a href="#" target="_self">我的技能</a></p>
+              <p ><a href="#" target="_self">技能发布</a></p> 
             </div>
           </li> 
           <li >
             <h4 >基本设置</h4>
             <div class="list-item none">
-              <p ><a href="http://sc.chinaz.com/" target="_self">个人资料修改</a></p>
-              <p ><a href="http://sc.chinaz.com/" target="_self">消息提醒</a></p> 
+              <p ><a href="#" target="_self">个人资料修改</a></p>
+              <p ><a href="#" target="_self">消息提醒</a></p> 
             </div>
           </li> 
         </ul>

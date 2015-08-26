@@ -35,17 +35,20 @@ public class OrderConstants {
 	// 等待付款
 	public static final int STATUS_PAY_WAITING_PAID = 2;
 	
-	// 等待确认
+	// 等待确认(买家已经付款)
 	public static final int STATUS_PAY_WAITING_SURE = 3;
 	
+	// 卖家已经确认订单。待出去服务买家
+	public static final int STATUS_PAY_SURE = 4;
+	
 	// 已退款，交易关闭
-	public static final int STATUS_PAY_REFUND = 4;
+	public static final int STATUS_PAY_REFUND = 5;
 	
 	// 交易成功
-	public static final int STATUS_PAY_SUCCESS = 5;
+	public static final int STATUS_PAY_SUCCESS = 6;
 	
 	// 系统关闭
-	public static final int STATUS_PAY_SYSTEM_CLOSE = 6;
+	public static final int STATUS_PAY_SYSTEM_CLOSE = 7;
 	
 	// 不可付款
 	public static final int STATUS_PAY_CANNOT = 7;
