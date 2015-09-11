@@ -12,12 +12,13 @@
 	<modules>
 		<module>dream-common</module>
 		<module>dream-dal</module>
-        <module>dream-commonservice</module>
-		<module>dream-order</module> 
+        <module>dream-commonservice</module> 
 		<module>dream-user</module> 
 		<module>dream-web</module>
-		<module>dream-deploy</module>	
-  </modules>
+		<module>dream-deploy</module>
+        <module>dream-blog</module>
+        <module>dream-music</module>
+    </modules>
 
     <properties>
         <java.version>1.6</java.version>
@@ -54,12 +55,7 @@
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-user</artifactId>
 				<version>1.0-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>com.sven.dream</groupId>
-				<artifactId>dream-order</artifactId>
-				<version>1.0-SNAPSHOT</version>
-			</dependency>
+			</dependency> 
 			<dependency>
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-web</artifactId>

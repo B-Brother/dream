@@ -14,14 +14,6 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
 	default-autowire="byType">
-     
-   	<bean id="uploadFileService" class="com.sven.dream.commonservice.service.impl.UploadFileServiceImpl">
-   		<property name="prefix">
-			<value>/Users/beckham/Desktop/mycode/sven/upload/</value>
-		</property> 
-   	</bean>
-   	
-   	<bean id="userOperationService" class="com.sven.dream.commonservice.service.impl.UserOperationServiceImpl" />  
-   	
+      
    	<bean id="geographyCache" class="com.sven.dream.commonservice.cache.GeographyCache" init-method="init"/>  
 </beans>

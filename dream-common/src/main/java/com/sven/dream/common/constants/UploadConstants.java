@@ -16,19 +16,7 @@ public class UploadConstants {
 	
 	// 磁盘保存文件
 	public static final String TYPE_DISK = "DISK";
-	
-	
-	// =================================================
-	// ===========         业务类型         =============
-	// ================================================= 
-	
-	// 技能信息场景
-	public static final String BIZ_TYPE_SKILL = "SKILL";
-	
-	// 用户图像
-	public static final String BIZ_TYPE_USER_PIC = "USER_PIC";
-	
-	
+ 
 	// =================================================
 	// ===========       附件规格(图片)         ==========
 	// ================================================= 

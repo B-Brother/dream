@@ -13,13 +13,5 @@
 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
-	default-autowire="byType">
-     
-   	<bean id="dreamUserBo" class="com.sven.dream.user.bo.impl.DreamUserBoImpl" />
-   	<bean id="dreamUserExperienceBo" class="com.sven.dream.user.bo.impl.DreamUserExperienceBoImpl" /> 
-   	
-   	<bean id="dreamRateBo" class="com.sven.dream.order.bo.impl.DreamRateBoImpl" />
-   	<bean id="dreamSkillBo" class="com.sven.dream.order.bo.impl.DreamSkillBoImpl" />
-   	<bean id="dreamOrderBo" class="com.sven.dream.order.bo.impl.DreamOrderBoImpl" /> 
-   	<bean id="dreamSkillSkuBo" class="com.sven.dream.order.bo.impl.DreamSkillSkuBoImpl" />
+	default-autowire="byType"> 
 </beans>

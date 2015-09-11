@@ -16,11 +16,7 @@
     	<dependency>
 			<groupId>com.sven.dream</groupId>
 			<artifactId>dream-user</artifactId> 
-		</dependency>
-		<dependency>
-			<groupId>com.sven.dream</groupId>
-			<artifactId>dream-order</artifactId> 
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>com.alibaba.citrus</groupId>
 			<artifactId>citrus-webx-all</artifactId> 

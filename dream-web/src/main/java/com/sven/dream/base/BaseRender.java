@@ -11,8 +11,7 @@ import static com.sven.dream.common.constants.CommonConstants.*;
 import com.alibaba.citrus.turbine.TurbineRunDataInternal;
 import com.alibaba.citrus.turbine.util.TurbineUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.sven.dream.commonservice.auth.DreamUser;
-import com.sven.dream.dal.user.DreamUserDo;
+import com.sven.dream.commonservice.auth.DreamUser; 
 
 /**
  * web层父类
@@ -70,18 +69,20 @@ public class BaseRender {
 	 * 
 	 * @return
 	 */
-	protected DreamUserDo getUser(){
-		DreamUser currentUser = DreamUser.getCurrentUser();
-		if(currentUser.getId() != null){
-			DreamUserDo user = new DreamUserDo();
-			user.setId(Long.parseLong(currentUser.getId()));
-			user.setName("fuckme");
-			user.setNick("ok.");
-			return user;
-		}
-		
-		return null;
-	}
+//	protected DreamUserDo getUser(){
+////		DreamUser currentUser = DreamUser.getCurrentUser();
+////		if(currentUser.getId() != null){
+////			DreamUserDo user = new DreamUserDo();
+////			user.setId(Long.parseLong(currentUser.getId()));
+////			user.setName("fuckme");
+////			user.setNick("ok.");
+////			return user;
+////		}
+////		
+////		return null;
+//		
+//		return null;
+//	}
 	
 	/**
 	 * 根据参数名称获取Long类型的值
