@@ -14,4 +14,15 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
 	default-autowire="byType"> 
+	
+	<bean id="blogBo" class="com.sven.dream.blog.bo.impl.BlogBoImpl" />
+	<bean id="blogCategoryBo" class="com.sven.dream.blog.bo.impl.BlogCategoryBoImpl" />
+	
+	<bean id="albumBo" class="com.sven.dream.music.bo.impl.AlbumBoImpl" />
+	<bean id="musicBo" class="com.sven.dream.music.bo.impl.MusicBoImpl" />
+	<bean id="musicMtvBo" class="com.sven.dream.music.bo.impl.MusicMtvBoImpl" />
+	
+	<bean id="userBo" class="com.sven.dream.user.bo.impl.UserBoImpl" />
+	<bean id="userEventBo" class="com.sven.dream.user.bo.impl.UserEventBoImpl" />
+	<bean id="userMappingBo" class="com.sven.dream.user.bo.impl.UserMappingBoImpl" /> 
 </beans>

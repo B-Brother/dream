@@ -55,8 +55,18 @@
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-user</artifactId>
 				<version>1.0-SNAPSHOT</version>
-			</dependency> 
-			<dependency>
+			</dependency>
+            <dependency>
+				<groupId>com.sven.dream</groupId>
+				<artifactId>dream-music</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+            <dependency>
+				<groupId>com.sven.dream</groupId>
+				<artifactId>dream-blog</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+            <dependency>
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-web</artifactId>
 				<version>1.0-SNAPSHOT</version>
