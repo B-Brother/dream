@@ -33,6 +33,9 @@ public class UploadConstants {
 	 
 	// 用户主图
 	public static final String BIZ_USER_MAIN_PIC = "USER_MAIN"; 
+	
+	// 专辑主图
+	public static final String BIZ_ALBUM_MAIN_PIC = "ALBUM_MAIN";
 }
 
 
