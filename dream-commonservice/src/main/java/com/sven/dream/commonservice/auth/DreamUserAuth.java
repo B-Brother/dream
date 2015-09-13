@@ -3,16 +3,18 @@ package com.sven.dream.commonservice.auth;
 import static com.alibaba.citrus.util.Assert.*;
 import static com.alibaba.citrus.util.StringUtil.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse; 
+import java.util.ArrayList;
+import java.util.List;
 
-import com.alibaba.citrus.service.uribroker.URIBrokerService;
-import com.alibaba.citrus.service.uribroker.uri.URIBroker;
+import javax.servlet.http.Cookie; 
+
+import com.alibaba.citrus.service.uribroker.URIBrokerService; 
 import com.alibaba.citrus.springext.support.BeanSupport;
 import com.alibaba.citrus.turbine.TurbineRunData;
 import com.alibaba.citrus.turbine.pipeline.valve.PageAuthorizationValve.Callback; 
 import com.sven.dream.common.constants.CommonConstants;
+import com.sven.dream.commonservice.biz.UserOperationService;
+import com.sven.dream.commonservice.vo.UserInformationVo; 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,44 +22,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth.Status> {
 	
-    private static final Logger log = LoggerFactory.getLogger(DreamUserAuth.class);
- 
-    /** Login页面返回URL的key。 */
-    String LOGIN_RETURN_KEY = "return";
-
-    /** 如果未指定return，登录以后就跳到该URL。 */
-    String LOGIN_RETURN_DEFAULT_LINK = "petstoreHomeLink";
-
-    /** 登录URL的名字。 */
-    String PETSTORE_LOGIN_LINK = "loginUri";
-
-    /** 登记用户URL的名字。 */
-    String PETSTORE_REGISTER_LINK = "petstoreRegisterLink";
-
-    /** 登记用户信息URL的名字。 */
-    String PETSTORE_REGISTER_ACCOUNT_LINK = "petstoreRegisterAccountLink";
-
-    /** 查看用户信息URL的名字。 */
-    String PETSTORE_ACCOUNT_LINK = "petstoreAccountLink";
-    
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(DreamUserAuth.class);
+     
     @Autowired
     private URIBrokerService uriBrokerService;
 
-    private String cookieUserKey;
-    private String brokerId;
-    private String returnKey;
-
+    @Autowired
+    private UserOperationService userOperationService;
+    
+    private String cookieUserKey; 
+    
+    private List<String> whiteUriList = new ArrayList<String>();
+    
     public void setCookieUserKey(String cookieUserKey) {
         this.cookieUserKey = trimToNull(cookieUserKey);
-    }
-
-    public void setRedirectURI(String brokerId) {
-        this.brokerId = trimToNull(brokerId);
-    }
-
-    public void setReturnKey(String returnKey) {
-        this.returnKey = trimToNull(returnKey);
-    }
+    } 
 
     @Override
     public void init() {
@@ -66,46 +46,38 @@ public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth
         if (cookieUserKey == null) {
         	cookieUserKey = CommonConstants.COOKIE_USER_KEY;
         }
-
-        if (brokerId == null) {
-            brokerId = PETSTORE_LOGIN_LINK;
-        }
-
-        if (returnKey == null) {
-            returnKey = LOGIN_RETURN_KEY;
-        }
+ 
+        whiteUriList.add("/user/login.htm");
+        whiteUriList.add("/user/register.htm");
+        whiteUriList.add("/user/registerSuccess.htm");
+        whiteUriList.add("/common/404.htm"); 
     }
 
     public Status onStart(TurbineRunData rundata) {  
         Cookie[] cookies = rundata.getRequest().getCookies();
         
         DreamUser user = null;
+        boolean isLogin = false;
         if(cookies != null){
 	        for(Cookie cookie : cookies){
 	        	if(cookie.getName().equals(cookieUserKey)){
 	        		String userId = cookie.getValue();
-	        		user = new DreamUser(userId);
+	        		
+	        		UserInformationVo currentUser = userOperationService.getUserInformation(new Long(userId));
+	        		if(currentUser != null){
+	        			DreamUser.setCurrentUser(currentUser);
+	        			isLogin = true;
+	        		}
 	        	}
 	        }
-        } 
+        }  
         
-        if (user == null) {
-            // 创建匿名用户，匿名用户只能有特殊的权限
-        	user = new DreamUser(); 
+        // 如果未登录并且访问的页面不在白名单, 统一去登录页面
+        if(!isLogin && !whiteUriList.contains(rundata.getRequest().getRequestURI())){
+        	rundata.setRedirectLocation("/user/login.htm"); 
         }
 
-        // 将user设置到rundata中，以便其它程序使用。
-        DreamUser.setCurrentUser(user);
-
         return new Status(rundata, user);
-    }
-
-    public String getUserName(Status status) {
-        return status.user.getId();
-    }
-
-    public String[] getRoleNames(Status status) {
-        return status.user.getRoles();
     }
 
     public String[] getActions(Status status) {
@@ -113,27 +85,14 @@ public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth
     }
 
     public void onAllow(Status status) throws Exception {
+    	System.out.println("on allow");
     }
 
     public void onDeny(Status status) throws Exception {
-        HttpServletRequest request = status.rundata.getRequest();
-        HttpServletResponse response = status.rundata.getResponse();
-        URIBroker redirectURI = uriBrokerService.getURIBroker(brokerId);
-
-        assertNotNull(redirectURI, "no URI broker found: %s", brokerId);
-
-        StringBuffer buf = request.getRequestURL();
-        String queryString = trimToNull(request.getQueryString());
-
-        if (queryString != null) {
-            buf.append('?').append(queryString);
-        }
-
-        String returnURL = buf.toString();
-
-        response.sendRedirect(redirectURI.addQueryData(returnKey, returnURL).render());
+        System.out.println("on deny");
     }
 
+    @SuppressWarnings("unused")
     static class Status {
         private final TurbineRunData rundata;
         private       DreamUser   user;
@@ -143,4 +102,16 @@ public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth
             this.user = user;
         }
     }
+
+	@Override
+	public String getUserName(Status status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String[] getRoleNames(Status status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

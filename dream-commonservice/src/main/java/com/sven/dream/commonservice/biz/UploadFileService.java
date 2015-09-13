@@ -1,4 +1,4 @@
-package com.sven.dream.commonservice.service;
+package com.sven.dream.commonservice.biz;
 
 import java.util.List;
 
@@ -20,5 +20,5 @@ public interface UploadFileService extends DreamBo<FileDo>{
 	 * @param businessId	业务ID
 	 * @return
 	 */
-	public List<FileDo> getFileListByType(String type, Long businessId); 
+	public List<FileDo> getFileListByBusiness(String businessType, Long businessId); 
 }

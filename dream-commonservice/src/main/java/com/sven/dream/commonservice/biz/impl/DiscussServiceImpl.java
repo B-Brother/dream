@@ -1,9 +1,9 @@
-package com.sven.dream.commonservice.service.impl;
+package com.sven.dream.commonservice.biz.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sven.dream.commonservice.AbstractDreamServiceImpl;
-import com.sven.dream.commonservice.service.DiscussService;
+import com.sven.dream.commonservice.biz.DiscussService;
 import com.sven.dream.dal.common.DiscussDo;
 import com.sven.dream.dal.common.mapper.DiscussDoMapperExt;
 

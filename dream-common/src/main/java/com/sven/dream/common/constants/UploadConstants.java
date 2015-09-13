@@ -15,17 +15,7 @@ public class UploadConstants {
 	public static final String TYPE_CDN = "CDN";
 	
 	// 磁盘保存文件
-	public static final String TYPE_DISK = "DISK";
- 
-	// =================================================
-	// ===========       附件规格(图片)         ==========
-	// ================================================= 
-	
-	// 48*48的图片大小。一般是用户评论这里的小图
-	public static final String SPEC_PIC_48_48 = "48*48";
-	
-	// 无规格图片以及非图片附件。
-	public static final String SPEC_NO = "NO_SPEC";
+	public static final String TYPE_DISK = "DISK"; 
 	
 	// =================================================
 	// ===========       附件生效情况         ============
@@ -36,6 +26,13 @@ public class UploadConstants {
 			
 	// 已经和业务关联了
 	public static final String USE_EFFECT = "EFFECT";
+	
+	// =================================================
+	// ===========       业务场景         ============
+	// =================================================
+	 
+	// 用户主图
+	public static final String BIZ_USER_MAIN_PIC = "USER_MAIN"; 
 }
 
 

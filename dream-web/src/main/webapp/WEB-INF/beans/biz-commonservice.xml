@@ -17,9 +17,14 @@
       
    	<bean id="geographyCache" class="com.sven.dream.commonservice.cache.GeographyCache" init-method="init"/> 
    	
-   	<bean id="collectService" class="com.sven.dream.commonservice.service.impl.CollectServiceImpl" /> 
-   	<bean id="discussService" class="com.sven.dream.commonservice.service.impl.DiscussServiceImpl" /> 
-   	<bean id="messageService" class="com.sven.dream.commonservice.service.impl.MessageServiceImpl" /> 
-   	<bean id="uploadFileService" class="com.sven.dream.commonservice.service.impl.UploadFileServiceImpl" /> 
-   	<bean id="userOperationService" class="com.sven.dream.commonservice.service.impl.UserOperationServiceImpl" /> 
+   	<bean id="collectService" class="com.sven.dream.commonservice.biz.impl.CollectServiceImpl" /> 
+   	<bean id="discussService" class="com.sven.dream.commonservice.biz.impl.DiscussServiceImpl" /> 
+   	<bean id="messageService" class="com.sven.dream.commonservice.biz.impl.MessageServiceImpl" />  
+   	<bean id="userOperationService" class="com.sven.dream.commonservice.biz.impl.UserOperationServiceImpl" /> 
+   	<bean id="uploadFileService" class="com.sven.dream.commonservice.biz.impl.UploadFileServiceImpl">
+   		<property name="diskPrefix" value="/usr/local/var/www/sven/"></property>
+   		<property name="httpPrefix" value="http://0.0.0.0:8080/sven/"></property>
+   	</bean> 
+   	
+   	<bean id="textFilterService" class="com.sven.dream.commonservice.analysis.impl.TextFilterServiceImpl" /> 
 </beans>

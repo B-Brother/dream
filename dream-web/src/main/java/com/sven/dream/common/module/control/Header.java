@@ -1,26 +1,18 @@
-//package com.sven.dream.common.module.control;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//
-//import com.alibaba.citrus.turbine.Context;  
-//import com.sven.dream.base.BaseRender; 
-//import com.sven.dream.commonservice.service.UserOperationService;
-//import com.sven.dream.dal.user.DreamUserDo;
-//
-//public class Header extends BaseRender{
-//	
-//	@Autowired
-//	private UserOperationService userOperationService;
-//	
-//	public void execute(Context context){
-//		DreamUserDo user = getUser();
-//		
-//		if(user != null){
-//			DreamUserDo currentUser = userOperationService.selectByPrimaryKey(user.getId());
-//			if(currentUser != null){
-//				context.put("isLogin", true);
-//				context.put("user", currentUser);
-//			}
-//		}
-//	}
-//}
+package com.sven.dream.common.module.control; 
+
+import com.alibaba.citrus.turbine.Context;  
+import com.sven.dream.base.BaseRender;  
+
+/**
+ * 
+ * 头部banner，这里需要说明。能进入到header顶栏的这个页面必然有权限。否则同意拦截到登录页面
+ * 
+ * @author beckham
+ *
+ */
+public class Header extends BaseRender{
+	 
+	public void execute(Context context){  
+		context.put("user", getUser());  
+	}
+}

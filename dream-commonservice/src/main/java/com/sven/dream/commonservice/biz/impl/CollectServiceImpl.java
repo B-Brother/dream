@@ -1,9 +1,9 @@
-package com.sven.dream.commonservice.service.impl;
+package com.sven.dream.commonservice.biz.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sven.dream.commonservice.AbstractDreamServiceImpl;
-import com.sven.dream.commonservice.service.CollectService;
+import com.sven.dream.commonservice.biz.CollectService;
 import com.sven.dream.dal.common.CollectDo;
 import com.sven.dream.dal.common.mapper.CollectDoMapperExt;
 

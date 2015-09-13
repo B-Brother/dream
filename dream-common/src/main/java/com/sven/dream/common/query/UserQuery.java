@@ -11,12 +11,22 @@ public class UserQuery {
 	
 	private String password;
 
+	private String nick;
+	
 	public String getLoginName() {
 		return loginName;
 	}
 
 	public void setLoginName(String loginName) {
 		this.loginName = loginName;
+	}
+
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public String getPassword() {
