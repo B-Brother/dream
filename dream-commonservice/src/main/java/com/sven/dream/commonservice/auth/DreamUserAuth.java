@@ -51,6 +51,7 @@ public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth
         whiteUriList.add("/user/register.htm");
         whiteUriList.add("/user/registerSuccess.htm");
         whiteUriList.add("/common/404.htm"); 
+        whiteUriList.add("/common/index.htm"); 
     }
 
     public Status onStart(TurbineRunData rundata) {  

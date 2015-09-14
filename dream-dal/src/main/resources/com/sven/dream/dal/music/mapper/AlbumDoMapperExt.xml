@@ -5,6 +5,7 @@
    	   select 
        	   <include refid="Base_Column_List" />
        from musik_album
+       where is_deleted = 'n'
 	   order by id desc
 	   limit 0,8
     </select>
