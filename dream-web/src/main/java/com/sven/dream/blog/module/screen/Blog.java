@@ -1,11 +1,13 @@
 package com.sven.dream.blog.module.screen;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.citrus.turbine.Context;
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.blog.bo.BlogBo;
-import com.sven.dream.dal.blog.BlogDo;
+import com.sven.dream.blog.vo.BlogVo; 
 
 public class Blog extends BaseRender{
 	
@@ -13,13 +15,11 @@ public class Blog extends BaseRender{
 	private BlogBo blogBo;
 	
 	public void execute(Context context) throws Exception {
-		long id = getLongParamValue("id");
-		BlogDo blog = blogBo.selectByPrimaryKey(id);
-		if(blog == null){
-			response.sendRedirect("/common/404.htm");
-			return;
-		}
-		
-		context.put("blog", blog);
+		/**
+		 * 如果blog页面不带参数，说明看到是自己，否则看的是其他人
+		 */
+		List<BlogVo> blogVoList = blogBo.getBlogListByUser(getUser().getUserDo().getId());
+		 
+		context.put("blogList", blogVoList);
 	} 
 }

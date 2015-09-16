@@ -39,6 +39,9 @@ public class UploadConstants {
 	
 	// 专辑主图
 	public static final String BIZ_MUSIC_MAIN_PIC = "MUSIC_MAIN";
+	
+	// 博客主背景顶图，如果有的话
+	public static final String BIZ_BLOG_MAIN_BG = "BLOG_BG";
 }
 
 
