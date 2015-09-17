@@ -122,9 +122,72 @@
                         </div> 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">附件</label>
+                          <label class="col-sm-3 control-label">音乐原声</label>
                           <div class="col-sm-9">
-	                        <input type="file" class="filestyle" data-icon="false" data-classbutton="btn btn-default" data-classinput="form-control inline v-middle input-s" id="filestyle-0" style="position: fixed; left: -500px;" /><div class="bootstrap-filestyle" style="display: inline;"><input type="text" class="form-control inline v-middle input-s" disabled=""> <label for="filestyle-0" class="btn btn-default"><span>Choose file</span></label></div>
+	                        <input id="input-1" name="file" type="file" multiple class="file-loading">
+							<div id="kv-error-1" style="margin-top:10px;display:none"></div>
+							<div id="kv-success-1" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
+							<script>
+							$("#input-1").fileinput({
+							    uploadUrl: "/common/upload.do", // server upload action
+							    uploadAsync: true,
+							    showPreview: false,
+							    allowedFileExtensions: ['jpg', 'png', 'gif', 'mp3'],
+							    maxFileCount: 5,
+							    elErrorContainer: '#kv-error-1'
+							}).on('filebatchpreupload', function(event, data, id, index) {
+							    $('#kv-success-1').html('<h4>Upload Status</h4><ul></ul>').hide();
+							}).on('fileuploaded', function(event, data, id, index) {
+							    var fname = data.files[index].name,
+							        out = '<li>' + 'Uploaded file # ' + (index + 1) + ' - '  +  
+							            fname + ' successfully.' + '</li>';
+							    // 修复这个ul初始为空的问题 
+							    if($('#kv-success-2 ul').length > 0){
+							    	$('#kv-success-2 ul').append(out);
+							    }else{
+							    	out = "<ul>" + out + "</ul>";
+							    	$('#kv-success-2').append(out);
+							   	    
+							    }
+							         
+							    $('#kv-success-2').fadeIn('slow');
+							});
+							</script>  
+	                      </div>
+                        </div> 
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">封面</label>
+                          <div class="col-sm-9">
+	                        <input id="input-2" name="file" type="file" multiple class="file-loading">
+							<div id="kv-error-2" style="margin-top:10px;display:none"></div>
+							<div id="kv-success-2" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
+							<script>
+							$("#input-2").fileinput({
+							    uploadUrl: "/common/upload.do", // server upload action
+							    uploadAsync: true,
+							    showPreview: true, 
+							    allowedFileExtensions: ['jpg', 'png', 'gif', 'jpeg', 'gif', 'tiff', 'bmp'],
+							    maxFileCount: 1,
+							    elErrorContainer: '#kv-error-2'
+							}).on('filebatchpreupload', function(event, data, id, index) {
+							    $('#kv-success-2').html('<h4>Upload Status</h4><ul></ul>').hide();
+							}).on('fileuploaded', function(event, data, id, index) {
+							    var fname = data.files[index].name,
+							        out = '<li>' + 'Uploaded file # ' + (index + 1) + ' - '  +  
+							            fname + ' successfully.' + '</li>';
+							    // 修复这个ul初始为空的问题  
+							    if($('#kv-success-2 ul').length > 0){
+							    	$('#kv-success-2 ul').append(out);
+							    }else{
+							    	out = "<ul>" + out + "</ul>";
+							    	$('#kv-success-2').append(out);
+							   	    
+							    }
+							         
+							    $('#kv-success-2').fadeIn('slow');
+							});
+							</script>  
 	                      </div>
                         </div> 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -139,7 +202,7 @@
                         
                       </div>
                       <footer class="panel-footer text-right bg-light lter">
-                        <button type="submit" class="btn btn-success btn-s-xs">提交</button>
+                        <button type="submit" class="btn btn-primary btn-s-xs">提交</button>
                       </footer>
                     </section>
                   </form>
