@@ -30,7 +30,10 @@ public class UploadConstants {
 	// =================================================
 	// ===========       业务场景         ============
 	// =================================================
-	 
+	
+	// 未定义
+	public static final String BIZ_UNDENFINED= "UNDENFINED"; 
+		
 	// 用户主图
 	public static final String BIZ_USER_MAIN_PIC = "USER_MAIN"; 
 	

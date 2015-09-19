@@ -75,8 +75,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into musik_file
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      ID,
+    <trim prefix="(" suffix=")" suffixOverrides="," > 
       <if test="gmtCreate != null" >
         GMT_CREATE,
       </if>
@@ -105,8 +104,7 @@
         STORAGE_TYPE,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      #{id,jdbcType=BIGINT},
+    <trim prefix="values (" suffix=")" suffixOverrides="," > 
       <if test="gmtCreate != null" >
         #{gmtCreate,jdbcType=TIMESTAMP},
       </if>

@@ -8,6 +8,8 @@
               <div class="row">
                 <div class="col-sm-9">
                   <form class="form-horizontal" data-validate="parsley">
+                    <input type="hidden" name="action" value="MusicAction"/> 
+                  
                     <section class="panel panel-default">
                       <header class="panel-heading">
                         <strong>Basic constraints</strong>
@@ -18,35 +20,35 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label">歌曲名称</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control parsley-validated" data-required="true" placeholder="required field">
+                            <input type="text" name="songName" class="form-control parsley-validated" data-required="true" placeholder="required field">
                           </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">作词</label>
                           <div class="col-sm-9">
-                            <input type="text" data-maxlength="45" class="form-control parsley-validated" placeholder="作词">
+                            <input type="text" name="authors" data-maxlength="45" class="form-control parsley-validated" placeholder="作词">
                           </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">作曲</label>
                           <div class="col-sm-9">
-                            <input type="text" data-maxlength="45" class="form-control parsley-validated" placeholder="作曲">
+                            <input type="text" name="compose" data-maxlength="45" class="form-control parsley-validated" placeholder="作曲">
                           </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">编曲</label>
                           <div class="col-sm-9">
-                            <input type="text" data-maxlength="45" class="form-control parsley-validated" placeholder="编曲">
+                            <input type="text" name="arranger" data-maxlength="45" class="form-control parsley-validated" placeholder="编曲">
                           </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">时长(单位:秒)</label>
                           <div class="col-sm-9">
-                            <input type="text" data-max="3600" class="form-control parsley-validated" placeholder="歌曲时间长度，单位为秒，最大允许上传时长为1小时的歌曲">
+                            <input type="text" name="musicTime" data-max="3600" class="form-control parsley-validated" placeholder="歌曲时间长度，单位为秒，最大允许上传时长为1小时的歌曲">
                           </div>
                         </div> 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -54,7 +56,7 @@
                           <label class="col-sm-3 control-label">歌曲简介</label>
                             
                           <div class="col-sm-9">
-                              <textarea></textarea>
+                              <textarea name="introduce"></textarea>
                           </div> 
                         </div> 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -124,16 +126,16 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label">音乐原声</label>
                           <div class="col-sm-9">
-	                        <input id="input-1" name="file" type="file" multiple class="file-loading">
+	                        <input id="input-709" name="file" type="file" multiple class="file-loading">
 							<div id="kv-error-1" style="margin-top:10px;display:none"></div>
 							<div id="kv-success-1" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
 							<script>
-							$("#input-1").fileinput({
+							$("#input-709").fileinput({
 							    uploadUrl: "/common/upload.do", // server upload action
 							    uploadAsync: true,
 							    showPreview: false,
-							    allowedFileExtensions: ['jpg', 'png', 'gif', 'mp3'],
-							    maxFileCount: 5,
+							    allowedFileExtensions: ['wav', 'mp3'],
+							    maxFileCount: 1,
 							    elErrorContainer: '#kv-error-1'
 							}).on('filebatchpreupload', function(event, data, id, index) {
 							    $('#kv-success-1').html('<h4>Upload Status</h4><ul></ul>').hide();
@@ -141,20 +143,20 @@
 							    var fname = data.files[index].name,
 							        out = '<li>' + 'Uploaded file # ' + (index + 1) + ' - '  +  
 							            fname + ' successfully.' + '</li>';
-							    // 修复这个ul初始为空的问题 
-							    if($('#kv-success-2 ul').length > 0){
-							    	$('#kv-success-2 ul').append(out);
+							    // 修复这个ul初始为空的问题  
+							    if($('#kv-success-1 ul').length > 0){
+							    	$('#kv-success-1 ul').append(out);
 							    }else{
 							    	out = "<ul>" + out + "</ul>";
-							    	$('#kv-success-2').append(out);
+							    	$('#kv-success-1').append(out);
 							   	    
 							    }
-							         
-							    $('#kv-success-2').fadeIn('slow');
+							    $('#kv-success-1').fadeIn('slow');
 							});
-							</script>  
+							</script> 
 	                      </div>
-                        </div> 
+                        </div>  
+                        
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">封面</label>
@@ -187,9 +189,10 @@
 							         
 							    $('#kv-success-2').fadeIn('slow');
 							});
-							</script>  
+							</script>   
 	                      </div>
                         </div> 
+                        
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">协议</label>

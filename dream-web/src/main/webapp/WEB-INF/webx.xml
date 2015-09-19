@@ -50,11 +50,7 @@
         <request-contexts:basic />
         <request-contexts:buffered />
         <request-contexts:lazy-commit />
-        <request-contexts:parser>
-            <filters>
-                <parser-filters:uploaded-file-whitelist extensions="jpg, gif, png" />
-            </filters>
-        </request-contexts:parser>
+        <request-contexts:parser />  
         <request-contexts:set-locale defaultLocale="zh_CN" defaultCharset="UTF-8" />
         <request-contexts:session forceExpirationPeriod="14400">
             <stores>

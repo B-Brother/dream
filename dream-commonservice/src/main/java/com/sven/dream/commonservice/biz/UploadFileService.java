@@ -2,6 +2,8 @@ package com.sven.dream.commonservice.biz;
 
 import java.util.List;
 
+import org.apache.commons.fileupload.FileItem;
+
 import com.sven.dream.commonservice.DreamBo;
 import com.sven.dream.dal.common.FileDo; 
 
@@ -21,4 +23,12 @@ public interface UploadFileService extends DreamBo<FileDo>{
 	 * @return
 	 */
 	public List<FileDo> getFileListByBusiness(String businessType, Long businessId); 
+	
+	/**
+	 * 写文件到磁盘
+	 * 
+	 * @param file
+	 * @return
+	 */
+	public FileDo writeFile2Disk(FileItem fileItem);
 }
