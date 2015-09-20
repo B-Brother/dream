@@ -7,6 +7,7 @@ import com.sven.dream.dal.music.MusicDo;
 import com.sven.dream.music.vo.MusicVo;
 
 public interface MusicBo extends DreamBo<MusicDo>{
+	
 	/**
 	 * 给首页提供的最新歌曲列表
 	 * 
@@ -20,4 +21,12 @@ public interface MusicBo extends DreamBo<MusicDo>{
 	 * @return
 	 */
 	public List<MusicVo> getTopSongList();
+	
+	/**
+	 * 根据音乐ID拿到对应的vo,vo中还有更完善的信息
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public MusicVo getMusicVoById(long id);
 }

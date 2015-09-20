@@ -16,8 +16,7 @@
 	default-autowire="byType">
       
    	<bean id="geographyCache" class="com.sven.dream.commonservice.cache.GeographyCache" init-method="init"/> 
-   	
-   	<bean id="collectService" class="com.sven.dream.commonservice.biz.impl.CollectServiceImpl" /> 
+   	 
    	<bean id="discussService" class="com.sven.dream.commonservice.biz.impl.DiscussServiceImpl" /> 
    	<bean id="messageService" class="com.sven.dream.commonservice.biz.impl.MessageServiceImpl" />  
    	<bean id="userOperationService" class="com.sven.dream.commonservice.biz.impl.UserOperationServiceImpl" /> 

@@ -20,6 +20,7 @@
 	
 	<bean id="albumBo" class="com.sven.dream.music.bo.impl.AlbumBoImpl" />
 	<bean id="musicBo" class="com.sven.dream.music.bo.impl.MusicBoImpl" />
+	<bean id="collectBo" class="com.sven.dream.music.bo.impl.CollectBoImpl" />
 	<bean id="musicMtvBo" class="com.sven.dream.music.bo.impl.MusicMtvBoImpl" />
 	
 	<bean id="userBo" class="com.sven.dream.user.bo.impl.UserBoImpl" />

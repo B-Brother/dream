@@ -89,7 +89,46 @@ public class MusicBoImpl extends
 		
 		return musicVoList;
 	}
+
+	@Override
+	public MusicVo getMusicVoById(long id) {
+		MusicDo music = selectByPrimaryKey(id);
+		if(music == null){
+			return null;
+		}
+		
+		MusicVo musicVo = new MusicVo();
+		musicVo.setUser(userOperationService.selectByPrimaryKey(music.getId()));
+		musicVo.setSongName(music.getSongName());
+		musicVo.setMusicTime(MusicUtil.convertViewSongTime(music.getMusicTime()));
+		
+		List<FileDo> fileList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
+		if(fileList == null || fileList.size() == 0){
+			return null;
+		}
+		musicVo.setMusicFile(fileList.get(0));
+		return musicVo;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
