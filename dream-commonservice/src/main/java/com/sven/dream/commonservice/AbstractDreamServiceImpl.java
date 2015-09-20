@@ -22,11 +22,9 @@ public class AbstractDreamServiceImpl<D extends DreamDo, K extends DreamMapper<D
      */
     public void insert(D dataObject) {
         if (isValidDo(dataObject)) {
-            dataObject.setCreator("system");
-            dataObject.setModifier("system");
-            dataObject.setIsDeleted("n");
             dataObject.setGmtCreate(new Date());
             dataObject.setGmtModified(new Date());
+            dataObject.setIsDeleted("n"); 
             mapper.insertSelective(dataObject); 
         } else {
             throw new RuntimeException("Invalid do:" + dataObject.toString());
@@ -50,9 +48,8 @@ public class AbstractDreamServiceImpl<D extends DreamDo, K extends DreamMapper<D
      * @return
      */
     public int update(D dataObject) {
-        if (isValidDo(dataObject)) {
+        if (isValidDo(dataObject)) { 
             dataObject.setGmtModified(new Date());
-            dataObject.setModifier("system");
             int v = mapper.updateByPrimaryKeySelective(dataObject);
             return v;
         } else {

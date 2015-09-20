@@ -41,9 +41,9 @@ $(document).ready(function(){
       poster: "/images/m0.jpg"
     },
     {
-      title:"讲不出再见",
-      artist:"谭咏麟",
-      mp3:"/demo/music/mp3/50651_218036_jiangbuchuzaijian.mp3",
+      title:"Sugar",
+      artist:"Maroon 5",
+      mp3:"/demo/music/mp3/Sugar.mp3",
       poster: "/images/m1.jpg"
     }
   ], {

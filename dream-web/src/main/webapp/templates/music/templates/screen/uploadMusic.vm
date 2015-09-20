@@ -7,9 +7,10 @@
                
               <div class="row">
                 <div class="col-sm-9">
-                  <form class="form-horizontal" data-validate="parsley">
+                  <form class="form-horizontal" data-validate="parsley" name="musicForm" method="post">
+                    $csrfToken.hiddenField
                     <input type="hidden" name="action" value="MusicAction"/> 
-                  
+                    <input type="hidden" name="event_submit_do_create_music" value="1"/> 
                     <section class="panel panel-default">
                       <header class="panel-heading">
                         <strong>Basic constraints</strong>
@@ -63,6 +64,7 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label">歌词</label>
                           <div class="col-sm-9">
+                            <input type="hidden" name="lyric" id="lyric"/>
 	                        <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
 	                          <div class="btn-group">
 	                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
@@ -127,14 +129,15 @@
                           <label class="col-sm-3 control-label">音乐原声</label>
                           <div class="col-sm-9">
 	                        <input id="input-709" name="file" type="file" multiple class="file-loading">
+	                        <input type="hidden" name="musicFileId" id="musicFileId"/> 
 							<div id="kv-error-1" style="margin-top:10px;display:none"></div>
-							<div id="kv-success-1" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
+							<div id="kv-success-1" class="alert alert-success fade in" style="margin-top:10px;display:none"></div> 
 							<script>
 							$("#input-709").fileinput({
 							    uploadUrl: "/common/upload.do", // server upload action
 							    uploadAsync: true,
-							    showPreview: false,
-							    allowedFileExtensions: ['wav', 'mp3'],
+							    showPreview: false,  
+							    allowedFileExtensions: ['webmv','ogv','m4v','oga','mp3'],
 							    maxFileCount: 1,
 							    elErrorContainer: '#kv-error-1'
 							}).on('filebatchpreupload', function(event, data, id, index) {
@@ -151,6 +154,8 @@
 							    	$('#kv-success-1').append(out);
 							   	    
 							    }
+							    
+							    $('#musicFileId').val(data.response.id);
 							    $('#kv-success-1').fadeIn('slow');
 							});
 							</script> 
@@ -162,6 +167,7 @@
                           <label class="col-sm-3 control-label">封面</label>
                           <div class="col-sm-9">
 	                        <input id="input-2" name="file" type="file" multiple class="file-loading">
+	                        <input type="hidden" name="musicPagePicId" id="musicPagePicId"/>
 							<div id="kv-error-2" style="margin-top:10px;display:none"></div>
 							<div id="kv-success-2" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
 							<script>
@@ -169,7 +175,7 @@
 							    uploadUrl: "/common/upload.do", // server upload action
 							    uploadAsync: true,
 							    showPreview: true, 
-							    allowedFileExtensions: ['jpg', 'png', 'gif', 'jpeg', 'gif', 'tiff', 'bmp'],
+							    allowedFileExtensions: ['jpg', 'png', 'gif', 'jpeg', 'tiff', 'bmp'],
 							    maxFileCount: 1,
 							    elErrorContainer: '#kv-error-2'
 							}).on('filebatchpreupload', function(event, data, id, index) {
@@ -186,7 +192,8 @@
 							    	$('#kv-success-2').append(out);
 							   	    
 							    }
-							         
+							    
+							    $('#musicPagePicId').val(data.response.id);     
 							    $('#kv-success-2').fadeIn('slow');
 							});
 							</script>   
@@ -205,7 +212,19 @@
                         
                       </div>
                       <footer class="panel-footer text-right bg-light lter">
-                        <button type="submit" class="btn btn-primary btn-s-xs">提交</button>
+                        <button id="submit-sync" class="btn btn-primary btn-s-xs">提交</button>
+                        <script>
+                        	$(document).ready(function(){
+							    $("#submit-sync").click(function() {
+							        // init lyric
+							        var lyric = $("#editor").html();
+							        $("#lyric").val(lyric);
+							        
+							        // submit
+							        document.musicForm.submit();
+							    });
+							});                 	
+                        </script>
                       </footer>
                     </section>
                   </form>
