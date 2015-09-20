@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sven.dream.common.constants.UploadConstants;
+import com.sven.dream.common.query.MusicQuery;
+import com.sven.dream.common.result.ResultBaseDo;
 import com.sven.dream.commonservice.AbstractDreamServiceImpl;
 import com.sven.dream.commonservice.biz.UploadFileService;
 import com.sven.dream.commonservice.biz.UserOperationService;
@@ -108,6 +110,22 @@ public class MusicBoImpl extends
 		}
 		musicVo.setMusicFile(fileList.get(0));
 		return musicVo;
+	}
+
+	@Override
+	public ResultBaseDo<List<MusicDo>> getMusicPagination(MusicQuery query) {
+		ResultBaseDo<List<MusicDo>> rs = new ResultBaseDo<List<MusicDo>>();
+		rs.setSuccess(false);
+		  
+	    List<MusicDo> musicPaginationList = mapper.getMusicListPagination(query);
+	    int count = mapper.getMusicListCount(query);
+	    
+	    rs.setSuccess(true);
+	    rs.setModule(musicPaginationList);
+	    
+	    query.setTotalCount(count);
+	    rs.setQ(query);
+	    return rs;
 	}
 }
 

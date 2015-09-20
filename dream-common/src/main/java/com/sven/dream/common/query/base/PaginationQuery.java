@@ -61,7 +61,11 @@ public class PaginationQuery {
 	}
 
 	public void setCurrentPage(int currentPage) {
-		this.currentPage = currentPage;
+		if(currentPage <= 0){
+			this.currentPage = 1;
+		}else{
+			this.currentPage = currentPage;
+		}
 	}
 
 	public int getPageSize() {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.sven.dream.common.query.MusicQuery;
 import com.sven.dream.dal.music.MusicDo;
  
 @Resource
@@ -22,4 +23,20 @@ public interface MusicDoMapperExt extends MusicDoMapper{
      * @return
      */
     public List<MusicDo> getTopSongList();
+    
+    /**
+     * 分页获取music列表
+     * 
+     * @param query
+     * @return
+     */
+    public List<MusicDo> getMusicListPagination(MusicQuery query);
+    
+    /**
+     * 获取和 @getMusicListPagination 相同条件下满足的系统总条数
+     * 
+     * @param query
+     * @return
+     */
+    public int getMusicListCount(MusicQuery query);
 }

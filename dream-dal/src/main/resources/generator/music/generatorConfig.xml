@@ -33,7 +33,7 @@
                              targetPackage="com.sven.dream.dal.music.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>  
-        
+         
         <table tableName="musik_music" domainObjectName="MusicDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
@@ -43,6 +43,7 @@
                <columnOverride column="ALBUM_ID" property="albumId" javaType="java.lang.Long" jdbcType="BIGINT" />  
         </table> 
         
+        <!--  
         <table tableName="musik_mtv" domainObjectName="MusicMtvDo"
                enableCountByExample="false" enableUpdateByExample="false"	
                enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
@@ -59,6 +60,14 @@
                <columnOverride column="SINGER_ID" property="singerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
                <columnOverride column="TRY_LISTEN" property="tryListen" javaType="java.lang.Long" jdbcType="BIGINT" />   
         </table>  
+        
+        
+        <table tableName="musik_collect" domainObjectName="CollectDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
+               <generatedKey column="id" sqlStatement="MySql"/>   
+               <columnOverride column="USER_ID" property="userId" javaType="java.lang.Long" jdbcType="BIGINT" />   
+        </table>  -->
     </context>
 </generatorConfiguration>  
 
