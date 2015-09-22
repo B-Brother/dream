@@ -5,25 +5,25 @@
       Discover
     </li>
     <li>
-      <a href="index.html">
+      <a href="/common/index.htm">
         <i class="icon-disc icon text-success"></i>
         <span class="font-bold">首页</span>
       </a>
     </li>
     <li>
-      <a href="genres.html">
+      <a href="/music/find.htm">
         <i class="icon-music-tone-alt icon text-info"></i>
         <span class="font-bold">发现音乐</span>
       </a>
     </li>
     <li>
-      <a href="listen.html">
+      <a href="/music/listen.htm">
         <i class="icon-list icon  text-info-dker"></i>
         <span class="font-bold">我的收藏</span>
       </a>
     </li>
     <li>
-      <a href="events.html">
+      <a href="/music/wall.htm">
         <i class="icon-drawer icon text-primary-lter"></i>
         <b class="badge bg-primary pull-right">6</b>
         <span class="font-bold">专辑墙</span>
