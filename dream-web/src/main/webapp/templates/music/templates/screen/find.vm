@@ -75,20 +75,24 @@
                   <input type="hidden" name="cp" id="cp" value="$!cp"/> 
 	              <h2 class="font-thin m-b">Acoustic</h2>
 	              <div class="row row-sm"> 
-	                #foreach($!music in $!result.getModule())
+	                #if($!result.getModule().size() == 0)
+	                	暂无数据!
+	                #end
+	                
+	                #foreach($!album in $!result.getModule())
 	                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
 	                      <div class="item">
 	                        <div class="pos-rlt">
 	                          <div class="item-overlay opacity r r-2x bg-black">
 	                            <div class="center text-center m-t-n">
-	                              <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
+	                              <a href="/music/album.htm?id=$!album.id"><i class="fa fa-play-circle i-2x"></i></a>
 	                            </div>
 	                          </div>
-	                          <a href="track-detail.html"><img src="/images/m17.jpg" alt="" class="r r-2x img-full"></a>
+	                          <a href="/music/album.htm?id=$!album.id"><img src="$!album.albumFile.url" width="128" height="128" alt="" class="r r-2x img-full"></a>
 	                        </div>
 	                        <div class="padder-v">
-	                          <a href="track-detail.html" data-bjax data-target="#bjax-target" data-el="#bjax-el" data-replace="true" class="text-ellipsis">$!music.songName</a>
-	                          <a href="track-detail.html" data-bjax data-target="#bjax-target" data-el="#bjax-el" data-replace="true" class="text-ellipsis text-xs text-muted">Londi Mentum</a>
+	                          <a href="/music/album.htm?id=$!album.id" data-bjax data-target="#bjax-target" data-el="#bjax-el" data-replace="true" class="text-ellipsis">$!album.albumName</a>
+	                          <a href="/music/album.htm?id=$!album.id" data-bjax data-target="#bjax-target" data-el="#bjax-el" data-replace="true" class="text-ellipsis text-xs text-muted">$!album.singer.nick</a>
 	                        </div>
 	                      </div>
 	                    </div>

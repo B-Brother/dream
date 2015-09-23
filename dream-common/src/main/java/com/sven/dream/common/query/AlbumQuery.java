@@ -2,9 +2,9 @@ package com.sven.dream.common.query;
 
 import com.sven.dream.common.query.base.PaginationQuery;
 
-public class MusicQuery extends PaginationQuery{
+public class AlbumQuery extends PaginationQuery{
 	
-	public MusicQuery(int pageSize, int currentPage) {
+	public AlbumQuery(int pageSize, int currentPage) {
 		super(pageSize, currentPage); 
 	}
 

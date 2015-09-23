@@ -11,7 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.fileupload.FileItem; 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sven.dream.common.constants.UploadConstants;
@@ -35,6 +36,10 @@ public class UploadFileServiceImpl extends
 	
 	public void setHttpPrefix(String httpPrefix) {
 		this.httpPrefix = httpPrefix;
+	}
+	
+	public String getHttpPrefix() {
+		return httpPrefix;
 	}
 	 
 	@Autowired
@@ -61,7 +66,11 @@ public class UploadFileServiceImpl extends
 			fileResultDo.setIsDeleted(fileResultDo.getIsDeleted());
 			fileResultDo.setStatus(file.getStatus());
 			fileResultDo.setStorageType(file.getStorageType());
-			fileResultDo.setUrl(file.getUrl()); 
+			fileResultDo.setUrl(file.getUrl());  
+			
+			if(StringUtils.isBlank(file.getUrl())){
+				file.setUrl("nopic.gif");
+			}
 			fileResultDo.setUrl(httpPrefix + file.getUrl());
 			
 			resultList.add(fileResultDo);

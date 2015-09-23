@@ -16,6 +16,13 @@ import com.sven.dream.dal.common.FileDo;
 public interface UploadFileService extends DreamBo<FileDo>{
 	
 	/**
+	 * http请求前缀透出
+	 * 
+	 * @return
+	 */
+	public String getHttpPrefix();
+	
+	/**
 	 * 根据业务场景和对应的业务ID获取到附件列表。
 	 * 
 	 * @param type			附件类型

@@ -12,6 +12,9 @@ import com.sven.dream.dal.user.UserDo;
  */
 public class AlbumVo {
 	
+	// 专辑ID
+	private Long id;
+	
 	// 专辑名称
     private String albumName;
     
@@ -36,6 +39,14 @@ public class AlbumVo {
 
 	public void setAlbumName(String albumName) {
 		this.albumName = albumName;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public FileDo getAlbumFile() {

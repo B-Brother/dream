@@ -9,15 +9,19 @@ import com.alibaba.citrus.turbine.Context;
 import com.alibaba.citrus.turbine.Navigator;
 import com.sven.dream.base.BaseRender;
 import com.sven.dream.common.enums.MusicConstants;
-import com.sven.dream.common.query.MusicQuery;
-import com.sven.dream.common.result.ResultBaseDo;
-import com.sven.dream.dal.music.MusicDo;
+import com.sven.dream.common.query.AlbumQuery; 
+import com.sven.dream.common.result.ResultBaseDo; 
+import com.sven.dream.music.bo.AlbumBo;
 import com.sven.dream.music.bo.MusicBo;
+import com.sven.dream.music.vo.AlbumVo;
 
 public class Find extends BaseRender{
 	 
 	@Autowired
 	private MusicBo musicBo;
+	
+	@Autowired
+	private AlbumBo albumBo;
 	
 	public void execute(Context context, Navigator nav) throws Exception {
 		 String category = getStringParamValue("cg");
@@ -35,12 +39,12 @@ public class Find extends BaseRender{
 		 
 		 context.put("cp", currentPage);
 		 
-		 MusicQuery query = new MusicQuery();
+		 AlbumQuery query = new AlbumQuery(18, currentPage);
 		 query.setCurrentPage(currentPage);
 		 query.setPageSize(18);
-		 query.setCategory(category); 
+		 query.setCategory(category);  
 		 
-		 ResultBaseDo<List<MusicDo>> musicPaginationList = musicBo.getMusicPagination(query);
-		 context.put("result", musicPaginationList);
+		 ResultBaseDo<List<AlbumVo>> albumPaginationList = albumBo.getAlbumPagination(query);
+		 context.put("result", albumPaginationList);
 	} 
 }

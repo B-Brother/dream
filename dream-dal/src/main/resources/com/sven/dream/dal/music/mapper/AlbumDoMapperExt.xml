@@ -9,4 +9,27 @@
 	   order by id desc
 	   limit 0,8
     </select>
+    
+    <select id="getAlbumListPagination" resultMap="BaseResultMap" parameterType="com.sven.dream.common.query.AlbumQuery"> 
+   	   select 
+       	   <include refid="Base_Column_List" />
+       from musik_album
+       where 
+	   is_deleted = 'n'
+	   <if test="category != null">
+          and category = #{category}
+       </if> 
+       limit #{startIndex}, #{pageSize}
+    </select>
+    
+    <select id="getAlbumListCount" resultType="java.lang.Integer" parameterType="com.sven.dream.common.query.AlbumQuery">  
+   	   select 
+       	   count(1)
+       from musik_album
+       where
+       is_deleted = 'n'
+	   <if test="category != null">
+          and category = #{category}
+       </if> 
+    </select>
 </mapper>

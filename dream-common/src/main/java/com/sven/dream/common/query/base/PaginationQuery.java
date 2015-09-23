@@ -53,18 +53,22 @@ public class PaginationQuery {
 	
 	// ====================== 给velocity使用的分页插件结束 ========================
 	
+	public PaginationQuery(int pageSize, int currentPage){
+		// 异常情况，当前页码小于等于0
+		if(currentPage <= 0){
+			startIndex = 0; 
+		}else{
+			startIndex = (currentPage - 1) * pageSize; 
+		}
+	}
+	
 	
 	public void init(){
 		if(isInit){
 			return;
 		}
 		
-		// 首先计算总共多少页
-		
-		// 不允许pageSize小于10
-		if(pageSize > 10){
-			pageSize = 10;
-		}
+		// 首先计算总共多少页 
 		
 		// 计算一共有多少页
 		if(totalCount == 0){
@@ -121,14 +125,7 @@ public class PaginationQuery {
 					paginationList4VM.add(i);
 				}
 			}
-		}
-		 
-		// 异常情况，当前页码小于等于0
-		if(currentPage <= 0){
-			startIndex = 0; 
-		}else{
-			startIndex = (currentPage - 1) * pageSize; 
-		}
+		} 
 	}
 	
 	public int getCurrentPage() {

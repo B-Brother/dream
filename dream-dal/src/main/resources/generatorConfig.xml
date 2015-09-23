@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="/Users/beckham/Desktop/opensource/maven/m2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar" />
+ 
+    <context id="dream" targetRuntime="MyBatis3">
+        <property name="suppressAllComments" value="true" />
+        <property name="useActualColumnNames" value="false" />  
+
+        <!-- 配置数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        			    connectionURL="jdbc:mysql://localhost:3306/sven"
+                        userId="root"
+                        password="beckham"> </jdbcConnection> 
+                        
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver> 
+        
+        <javaModelGenerator targetPackage="com.sven.dream.dal.music"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.sven.dream.dal.music.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.sven.dream.dal.music.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>  
+         
+        <!--  
+        <table tableName="musik_music" domainObjectName="MusicDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
+               <generatedKey column="id" sqlStatement="MySql"/>   
+               
+               <columnOverride column="SINGER_ID" property="singerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="ALBUM_ID" property="albumId" javaType="java.lang.Long" jdbcType="BIGINT" />  
+        </table> 
+        
+         
+        <table tableName="musik_mtv" domainObjectName="MusicMtvDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
+               <generatedKey column="id" sqlStatement="MySql"/>  
+               <columnOverride column="SINGER_ID" property="singerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="ALBUM_ID" property="albumId" javaType="java.lang.Long" jdbcType="BIGINT" /> 
+               <columnOverride column="RELATION_MUSIC" property="relationMusic" javaType="java.lang.Long" jdbcType="BIGINT" />  
+        </table> 
+        -->
+        
+        <table tableName="musik_album" domainObjectName="AlbumDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
+               <generatedKey column="id" sqlStatement="MySql"/>   
+               <columnOverride column="SINGER_ID" property="singerId" javaType="java.lang.Long" jdbcType="BIGINT" />  
+               <columnOverride column="TRY_LISTEN" property="tryListen" javaType="java.lang.Long" jdbcType="BIGINT" />   
+        </table>  
+        
+        <!--  
+        <table tableName="musik_collect" domainObjectName="CollectDo"
+               enableCountByExample="false" enableUpdateByExample="false"	
+               enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"> 
+               <generatedKey column="id" sqlStatement="MySql"/>   
+               <columnOverride column="USER_ID" property="userId" javaType="java.lang.Long" jdbcType="BIGINT" />   
+        </table>  -->
+    </context>
+</generatorConfiguration>  
+
+
+
+
+
