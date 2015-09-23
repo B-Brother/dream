@@ -39,4 +39,12 @@ public interface MusicDoMapperExt extends MusicDoMapper{
      * @return
      */
     public int getMusicListCount(MusicQuery query);
+    
+    /**
+     * 获取专辑下的歌曲根据专辑ID
+     * 
+     * @param albumId
+     * @return
+     */
+    public List<MusicDo> getMusicListByAlbum(long albumId);
 }

@@ -127,6 +127,17 @@ public class MusicBoImpl extends
 	    rs.setQ(query);
 	    return rs;
 	}
+
+	@Override
+	public List<MusicVo> getMusicListByAlbum(long albumId) {
+		List<MusicDo> musicList = mapper.getMusicListByAlbum(albumId);
+		List<MusicVo> musicVoList = new ArrayList<MusicVo>();
+		for(MusicDo music : musicList){
+			musicVoList.add(getMusicVoById(music.getId()));
+		}
+		
+		return musicVoList;
+	}
 }
 
 

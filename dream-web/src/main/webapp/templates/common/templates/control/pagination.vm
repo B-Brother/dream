@@ -1,0 +1,17 @@
+<!-- 分页组件 -->
+<ul class="pagination pagination"> 
+    <!-- 一共多少页，循环 -->
+    <li><a href="javascript:gotoPage($!q.prevPage)"><i class="fa fa-chevron-left"></i></a></li> 
+    
+    #foreach($!page in $!q.paginationList4VM)
+    	<li #if($!page == $!q.currentPage) class="active" #end><a href="javascript:gotoPage($!page)">$!page</a></li>
+    #end
+    
+    <li><a href="javascript:gotoPage($!q.nextPage)"><i class="fa fa-chevron-right"></i></a></li> 
+</ul>
+<script>
+	function gotoPage(val){
+		document.getElementById("cp").value = val;
+		document.paginationForm.submit();
+	}
+</script>

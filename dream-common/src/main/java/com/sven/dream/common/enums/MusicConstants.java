@@ -23,7 +23,7 @@ public class MusicConstants {
 	public static final String TYPE_MUSIC_ELECTRONIC = "ELECTRONIC";
 	 
 	// R&B
-	public static final String TYPE_MUSIC_RB = "R&B";
+	public static final String TYPE_MUSIC_RB = "RB";
 			
 	// 爵士
 	public static final String TYPE_MUSIC_JAZZ = "JAZZ";

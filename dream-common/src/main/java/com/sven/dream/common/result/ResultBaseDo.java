@@ -57,5 +57,6 @@ public class ResultBaseDo<T> {
 
 	public void setQ(PaginationQuery q) {
 		this.q = q;
+		q.init();
 	} 
 }

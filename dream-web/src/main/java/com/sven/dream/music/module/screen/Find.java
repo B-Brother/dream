@@ -33,10 +33,13 @@ public class Find extends BaseRender{
 			 currentPage = 1;
 		 }
 		 
+		 context.put("cp", currentPage);
+		 
 		 MusicQuery query = new MusicQuery();
 		 query.setCurrentPage(currentPage);
 		 query.setPageSize(18);
-		 query.setCategory(category);
+		 query.setCategory(category); 
+		 
 		 ResultBaseDo<List<MusicDo>> musicPaginationList = musicBo.getMusicPagination(query);
 		 context.put("result", musicPaginationList);
 	} 

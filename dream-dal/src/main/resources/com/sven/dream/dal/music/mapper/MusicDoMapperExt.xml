@@ -41,6 +41,16 @@
           and category = #{category}
        </if> 
     </select>
+    
+    <select id="getMusicListByAlbum" resultMap="BaseResultMap" parameterType="java.lang.Long">  
+   	   select 
+       	   <include refid="Base_Column_List" />
+       from musik_music
+       where
+       is_deleted = 'n'
+       and
+       album_id = #{albumId}
+    </select>
 </mapper>
 
 
