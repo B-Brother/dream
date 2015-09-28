@@ -44,13 +44,16 @@ public class MusicBoImpl extends
 			musicVo.setUser(userOperationService.selectByPrimaryKey(music.getId()));
 			musicVo.setSongName(music.getSongName());
 			musicVo.setMusicTime(MusicUtil.convertViewSongTime(music.getMusicTime()));
-			
+			  
+			// 设置附件信息。如果db没有附件，则mock出一个空文件来。
 			List<FileDo> fileList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
 			if(fileList == null || fileList.size() == 0){
-				// 针对没有主图的情况跳过
-				continue;
+				FileDo mockFile = new FileDo();
+				mockFile.setUrl(fileService.getHttpPrefix() + "nopic.gif");
+				musicVo.setMusicFile(mockFile);
+			}else{
+				musicVo.setMusicFile(fileList.get(0));
 			}
-			musicVo.setMusicFile(fileList.get(0));
 			
 			musicVoList.add(musicVo);
 		}
@@ -70,21 +73,27 @@ public class MusicBoImpl extends
 			
 			UserDo user = userOperationService.selectByPrimaryKey(music.getSingerId());
 			musicVo.setUser(user);
-			musicVo.setSongName(music.getSongName()); 
+			musicVo.setSongName(music.getSongName());  
 			
-			List<FileDo> fileList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
-			if(fileList == null || fileList.size() == 0){
-				// 针对没有主图的情况跳过
-				continue;
-			}
-			musicVo.setMusicFile(fileList.get(0));
+			// 设置附件信息。如果db没有附件，则mock出一个空文件来。
+			List<FileDo> musicFileList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
+			if(musicFileList == null || musicFileList.size() == 0){
+				FileDo mockFile = new FileDo();
+				mockFile.setUrl(fileService.getHttpPrefix() + "nopic.gif");
+				musicVo.setMusicFile(mockFile);
+			}else{
+				musicVo.setMusicFile(musicFileList.get(0));
+			} 
 			
-			List<FileDo> fileUserPicList = fileService.getFileListByBusiness(UploadConstants.BIZ_USER_MAIN_PIC, user.getId());
+			// 设置附件信息。如果db没有附件，则mock出一个空文件来。
+			List<FileDo> fileUserPicList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
 			if(fileUserPicList == null || fileUserPicList.size() == 0){
-				// 针对没有主图的情况跳过
-				continue;
+				FileDo mockFile = new FileDo();
+				mockFile.setUrl(fileService.getHttpPrefix() + "nopic.gif");
+				musicVo.setUserPicFile(mockFile);
+			}else{
+				musicVo.setUserPicFile(fileUserPicList.get(0));
 			}
-			musicVo.setUserPicFile(fileUserPicList.get(0));
 			
 			musicVoList.add(musicVo);
 		}
@@ -104,11 +113,16 @@ public class MusicBoImpl extends
 		musicVo.setSongName(music.getSongName());
 		musicVo.setMusicTime(MusicUtil.convertViewSongTime(music.getMusicTime()));
 		
+		// 设置附件信息。如果db没有附件，则mock出一个空文件来。
 		List<FileDo> fileList = fileService.getFileListByBusiness(UploadConstants.BIZ_MUSIC_MAIN_PIC, music.getId());
 		if(fileList == null || fileList.size() == 0){
-			return null;
+			FileDo mockFile = new FileDo();
+			mockFile.setUrl(fileService.getHttpPrefix() + "nopic.gif");
+			musicVo.setMusicFile(mockFile);
+		}else{
+			musicVo.setMusicFile(fileList.get(0));
 		}
-		musicVo.setMusicFile(fileList.get(0));
+					
 		return musicVo;
 	}
 

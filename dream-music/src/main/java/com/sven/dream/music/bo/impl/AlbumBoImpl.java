@@ -45,14 +45,17 @@ public class AlbumBoImpl extends
 			albumVo.setIntroduce(album.getIntroduce());
 			albumVo.setPublishDateString(album.getPublishDate().toLocaleString()); 
 			albumVo.setSinger(userOperationService.selectByPrimaryKey(album.getSingerId())); 
-			
+			 
+			// 设置附件信息。如果db没有附件，则mock出一个空文件来。
 			List<FileDo> fileList = fileService.getFileListByBusiness(UploadConstants.BIZ_ALBUM_MAIN_PIC, album.getId());
 			if(fileList == null || fileList.size() == 0){
-				// 针对没有主图的情况跳过
-				continue;
+				FileDo mockFile = new FileDo();
+				mockFile.setUrl(fileService.getHttpPrefix() + "nopic.gif");
+				albumVo.setAlbumFile(mockFile);
+			}else{
+				albumVo.setAlbumFile(fileList.get(0));
 			}
-			albumVo.setAlbumFile(fileList.get(0));
-			
+  			
 			albumVo.setTryListen(album.getTryListen());
 			
 			albumVoList.add(albumVo);

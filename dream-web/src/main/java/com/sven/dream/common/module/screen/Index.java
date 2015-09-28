@@ -21,11 +21,11 @@ public class Index extends BaseRender{
 	private UserMappingBo userMappingBo;
 	
 	public void execute(Context context) throws Exception {
-		UserInformationVo user = getUser();
-		
-		context.put("newAlbumList", albumBo.getNewAlbumList());
-		context.put("musicList", musicBo.getNewSongList()); 
-		context.put("topMusicList", musicBo.getTopSongList()); 
-		context.put("mappingList", userMappingBo.getUserMappingVoList(user.getUserDo().getId())); 
+//		UserInformationVo user = getUser();
+//		
+//		context.put("newAlbumList", albumBo.getNewAlbumList());
+//		context.put("musicList", musicBo.getNewSongList()); 
+//		context.put("topMusicList", musicBo.getTopSongList()); 
+//		context.put("mappingList", userMappingBo.getUserMappingVoList(user.getUserDo().getId())); 
 	} 
 }
