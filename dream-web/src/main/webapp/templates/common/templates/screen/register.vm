@@ -22,10 +22,10 @@ $rundata.setLayoutEnabled(false)
 <body class="bg-info dker">
   <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
     <div class="container aside-xl">
-      <a class="navbar-brand block" href="index.html"><span class="h1 font-bold">Musik</span></a>
+      <a class="navbar-brand block" href="index.html"><span class="h1 font-bold">SVEN</span></a>
       <section class="m-b-lg">
         <header class="wrapper text-center">
-          <strong>音乐，让我们发现生活的美好</strong>
+          <strong>答案</strong>
         </header>
         <form action="register.htm" method="post">
           <input type="hidden" name="action" value="RegisterAction" />
