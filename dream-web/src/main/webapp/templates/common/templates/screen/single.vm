@@ -191,13 +191,25 @@
 
 
                                                 <form action="#" method="post" id="commentform">
-  
+ 
+                                                        <p class="comment-notes">您的邮件信息将不会被公开，请放心填写。标注有<span class="required">*</span>号为必填信息。</p>
+
+                                                        <div>
+                                                                <label for="author">昵称 *</label>
+                                                                <input class="span4" type="text" name="author" id="author" value="" size="22">
+                                                        </div>
+
+                                                        <div>
+                                                                <label for="email">邮件 *</label>
+                                                                <input class="span4" type="text" name="email" id="email" value="" size="22">
+                                                        </div>
+ 
                                                         <div>
                                                                 <label for="comment">评论</label>
                                                                 <textarea class="span8" name="comment" id="comment" cols="58" rows="10"></textarea>
                                                         </div>
 
-                                                        <p class="allowed-tags">您可以在回复中使用以下标签<small><code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>
+                                                        <p class="allowed-tags">你可以在回复中使用以下标签属性 <small><code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>
 
                                                         <div>
                                                                 <input class="btn" name="submit" type="submit" id="submit" value="回复">

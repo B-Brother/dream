@@ -1082,6 +1082,51 @@ input[type=text].error,
   top: 0px;
 }
 
+/* Tinker Styles by tinker -----------------------------------------------------------------------------------*/
+.tinker {
+  margin-bottom: 25px;
+  padding-left: 0px;
+  text-align: left;
+}
+
+.tinker dt {
+  position: relative;
+  padding: 10px 10px 9px 35px;
+  line-height: 20px;
+  margin-bottom: 1px;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tinker dt:hover {
+  color: #395996;
+}
+
+.tinker dt span {
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: url(../images/plus-minus.png) no-repeat 0px 0px;
+}
+
+.tinker dt.current span {
+  background-position: bottom;
+}
+
+.tinker dd {
+  display: none;
+  padding: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.lt-ie8 .tinker dt span {
+  top: 0px;
+}
+
 /* Tabs Styles -----------------------------------------------------------------------------------*/
 .tabs-nav {
   list-style: none;

@@ -1,0 +1,61 @@
+<div class="content-wrapper" style="min-height: 946px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            资料修改 
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">资料修改</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-3"> 
+              <div class="box box-solid">
+                 您好，填写真实有效的资料。会让大家更了解你哦。
+                 
+                 要求:xxxxxx
+                 
+              </div><!-- /. box --> 
+            </div><!-- /.col -->
+            <div class="col-md-9">
+              
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">个人信息</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <form role="form">
+                    <!-- text input -->
+                    <div class="form-group">
+                      <label>昵称</label>
+                      <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                    <div class="form-group">
+                      <label>头像</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                    </div>
+					<div class="form-group">
+                      <label>常居住地</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                    </div>
+                    <div class="form-group">
+                      <label>登录密码</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                    </div>
+                    <div class="form-group">
+                      <label>头像</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                    </div> 
+                  </form>
+                </div><!-- /.box-body -->
+              </div>
+              
+               
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+      </div>
