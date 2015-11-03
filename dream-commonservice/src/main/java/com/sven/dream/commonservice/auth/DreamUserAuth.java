@@ -27,8 +27,7 @@ public class DreamUserAuth extends BeanSupport implements Callback<DreamUserAuth
      
     @Autowired
     private URIBrokerService uriBrokerService;
-
-    @Autowired
+ 
     private UserOperationService userOperationService;
     
     private String cookieUserKey; 

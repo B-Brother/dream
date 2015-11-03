@@ -16,9 +16,7 @@
 		<module>dream-user</module> 
 		<module>dream-web</module>
 		<module>dream-deploy</module>
-        <module>dream-blog</module>
-        <module>dream-music</module>
-    </modules>
+     </modules>
 
     <properties>
         <java.version>1.6</java.version>
@@ -55,17 +53,7 @@
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-user</artifactId>
 				<version>1.0-SNAPSHOT</version>
-			</dependency>
-            <dependency>
-				<groupId>com.sven.dream</groupId>
-				<artifactId>dream-music</artifactId>
-				<version>1.0-SNAPSHOT</version>
-			</dependency>
-            <dependency>
-				<groupId>com.sven.dream</groupId>
-				<artifactId>dream-blog</artifactId>
-				<version>1.0-SNAPSHOT</version>
-			</dependency>
+			</dependency> 
             <dependency>
 				<groupId>com.sven.dream</groupId>
 				<artifactId>dream-web</artifactId>

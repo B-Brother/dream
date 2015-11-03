@@ -22,8 +22,7 @@ import com.sven.dream.commonservice.biz.UserOperationService;
 import com.sven.dream.dal.user.UserDo; 
 
 public class LoginAction extends BaseRender{
-	
-	@Autowired
+	 
 	private UserOperationService userOperationService; 
 	
 	/**

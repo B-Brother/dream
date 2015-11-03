@@ -17,10 +17,8 @@ import com.sven.dream.dal.user.UserDo;
 
 public class RegisterAction extends BaseRender{
 	 
-	@Autowired
-	private UserOperationService userOperationService;
-	
-	@Autowired
+    private UserOperationService userOperationService;
+	 
 	private TextFilterService textFilterService;
 	
 	public void doSimpleRegister(Context context, Navigator nav){

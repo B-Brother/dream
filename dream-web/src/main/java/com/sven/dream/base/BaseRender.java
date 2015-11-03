@@ -27,11 +27,9 @@ public class BaseRender {
 	protected final String AJAX_RESULT_TAG = "result";
 	
 	protected final String AJAX_ERROR_MESSAGE_TAG = "errorMessage";
-	
-	@Autowired
+	 
 	protected HttpServletRequest request;
-	
-	@Autowired
+	 
 	protected HttpServletResponse response;
 	
 	/**

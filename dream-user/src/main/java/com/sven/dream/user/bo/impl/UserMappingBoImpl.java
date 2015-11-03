@@ -19,17 +19,13 @@ import com.sven.dream.user.vo.UserMappingVo;
 
 public class UserMappingBoImpl extends
 	AbstractDreamServiceImpl<UserMappingDo, UserMappingDoMapperExt> implements UserMappingBo{
-
-	@Autowired
+ 
 	private UserOperationService userOperationService;
-	
-	@Autowired
+	 
 	private UploadFileService uploadFileService;
-	
-	@Autowired
+	 
 	private GeographyCache geographyCache;
-	
-	@Autowired
+	 
     public void setBaseMapper(UserMappingDoMapperExt mapper) {
         setMapper(mapper);
     }

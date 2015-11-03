@@ -9,8 +9,7 @@ import com.sven.dream.user.bo.UserBo;
 
 public class UserBoImpl extends
 	AbstractDreamServiceImpl<UserDo, UserDoMapperExt> implements UserBo{
-
-	@Autowired
+ 
     public void setBaseMapper(UserDoMapperExt mapper) {
         setMapper(mapper);
     }

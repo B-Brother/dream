@@ -9,8 +9,7 @@ import com.sven.dream.user.bo.UserEventBo;
 
 public class UserEventBoImpl extends
 	AbstractDreamServiceImpl<UserEventDo, UserEventDoMapperExt> implements UserEventBo{
-
-	@Autowired
+ 
     public void setBaseMapper(UserEventDoMapperExt mapper) {
         setMapper(mapper);
     }
